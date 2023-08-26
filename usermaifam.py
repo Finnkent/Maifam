@@ -24,48 +24,11 @@ cmd = '/th_SlotMachine_SevenFish'
 cmd1 = '/th_SlotMachine_add'
 area = ""
 slot = ""
-tunggu = 2
 #user = [201319154,5199147926]
 user = 201319154
 
 respond_to_group = False
 
-lala1 = "Doesn't look like"
-lala2 = "Sungai dangkal"
-mimi1 = "Legend said a man"
-mimi2 = "Legenda mengatakan"
-badabu1 = "Only big fish"
-badabu2 = "Hanya ikan besar"
-soprano1 = "Rare fish lived"
-soprano2 = "Ikan langka"
-bulari1 = "Well, some little"
-bulari2 = "Terletak di bagian"
-narrow1 = "People claimed that"
-narrow2 = "Orang-orang mengklaim"
-gaba1 = "Many years ago"
-gaba2 = "Bertahun-tahun yang"
-ancient1 = "A dangerous strange"
-ancient2 = "Laut aneh berbahaya"
-haunted1 = "A cursed sea"
-haunted2 = "Laut terkutuk"
-all1 = "Here you can"
-all2 = "Bagian kecil"
-penjara1 = "The Government"
-penjara2 = "Pemerintah Maikantri"
-
-areas_dict = {
-    'SL': 'Sungai Lala',
-    'SM': 'Sungai Mimi',
-    'SB': 'Sungai Badabu',
-    'DS': 'Danau Soprano',
-    'TB': 'Teluk Bulari',
-    'LS': 'Laut Sempit',
-    'LG': 'Laut Gabagaba',
-    'LP': 'Laut Purba',
-    'LB': 'Laut Berhantu',
-    'DP': 'Danau Penjara',
-    'AS': 'All Sea',
-}
 
 slots_dict = {
     'Ikan': '/th_SlotMachine_SevenFish',
@@ -86,193 +49,160 @@ async def handler_maifam(event):
     if not respond_to_group:
         
     
-        pesan = event.raw_text
+    pesan = event.raw_text
+    
+    
+    #masak
+    if "Berhasil memasak" in pesan:
+        print(time.asctime(), pesan)
+        await asyncio.sleep(2)
+        await event.respond(cook)
         
-        
-        #masak
-        if "Berhasil memasak" in pesan:
-            print(time.asctime(), pesan)
-            await asyncio.sleep(2)
-            await event.respond(cook)
+    if 'Kamu tidak bisa memasak' in pesan:
+        print(time.asctime(), 'Rehat')
+        await asyncio.sleep(3240)
+        await event.respond(cook)
+    
+    #slot
+    if '10000000Qn' in pesan:
+        time.sleep(2)
+        await event.respond('/tamanHiburan_TembakTopeng')
+        print('Mulai Dart')
             
-        if 'Kamu tidak bisa memasak' in pesan:
-            print(time.asctime(), 'Rehat')
-            await asyncio.sleep(3240)
-            await event.respond(cook)
-        
-        #slot
-        if '10000000Qn' in pesan:
-            time.sleep(2)
-            await event.respond('/tamanHiburan_TembakTopeng')
-            print('Mulai Dart')
                 
-                    
-        if 'Berhasil mengumpulkan 30 CollectibleFragment SixLeaves!!' in pesan:
-            time.sleep(2)
-            await event.respond(cmd1)
+    if 'Berhasil mengumpulkan 30 CollectibleFragment SixLeaves!!' in pesan:
+        time.sleep(2)
+        await event.respond(cmd1)
+      
+                
+    elif 'Ada tujuh jenis ikan' in pesan:
+        time.sleep(2)
+        await event.click(1,0)
+            
+    elif 'Ada enam jenis daun' in pesan:
+        time.sleep(2)
+        await event.click(1,0)
+            
+    elif 'Kamu memutar SlotMachine 10x' in pesan:
+        time.sleep(2)
+        await event.click(1,0)
+            
+    elif 'Koin untuk' in pesan:
+        if 'SevenFish 🎰 SlotMachine' in pesan:
+          time.sleep(2)
+          await event.respond(cmd1)
           
-                    
-        elif 'Ada tujuh jenis ikan' in pesan:
-            time.sleep(2)
-            await event.click(1,0)
+        else:
+          time.sleep(2)
+          await event.respond("/collectibleFragment_SixLeaves")
+            
+    elif 'Kumpulkan 30 CollectibleFragment' in pesan:
+        time.sleep(2)
+        await event.click(text="Get CollectibleItem")
+        time.sleep(2)
+        await event.respond(cmd1)
                 
-        elif 'Ada enam jenis daun' in pesan:
-            time.sleep(2)
-            await event.click(1,0)
-                
-        elif 'Kamu memutar SlotMachine 10x' in pesan:
-            time.sleep(2)
-            await event.click(1,0)
-                
-        elif 'Koin untuk' in pesan:
-            if 'SevenFish 🎰 SlotMachine' in pesan:
-              time.sleep(2)
-              await event.respond(cmd1)
-              
-            else:
-              time.sleep(2)
-              await event.respond("/collectibleFragment_SixLeaves")
-                
-        elif 'Kumpulkan 30 CollectibleFragment' in pesan:
-            time.sleep(2)
-            await event.click(text="Get CollectibleItem")
-            time.sleep(2)
-            await event.respond(cmd1)
-                    
-                
-        elif 'Apa kamu' in pesan:
-            time.sleep(2)
-            await event.click(text="Confirm")
-                
-        elif 'Berhasil membeli tambahan' in pesan:
-            time.sleep(2)
-            if slot in slots_dict:
-                await event.respond(slots_dict[slot])
-            print(pesan)
-               
-        elif 'Setiap harinya' in pesan:
-            time.sleep(2)
-            await event.click(text='Mulai')
-     
-        elif 'Pilih sasaran' in pesan:
-            time.sleep(2)
-            await event.click(0,1)
-                
-        elif 'Lemparanmu berhasil' in pesan:
-            time.sleep(2)
-            await event.click(text='Lanjut')
-                
-        elif 'Sayang sekali' in pesan:
-            time.sleep(2)
-            await event.click(text='Lanjut')
-                
-        elif 'Kesempatan' in pesan:
-            time.sleep(2)
-            await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
+            
+    elif 'Apa kamu' in pesan:
+        time.sleep(2)
+        await event.click(text="Confirm")
+            
+    elif 'Berhasil membeli tambahan' in pesan:
+        time.sleep(2)
+        if slot in slots_dict:
+            await event.respond(slots_dict[slot])
+        print(pesan)
+           
+    elif 'Setiap harinya' in pesan:
+        time.sleep(2)
+        await event.click(text='Mulai')
+ 
+    elif 'Pilih sasaran' in pesan:
+        time.sleep(2)
+        await event.click(0,1)
+            
+    elif 'Lemparanmu berhasil' in pesan:
+        time.sleep(2)
+        await event.click(text='Lanjut')
+            
+    elif 'Sayang sekali' in pesan:
+        time.sleep(2)
+        await event.click(text='Lanjut')
+            
+    elif 'Kesempatan' in pesan:
+        time.sleep(2)
+        await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
             
    
 @client.on(events.NewMessage(from_users=mepamx))
 async def handler_memancing(event):
     global respond_to_group
     if not respond_to_group:
-        
     
+Kode yang Anda berikan sejauh ini tidak akan berfungsi dengan benar karena ada beberapa hal yang perlu diubah. Pertama, Anda tidak dapat meletakkan definisi fungsi dalam definisi fungsi lainnya tanpa menghubungkannya secara benar. Kedua, Anda mencoba menggabungkan dua level indentasi yang berbeda, yang tidak akan berfungsi dalam Python.
+
+Berikut adalah cara Anda dapat memodifikasi kode tersebut untuk memastikan bahwa semua fungsi dan logika berjalan dengan benar:
+
+```python
+# Buat dictionary untuk pesan-pesan yang ingin Anda cari
+pesan_dict = {
+    "lala": ["Doesn't look like", "Sungai dangkal"],
+    "mimi": ["Legend said a man", "Legenda mengatakan"],
+    "badabu": ["Only big fish", "Hanya ikan besar"],
+    "soprano": ["Rare fish lived", "Ikan langka"],
+    "bulari": ["Well, some little", "Terletak di bagian"],
+    "narrow": ["People claimed that", "Orang-orang mengklaim"],
+    "gaba": ["Many years ago", "Bertahun-tahun yang"],
+    "ancient": ["A dangerous strange", "Laut aneh berbahaya"],
+    "haunted": ["A cursed sea", "Laut terkutuk"],
+    "all": ["Here you can", "Bagian kecil"],
+    "penjara": ["The Government", "Pemerintah Maikantri"]
+}
+
+@client.on(events.NewMessage(from_users=mepamx))
+async def handler_memancing(event):
+    global respond_to_group
+    if not respond_to_group:
         pesan = event.raw_text
-       
-        if lala1 in pesan or lala2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
+
+        for key, values in pesan_dict.items():
+            for value in values:
+                if value in pesan:
+                    klik = await client.get_messages(mepamx, ids=event.message.id)
+                    time.sleep(tunggu)
+                    await klik.click(text=alat)
+                    break 
+  
+                if "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
+                    await asyncio.sleep(2)
+                    if area in areas_dict:
+                        await event.respond(areas_dict[area])
+                    print(pesan)
                 
-                         
-        if mimi1 in pesan or mimi2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-                
-        if badabu1 in pesan or badabu2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-                       
-        if soprano1 in pesan or soprano2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-            
-        if bulari1 in pesan or bulari2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-                        
-        if narrow1 in pesan or narrow2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-                        
-        if gaba1 in pesan or gaba2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                        
-                
-        if ancient1 in pesan or ancient2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                      
-                         
-        if haunted1 in pesan or haunted2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-            
-        if all1 in pesan or all2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-            
-        if penjara1 in pesan or penjara2 in pesan:
-            klik = await client.get_messages(mepamx, ids=event.message.id)
-            time.sleep(tunggu)
-            await klik.click(text=alat)
-                
-        elif "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
-            await asyncio.sleep(2)
-            if area in areas_dict:
-                await event.respond(areas_dict[area])
-            print(pesan)
-            
-        elif 'tidak memiliki cukup energi' in pesan:
-            await asyncio.sleep(2)
-            await event.respond('/restore_max_confirm')
-            print(time.asctime(), 'Isi Ulang Energi')
-            
                     
-        elif 'Energi berhasil' in pesan:
-            await asyncio.sleep(2)
-            await event.click(text=alat)
-            print('Lanjut Gan')
-            
-                  
-        elif '==' in pesan:
-            await asyncio.sleep(2)
-            await event.click(text=alat)
-            
+                elif 'tidak memiliki cukup energi' in pesan:
+                    await asyncio.sleep(2)
+                    await event.respond('/restore_max_confirm')
+                    print(time.asctime(), 'Isi Ulang Energi')
                     
-        elif 'Kamu tidak sedang' in pesan:
-            await asyncio.sleep(2)
-            if area in areas_dict:
-                await event.respond(areas_dict[area])
-            print(pesan)
-    
+                            
+                elif 'Energi berhasil' in pesan:
+                    await asyncio.sleep(2)
+                    await event.click(text=alat)
+                    print('Lanjut Gan')
+                    
+                          
+                elif '==' in pesan:
+                    await asyncio.sleep(2)
+                    await event.click(text=alat)
+                    
+                            
+                elif 'Kamu tidak sedang' in pesan:
+                    await asyncio.sleep(2)
+                    if area in areas_dict:
+                        await event.respond(areas_dict[area])
+                    print(pesan)
+        
         
         
 @client.on(events.NewMessage(from_users=mepamx4))
@@ -281,17 +211,17 @@ async def handler_ayam(event):
     if not respond_to_group:
         
     
-        pesan = event.raw_text
-        
-        #beliayam
-        if "Kamu membeli 🐓Ayam" in pesan:
-            print(time.asctime(), 'Beli ayam')
-            await asyncio.sleep(2)
-            await event.respond(chicken)
-              
-        if 'Kamu memerlukan 20' in pesan:
-            await asyncio.sleep(2)
-            await client.send_message(-1001946930100, 'Kandang sudah penuh')
+    pesan = event.raw_text
+    
+    #beliayam
+    if "Kamu membeli 🐓Ayam" in pesan:
+        print(time.asctime(), 'Beli ayam')
+        await asyncio.sleep(2)
+        await event.respond(chicken)
+          
+    if 'Kamu memerlukan 20' in pesan:
+        await asyncio.sleep(2)
+        await client.send_message(-1001946930100, 'Kandang sudah penuh')
     
         
 @client.on(events.NewMessage(from_users=user))
