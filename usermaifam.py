@@ -178,13 +178,7 @@ async def handler_memancing(event):
         
     
     pesan = event.raw_text
-    
-    if "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
-        await asyncio.sleep(2)
-        if area in areas_dict:
-            await event.respond(areas_dict[area])
-        print(pesan)
-        
+   
     if lala1 in pesan or lala2 in pesan:
         klik = await client.get_messages(mepamx, ids=event.message.id)
         time.sleep(tunggu)
@@ -250,7 +244,12 @@ async def handler_memancing(event):
         time.sleep(tunggu)
         await klik.click(text=alat)
             
-          
+    elif "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
+        await asyncio.sleep(2)
+        if area in areas_dict:
+            await event.respond(areas_dict[area])
+        print(pesan)
+        
     elif 'tidak memiliki cukup energi' in pesan:
         await asyncio.sleep(2)
         await event.respond('/restore_max_confirm')
