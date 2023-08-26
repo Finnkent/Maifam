@@ -9,7 +9,7 @@ from telethon.sync import TelegramClient, events, utils, Button
 
 api_id = 18850178 
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Finnkent'
+sesi_file = 'Horang'
 client = TelegramClient(sesi_file, api_id, api_hash)
 
 mepam = "KampungMaifamBot"
@@ -24,7 +24,7 @@ cmd = '/th_SlotMachine_SevenFish'
 cmd1 = '/th_SlotMachine_add'
 area = ""
 slot = ""
-user = 5199147926
+user = 201319154
 
 respond_to_group = False
 
@@ -143,7 +143,7 @@ async def handler_maifam(event):
             
     elif 'Kesempatan' in pesan:
         time.sleep(2)
-        await client.send_message(-1001522767385, 'Slot telah selesai di mainkan')
+        await client.send_message(pesan, 'Slot dan Dart telah selesai di mainkan')
             
    
 @client.on(events.NewMessage(from_users=mepamx))
@@ -204,7 +204,7 @@ async def handler_ayam(event):
           
     if 'Kamu memerlukan 20' in pesan:
         await asyncio.sleep(2)
-        await client.send_message(-1001522767385, 'Kandang sudah penuh')
+        await client.send_message(pesan, 'Kandang sudah penuh')
     
         
 @client.on(events.NewMessage(from_users=user))
