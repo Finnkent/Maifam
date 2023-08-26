@@ -100,7 +100,7 @@ async def handler_maifam(event):
         await event.click(1,0)
             
     elif 'Koin untuk' in pesan:
-        if slots_dict == 'Ikan':
+        if 'SevenFish 🎰 SlotMachine' in pesan:
           time.sleep(2)
           await event.respond(cmd1)
           return
@@ -143,7 +143,7 @@ async def handler_maifam(event):
             
     elif 'Kesempatan' in pesan:
         time.sleep(2)
-        await client.send_message(-1001933220259, 'Slot dan Dart telah selesai di mainkan')
+        await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
             
    
 @client.on(events.NewMessage(from_users=mepamx))
@@ -204,7 +204,7 @@ async def handler_ayam(event):
           
     if 'Kamu memerlukan 20' in pesan:
         await asyncio.sleep(2)
-        await client.send_message(-1001933220259, 'Kandang sudah penuh')
+        await client.send_message(-1001946930100, 'Kandang sudah penuh')
     
         
 @client.on(events.NewMessage(from_users=user))
