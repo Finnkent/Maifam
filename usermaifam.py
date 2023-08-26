@@ -24,10 +24,34 @@ cmd = '/th_SlotMachine_SevenFish'
 cmd1 = '/th_SlotMachine_add'
 area = ""
 slot = ""
+tunggu = 2
 #user = [201319154,5199147926]
 user = 201319154
 
 respond_to_group = False
+
+lala1 = "Doesn't look like"
+lala2 = "Sungai dangkal"
+mimi1 = "Legend said a man"
+mimi2 = "Legenda mengatakan"
+badabu1 = "Only big fish"
+badabu2 = "Hanya ikan besar"
+soprano1 = "Rare fish lived"
+soprano2 = "Ikan langka"
+bulari1 = "Well, some little"
+bulari2 = "Terletak di bagian"
+narrow1 = "People claimed that"
+narrow2 = "Orang-orang mengklaim"
+gaba1 = "Many years ago"
+gaba2 = "Bertahun-tahun yang"
+ancient1 = "A dangerous strange"
+ancient2 = "Laut aneh berbahaya"
+haunted1 = "A cursed sea"
+haunted2 = "Laut terkutuk"
+all1 = "Here you can"
+all2 = "Bagian kecil"
+penjara1 = "The Government"
+penjara2 = "Pemerintah Maikantri"
 
 areas_dict = {
     'SL': 'Sungai Lala',
@@ -60,7 +84,7 @@ def stop_sesi():
 async def handler_maifam(event):
     global respond_to_group
     if not respond_to_group:
-        return
+        
     
     pesan = event.raw_text
     
@@ -104,7 +128,7 @@ async def handler_maifam(event):
         if 'SevenFish 🎰 SlotMachine' in pesan:
           time.sleep(2)
           await event.respond(cmd1)
-          return
+          
         else:
           time.sleep(2)
           await event.respond("/collectibleFragment_SixLeaves")
@@ -151,7 +175,7 @@ async def handler_maifam(event):
 async def handler_memancing(event):
     global respond_to_group
     if not respond_to_group:
-        return
+        
     
     pesan = event.raw_text
     
@@ -161,6 +185,72 @@ async def handler_memancing(event):
             await event.respond(areas_dict[area])
         print(pesan)
         
+    if lala1 in pesan or lala2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+                     
+    if mimi1 in pesan or mimi2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+            
+    if badabu1 in pesan or badabu2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+                   
+    if soprano1 in pesan or soprano2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+        
+    if bulari1 in pesan or bulari2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+                    
+    if narrow1 in pesan or narrow2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+                    
+    if gaba1 in pesan or gaba2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+                    
+            
+    if ancient1 in pesan or ancient2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+                  
+                     
+    if haunted1 in pesan or haunted2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+        
+    if all1 in pesan or all2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+        
+    if penjara1 in pesan or penjara2 in pesan:
+        klik = await client.get_messages(mepamx, ids=event.message.id)
+        time.sleep(tunggu)
+        await klik.click(text=alat)
+            
+          
     elif 'tidak memiliki cukup energi' in pesan:
         await asyncio.sleep(2)
         await event.respond('/restore_max_confirm')
@@ -177,9 +267,6 @@ async def handler_memancing(event):
         await asyncio.sleep(2)
         await event.click(text=alat)
         
-    elif 'Bagian kecil dari laut' in pesan:
-        await asyncio.sleep(2)
-        await event.click(text=alat)
                 
     elif 'Kamu tidak sedang' in pesan:
         await asyncio.sleep(2)
@@ -193,7 +280,7 @@ async def handler_memancing(event):
 async def handler_ayam(event):
     global respond_to_group
     if not respond_to_group:
-        return
+        
     
     pesan = event.raw_text
     
