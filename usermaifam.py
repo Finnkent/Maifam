@@ -247,8 +247,8 @@ AS = All Sea
     if '/mainslot' in pesan:
         await asyncio.sleep(2)
         mainslot_list = """Kata kunci mode slot : 
-Ikan = SlotMachine_SevenFish,
-Daun = SlotMachine_SixLeaves,
+Ikan = SlotMachine_SevenFish
+Daun = SlotMachine_SixLeaves
 """
         await event.reply(mainslot_list)
         
