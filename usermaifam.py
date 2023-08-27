@@ -48,64 +48,6 @@ slots_dict = {
     'Daun': '/th_SlotMachine_SixLeaves',
 }
 
-async def bentar(w):
-    await asyncio.sleep(w)
-    
-def stop_sesi():
-    python = sys.executable
-    os.execl(python, python, *sys.argv)
-    
-Saya akan mencoba membantu memperbaiki masalah tersebut. Sepertinya pesan-pesan yang dicari dalam `pesan_dict` tidak berfungsi dengan benar. Untuk memastikan pesan-pesan itu ditemukan dan direspons, Anda dapat mencoba menggunakan ekspresi reguler (regex) dalam pencarian pesan. Berikut adalah kode yang diperbarui dengan ekspresi reguler:
-
-```python
-import time
-import asyncio
-import sys
-import random
-import datetime
-import os
-import re  # Import modul regex
-from telethon.sync import TelegramClient, events, utils, Button
-
-api_id = 18850178
-api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Horang'
-client = TelegramClient(sesi_file, api_id, api_hash)
-
-mepam = "KampungMaifamBot"
-mepamx = "KampungMaifamXBot"
-mepamx4 = "KampungMaifamX4Bot"
-
-cook = "/masak_minibacon_220"
-chicken = "/beliternak_Ayam_Ayam_20"
-alat = "Tarik Jala"
-cmd = '/th_SlotMachine_SevenFish'
-cmd1 = '/th_SlotMachine_add'
-area = ""
-slot = ""
-user = 201319154
-
-respond_to_group = False
-
-areas_dict = {
-    'SL': 'Sungai Lala',
-    'SM': 'Sungai Mimi',
-    'SB': 'Sungai Badabu',
-    'DS': 'Danau Soprano',
-    'TB': 'Teluk Bulari',
-    'LS': 'Laut Sempit',
-    'LG': 'Laut Gabagaba',
-    'LP': 'Laut Purba',
-    'LB': 'Laut Berhantu',
-    'DP': 'Danau Penjara',
-    'AS': 'All Sea',
-}
-
-slots_dict = {
-    'Ikan': '/th_SlotMachine_SevenFish',
-    'Daun': '/th_SlotMachine_SixLeaves',
-}
-
 pesan_dict = {
     "lala": ["Doesn't look like", "Sungai dangkal"],
     "mimi": ["Legend said a man", "Legenda mengatakan"],
@@ -119,7 +61,6 @@ pesan_dict = {
     "all": ["Here you can", "Bagian kecil"],
     "penjara": ["The Government", "Pemerintah Maikantri"]
 }
-
 
 
 async def bentar(w):
