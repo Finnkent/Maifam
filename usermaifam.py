@@ -29,6 +29,19 @@ user = 201319154
 
 respond_to_group = False
 
+areas_dict = {
+    'SL': 'Sungai Lala',
+    'SM': 'Sungai Mimi',
+    'SB': 'Sungai Badabu',
+    'DS': 'Danau Soprano',
+    'TB': 'Teluk Bulari',
+    'LS': 'Laut Sempit',
+    'LG': 'Laut Gabagaba',
+    'LP': 'Laut Purba',
+    'LB': 'Laut Berhantu',
+    'DP': 'Danau Penjara',
+    'AS': 'All Sea',
+}
 
 slots_dict = {
     'Ikan': '/th_SlotMachine_SevenFish',
