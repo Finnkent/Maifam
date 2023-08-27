@@ -55,17 +55,184 @@ def stop_sesi():
     python = sys.executable
     os.execl(python, python, *sys.argv)
     
+Saya akan mencoba membantu memperbaiki masalah tersebut. Sepertinya pesan-pesan yang dicari dalam `pesan_dict` tidak berfungsi dengan benar. Untuk memastikan pesan-pesan itu ditemukan dan direspons, Anda dapat mencoba menggunakan ekspresi reguler (regex) dalam pencarian pesan. Berikut adalah kode yang diperbarui dengan ekspresi reguler:
+
+```python
+import time
+import asyncio
+import sys
+import random
+import datetime
+import os
+import re  # Import modul regex
+from telethon.sync import TelegramClient, events, utils, Button
+
+api_id = 18850178
+api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
+sesi_file = 'Horang'
+client = TelegramClient(sesi_file, api_id, api_hash)
+
+mepam = "KampungMaifamBot"
+mepamx = "KampungMaifamXBot"
+mepamx4 = "KampungMaifamX4Bot"
+
+cook = "/masak_minibacon_220"
+chicken = "/beliternak_Ayam_Ayam_20"
+alat = "Tarik Jala"
+cmd = '/th_SlotMachine_SevenFish'
+cmd1 = '/th_SlotMachine_add'
+area = ""
+slot = ""
+user = 201319154
+
+respond_to_group = False
+
+areas_dict = {
+    'SL': 'Sungai Lala',
+    'SM': 'Sungai Mimi',
+    'SB': 'Sungai Badabu',
+    'DS': 'Danau Soprano',
+    'TB': 'Teluk Bulari',
+    'LS': 'Laut Sempit',
+    'LG': 'Laut Gabagaba',
+    'LP': 'Laut Purba',
+    'LB': 'Laut Berhantu',
+    'DP': 'Danau Penjara',
+    'AS': 'All Sea',
+}
+
+slots_dict = {
+    'Ikan': '/th_SlotMachine_SevenFish',
+    'Daun': '/th_SlotMachine_SixLeaves',
+}
+
+pesan_dict = {
+    "lala": ["Doesn't look like", "Sungai dangkal"],
+    "mimi": ["Legend said a man", "Legenda mengatakan"],
+    "badabu": ["Only big fish", "Hanya ikan besar"],
+    "soprano": ["Rare fish lived", "Ikan langka"],
+    "bulari": ["Well, some little", "Terletak di bagian"],
+    "narrow": ["People claimed that", "Orang-orang mengklaim"],
+    "gaba": ["Many years ago", "Bertahun-tahun yang"],
+    "ancient": ["A dangerous strange", "Laut aneh berbahaya"],
+    "haunted": ["A cursed sea", "Laut terkutuk"],
+    "all": ["Here you can", "Bagian kecil"],
+    "penjara": ["The Government", "Pemerintah Maikantri"]
+}
+
+
+
+async def bentar(w):
+    await asyncio.sleep(w)
+
+def stop_sesi():
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+
+def cari_pesan(pesan_dict, pesan):
+    for key, values in pesan_dict.items():
+        for value in values:
+            if re.search(value, pesan, re.IGNORECASE):  # Menggunakan ekspresi reguler dengan re.IGNORECASE
+                return key
+    return None
 
 @client.on(events.NewMessage(from_users=mepam))
 async def handler_maifam(event):
     global respond_to_group
     if not respond_to_group:
-        
-    
         pesan = event.raw_text
+
+        # Masak
+        if "Berhasil memasak" in pesan:
+            print(time.asctime(), pesan)
+            await asyncio.sleep(2)
+            await event.respond(cook)
+
+        if 'Kamu tidak bisa memasak' in pesan:
+            print(time.asctime(), 'Rehat')
+            await asyncio.sleep(3240)
+            await event.respond(cook)
+
+        # Slot
+        if '10000000Qn' in pesan:
+            time.sleep(2)
+            await event.respond('/tamanHiburan_TembakTopeng')
+            print('Mulai Dart')
+
+        if 'Berhasil mengumpulkan 30 CollectibleFragment SixLeaves!!' in pesan:
+            time.sleep(2)
+            await event.respond(cmd1)
+
+        elif 'Ada tujuh jenis ikan' in pesan:
+            time.sleep(2)
+            await event.click(1, 0)
+
+        elif 'Ada enam jenis daun' in pesan:
+            time.sleep(2)
+            await event.click(1, 0)
+
+        elif 'Kamu memutar SlotMachine 10x' in pesan:
+            time.sleep(2)
+            await event.click(1, 0)
+
+        elif 'Koin untuk' in pesan:
+            if 'SevenFish 🎰 SlotMachine' in pesan:
+                time.sleep(2)
+                await event.respond(cmd1)
+            else:
+                time.sleep(2)
+                await event.respond("/collectibleFragment_SixLeaves")
+
+        elif 'Kumpulkan 30 CollectibleFragment' in pesan:
+            time.sleep(2)
+            await event.click(text="Get CollectibleItem")
+            time.sleep(2)
+            await event.respond(cmd1)
+
+        elif 'Apa kamu' in pesan:
+            time.sleep(2)
+            await event.click(text="Confirm")
+
+        elif 'Berhasil membeli tambahan' in pesan:
+            time.sleep(2)
+            if slot in slots_dict:
+                await event.respond(slots_dict[slot])
+            print(pesan)
+
+        elif 'Setiap harinya' in pesan:
+            time.sleep(2)
+            await event.click(text='Mulai')
+
+        elif 'Pilih sasaran' in pesan:
+            time.sleep(2)
+            await event.click(0, 1)
+
+        elif 'Lemparanmu berhasil' in pesan:
+            time.sleep(2)
+            await event.click(text='Lanjut')
+
+        elif 'Sayang sekali' in pesan:
+            time.sleep(2)
+            await event.click(text='Lanjut')
+
+        elif 'Kesempatan' in pesan:
+            time.sleep(2)
+            await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
+
+        
+            
+@client.on(events.NewMessage(from_users=mepam))
+async def handler_maifam(event):
+    global respond_to_group
+    if not respond_to_group:
+        pesan = event.raw_text
+        pesan_key = cari_pesan(pesan_dict, pesan)
+
+        if pesan_key:
+            time.sleep(2)
+            await client.click(text=alat)
         
         
-        #masak
         if "Berhasil memasak" in pesan:
             print(time.asctime(), pesan)
             await asyncio.sleep(2)
