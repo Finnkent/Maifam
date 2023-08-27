@@ -49,90 +49,90 @@ async def handler_maifam(event):
     if not respond_to_group:
         
     
-    pesan = event.raw_text
-    
-    
-    #masak
-    if "Berhasil memasak" in pesan:
-        print(time.asctime(), pesan)
-        await asyncio.sleep(2)
-        await event.respond(cook)
+        pesan = event.raw_text
         
-    if 'Kamu tidak bisa memasak' in pesan:
-        print(time.asctime(), 'Rehat')
-        await asyncio.sleep(3240)
-        await event.respond(cook)
-    
-    #slot
-    if '10000000Qn' in pesan:
-        time.sleep(2)
-        await event.respond('/tamanHiburan_TembakTopeng')
-        print('Mulai Dart')
+        
+        #masak
+        if "Berhasil memasak" in pesan:
+            print(time.asctime(), pesan)
+            await asyncio.sleep(2)
+            await event.respond(cook)
             
+        if 'Kamu tidak bisa memasak' in pesan:
+            print(time.asctime(), 'Rehat')
+            await asyncio.sleep(3240)
+            await event.respond(cook)
+        
+        #slot
+        if '10000000Qn' in pesan:
+            time.sleep(2)
+            await event.respond('/tamanHiburan_TembakTopeng')
+            print('Mulai Dart')
                 
-    if 'Berhasil mengumpulkan 30 CollectibleFragment SixLeaves!!' in pesan:
-        time.sleep(2)
-        await event.respond(cmd1)
-      
-                
-    elif 'Ada tujuh jenis ikan' in pesan:
-        time.sleep(2)
-        await event.click(1,0)
-            
-    elif 'Ada enam jenis daun' in pesan:
-        time.sleep(2)
-        await event.click(1,0)
-            
-    elif 'Kamu memutar SlotMachine 10x' in pesan:
-        time.sleep(2)
-        await event.click(1,0)
-            
-    elif 'Koin untuk' in pesan:
-        if 'SevenFish 🎰 SlotMachine' in pesan:
-          time.sleep(2)
-          await event.respond(cmd1)
+                    
+        if 'Berhasil mengumpulkan 30 CollectibleFragment SixLeaves!!' in pesan:
+            time.sleep(2)
+            await event.respond(cmd1)
           
-        else:
-          time.sleep(2)
-          await event.respond("/collectibleFragment_SixLeaves")
-            
-    elif 'Kumpulkan 30 CollectibleFragment' in pesan:
-        time.sleep(2)
-        await event.click(text="Get CollectibleItem")
-        time.sleep(2)
-        await event.respond(cmd1)
+                    
+        elif 'Ada tujuh jenis ikan' in pesan:
+            time.sleep(2)
+            await event.click(1,0)
                 
-            
-    elif 'Apa kamu' in pesan:
-        time.sleep(2)
-        await event.click(text="Confirm")
-            
-    elif 'Berhasil membeli tambahan' in pesan:
-        time.sleep(2)
-        if slot in slots_dict:
-            await event.respond(slots_dict[slot])
-        print(pesan)
-           
-    elif 'Setiap harinya' in pesan:
-        time.sleep(2)
-        await event.click(text='Mulai')
- 
-    elif 'Pilih sasaran' in pesan:
-        time.sleep(2)
-        await event.click(0,1)
-            
-    elif 'Lemparanmu berhasil' in pesan:
-        time.sleep(2)
-        await event.click(text='Lanjut')
-            
-    elif 'Sayang sekali' in pesan:
-        time.sleep(2)
-        await event.click(text='Lanjut')
-            
-    elif 'Kesempatan' in pesan:
-        time.sleep(2)
-        await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
-            
+        elif 'Ada enam jenis daun' in pesan:
+            time.sleep(2)
+            await event.click(1,0)
+                
+        elif 'Kamu memutar SlotMachine 10x' in pesan:
+            time.sleep(2)
+            await event.click(1,0)
+                
+        elif 'Koin untuk' in pesan:
+            if 'SevenFish 🎰 SlotMachine' in pesan:
+              time.sleep(2)
+              await event.respond(cmd1)
+              
+            else:
+              time.sleep(2)
+              await event.respond("/collectibleFragment_SixLeaves")
+                
+        elif 'Kumpulkan 30 CollectibleFragment' in pesan:
+            time.sleep(2)
+            await event.click(text="Get CollectibleItem")
+            time.sleep(2)
+            await event.respond(cmd1)
+                    
+                
+        elif 'Apa kamu' in pesan:
+            time.sleep(2)
+            await event.click(text="Confirm")
+                
+        elif 'Berhasil membeli tambahan' in pesan:
+            time.sleep(2)
+            if slot in slots_dict:
+                await event.respond(slots_dict[slot])
+            print(pesan)
+               
+        elif 'Setiap harinya' in pesan:
+            time.sleep(2)
+            await event.click(text='Mulai')
+     
+        elif 'Pilih sasaran' in pesan:
+            time.sleep(2)
+            await event.click(0,1)
+                
+        elif 'Lemparanmu berhasil' in pesan:
+            time.sleep(2)
+            await event.click(text='Lanjut')
+                
+        elif 'Sayang sekali' in pesan:
+            time.sleep(2)
+            await event.click(text='Lanjut')
+                
+        elif 'Kesempatan' in pesan:
+            time.sleep(2)
+            await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
+                
 
 
 @client.on(events.NewMessage(from_users=mepamx))
@@ -188,17 +188,17 @@ async def handler_ayam(event):
     if not respond_to_group:
         
     
-    pesan = event.raw_text
-    
-    #beliayam
-    if "Kamu membeli 🐓Ayam" in pesan:
-        print(time.asctime(), 'Beli ayam')
-        await asyncio.sleep(2)
-        await event.respond(chicken)
-          
-    if 'Kamu memerlukan 20' in pesan:
-        await asyncio.sleep(2)
-        await client.send_message(-1001946930100, 'Kandang sudah penuh')
+        pesan = event.raw_text
+        
+        #beliayam
+        if "Kamu membeli 🐓Ayam" in pesan:
+            print(time.asctime(), 'Beli ayam')
+            await asyncio.sleep(2)
+            await event.respond(chicken)
+              
+        if 'Kamu memerlukan 20' in pesan:
+            await asyncio.sleep(2)
+            await client.send_message(-1001946930100, 'Kandang sudah penuh')
     
         
 @client.on(events.NewMessage(from_users=user))
