@@ -49,17 +49,17 @@ slots_dict = {
 }
 
 pesan_dict = {
-    "lala": ["Doesn't look like", "Sungai dangkal"],
-    "mimi": ["Legend said a man", "Legenda mengatakan"],
-    "badabu": ["Only big fish", "Hanya ikan besar"],
-    "soprano": ["Rare fish lived", "Ikan langka"],
-    "bulari": ["Well, some little", "Terletak di bagian"],
-    "narrow": ["People claimed that", "Orang-orang mengklaim"],
-    "gaba": ["Many years ago", "Bertahun-tahun yang"],
-    "ancient": ["A dangerous strange", "Laut aneh berbahaya"],
-    "haunted": ["A cursed sea", "Laut terkutuk"],
-    "all": ["Here you can", "Bagian kecil"],
-    "penjara": ["The Government", "Pemerintah Maikantri"]
+    "Sungai dangkal": ["Doesn't look like", "Sungai dangkal"],
+    "Legenda mengatakan": ["Legend said a man", "Legenda mengatakan"],
+    "Hanya ikan besar": ["Only big fish", "Hanya ikan besar"],
+    "Ikan langka": ["Rare fish lived", "Ikan langka"],
+    "Terletak di bagian": ["Well, some little", "Terletak di bagian"],
+    "Orang-orang mengklaim": ["People claimed that", "Orang-orang mengklaim"],
+    "Bertahun-tahun yang": ["Many years ago", "Bertahun-tahun yang"],
+    "Laut aneh berbahaya": ["A dangerous strange", "Laut aneh berbahaya"],
+    "Laut terkutuk": ["A cursed sea", "Laut terkutuk"],
+    "Bagian kecil": ["Here you can", "Bagian kecil"],
+    "Pemerintah Maikantri": ["The Government", "Pemerintah Maikantri"]
 }
 
 
