@@ -291,7 +291,7 @@ AS = All Sea
 Ikan = SlotMachine_SevenFish
 Daun = SlotMachine_SixLeaves
 """    
-       await event.reply(mainslot_list)
+        await event.reply(mainslot_list)
        
     if '/stop_makro' in pesan:
         await asyncio.sleep(2)
