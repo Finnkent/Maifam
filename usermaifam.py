@@ -24,7 +24,7 @@ cmd = '/th_SlotMachine_SevenFish'
 cmd1 = '/th_SlotMachine_add'
 area = ""
 slot = ""
-user = 5199147926
+user = 201319154
 
 respond_to_group = False
 
