@@ -133,75 +133,52 @@ async def handler_maifam(event):
         time.sleep(2)
         await client.send_message(-1001946930100, 'Slot dan Dart telah selesai di mainkan')
             
-   
-@client.on(events.NewMessage(from_users=mepamx))
-async def handler_memancing(event):
-    global respond_to_group
-    if not respond_to_group:
-    
-Kode yang Anda berikan sejauh ini tidak akan berfungsi dengan benar karena ada beberapa hal yang perlu diubah. Pertama, Anda tidak dapat meletakkan definisi fungsi dalam definisi fungsi lainnya tanpa menghubungkannya secara benar. Kedua, Anda mencoba menggabungkan dua level indentasi yang berbeda, yang tidak akan berfungsi dalam Python.
 
-Berikut adalah cara Anda dapat memodifikasi kode tersebut untuk memastikan bahwa semua fungsi dan logika berjalan dengan benar:
-
-```python
-# Buat dictionary untuk pesan-pesan yang ingin Anda cari
-pesan_dict = {
-    "lala": ["Doesn't look like", "Sungai dangkal"],
-    "mimi": ["Legend said a man", "Legenda mengatakan"],
-    "badabu": ["Only big fish", "Hanya ikan besar"],
-    "soprano": ["Rare fish lived", "Ikan langka"],
-    "bulari": ["Well, some little", "Terletak di bagian"],
-    "narrow": ["People claimed that", "Orang-orang mengklaim"],
-    "gaba": ["Many years ago", "Bertahun-tahun yang"],
-    "ancient": ["A dangerous strange", "Laut aneh berbahaya"],
-    "haunted": ["A cursed sea", "Laut terkutuk"],
-    "all": ["Here you can", "Bagian kecil"],
-    "penjara": ["The Government", "Pemerintah Maikantri"]
-}
 
 @client.on(events.NewMessage(from_users=mepamx))
 async def handler_memancing(event):
     global respond_to_group
     if not respond_to_group:
-        pesan = event.raw_text
+      
+    pesan = event.raw_text
 
-        for key, values in pesan_dict.items():
-            for value in values:
-                if value in pesan:
-                    klik = await client.get_messages(mepamx, ids=event.message.id)
-                    time.sleep(tunggu)
-                    await klik.click(text=alat)
-                    break 
+    for key, values in pesan_dict.items():
+        for value in values:
+            if value in pesan:
+                klik = await client.get_messages(mepamx, ids=event.message.id)
+                time.sleep(tunggu)
+                await klik.click(text=alat)
+                break 
   
-                if "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
-                    await asyncio.sleep(2)
-                    if area in areas_dict:
-                        await event.respond(areas_dict[area])
-                    print(pesan)
+            if "Kamu berhasil" in pesan or "Kamu mendapat" in pesan:
+                await asyncio.sleep(2)
+                if area in areas_dict:
+                    await event.respond(areas_dict[area])
+                print(pesan)
                 
                     
-                elif 'tidak memiliki cukup energi' in pesan:
-                    await asyncio.sleep(2)
-                    await event.respond('/restore_max_confirm')
-                    print(time.asctime(), 'Isi Ulang Energi')
+            elif 'tidak memiliki cukup energi' in pesan:
+                await asyncio.sleep(2)
+                await event.respond('/restore_max_confirm')
+                print(time.asctime(), 'Isi Ulang Energi')
                     
                             
-                elif 'Energi berhasil' in pesan:
-                    await asyncio.sleep(2)
-                    await event.click(text=alat)
-                    print('Lanjut Gan')
+            elif 'Energi berhasil' in pesan:
+                await asyncio.sleep(2)
+                await event.click(text=alat)
+                print('Lanjut Gan')
                     
                           
-                elif '==' in pesan:
-                    await asyncio.sleep(2)
-                    await event.click(text=alat)
+            elif '==' in pesan:
+                await asyncio.sleep(2)
+                await event.click(text=alat)
                     
                             
-                elif 'Kamu tidak sedang' in pesan:
-                    await asyncio.sleep(2)
-                    if area in areas_dict:
-                        await event.respond(areas_dict[area])
-                    print(pesan)
+            elif 'Kamu tidak sedang' in pesan:
+                await asyncio.sleep(2)
+                if area in areas_dict:
+                    await event.respond(areas_dict[area])
+                print(pesan)
         
         
         
