@@ -143,7 +143,7 @@ async def handler_maifam(event):
             
     elif 'Kesempatan' in pesan:
         time.sleep(2)
-        await client.send_message(-1001522767385, 'Slot telah selesai di mainkan')
+        await client.send_message(5199147926, 'Slot telah selesai di mainkan')
             
    
 @client.on(events.NewMessage(from_users=mepamx))
@@ -245,7 +245,7 @@ async def handler_ayam(event):
           
     if 'Kamu memerlukan 20' in pesan:
         await asyncio.sleep(2)
-        await client.send_message(-1001522767385, 'Kandang sudah penuh')
+        await client.send_message(5199147926, 'Kandang sudah penuh')
     
         
 @client.on(events.NewMessage(from_users=user))
