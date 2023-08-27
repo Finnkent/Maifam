@@ -257,7 +257,7 @@ async def handler_user(event):
         await asyncio.sleep(2)
         pesan_list = """Daftar perintah :
         
-!masak (alpha)
+!cook (masak minibacon)(alpha)
 !gasmancing_area (botx)
 !beliayam (botx4)
 !pancingan (list area mancing)
@@ -318,7 +318,7 @@ Daun = SlotMachine_SixLeaves
             await event.reply("Silahkan kirimkan beserta area")
 
     
-    if '/masak' in pesan:
+    if '/cook' in pesan:
         await asyncio.sleep(2)
         await event.reply("Mulai memasak...!")
         await asyncio.sleep(2)
