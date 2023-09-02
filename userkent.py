@@ -22,6 +22,7 @@ adv = '/adventure'
 
 logging.basicConfig(level=logging.ERROR)
 
+piggy = "/pelihara_BayiBabi_336"
 cook = "/masak_minibacon_220"
 chicken = "/beliternak_Ayam_Ayam_20"
 alat = "Tarik Jala"
@@ -267,6 +268,38 @@ async def handler_ayam(event):
     if 'Kamu memerlukan 20' in pesan:
         await asyncio.sleep(2)
         await client.send_message(grup, 'Kandang sudah penuh')
+    
+    #bayibabi
+    if "Berhasil menambahkan" in pesan or "Kandang ternak khusus penuh" in pesan:
+        time.sleep(2)
+        await event.respond('/ambilHewan')
+        
+        
+    if "Kamu berhasil mendapat" in pesan:
+        print(time.asctime(), pesan)
+        time.sleep(2)
+        await event.respond(piggy)
+          
+          
+        
+    if "Kamu tidak memiliki cukup energi" in pesan:
+        print(time.asctime(), 'Isi Ulang Energi')
+        time.sleep(2)
+        await event.respond(restore)
+            
+                
+    if "Energi berhasil" in pesan:
+        print(time.asctime(), 'Energi pulih')
+        time.sleep(2)
+        await event.respond(piggy) 
+            
+          
+    elif "Tidak ada yang bisa diambil" in pesan:
+        print(time.asctime(), pesan)
+        time.sleep(2)
+        await event.respond(piggy)
+            
+        
 
 
 @client.on(events.NewMessage(from_users=one))
@@ -365,6 +398,7 @@ async def handler_user(event):
 !pancingan (list area mancing)
 !mainslot (list jenis slot)
 !slot_mode (alpha)
+!piggy (ternak babi) (botx4)
 !wanpis (Grand Pirates)
 !stop_makro
 """
@@ -459,6 +493,13 @@ Daun = SlotMachine_SixLeaves
         await event.reply("Mulai berlayar...!")
         await asyncio.sleep(2)
         await client.send_message(one, adv)
+        respond_to_group = True
+        
+    if '/piggy' in pesan:
+        await asyncio.sleep(2)
+        await event.reply("Mulai menernak babi...!")
+        await asyncio.sleep(2)
+        await client.send_message(mepamx4, piggy)
         respond_to_group = True
 
 
