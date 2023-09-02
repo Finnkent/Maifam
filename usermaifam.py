@@ -17,7 +17,7 @@ mepamx = "KampungMaifamXBot"
 mepamx4 = "KampungMaifamX4Bot"
 
 
-cook = "/masak_minibacon_220"
+
 chicken = "/beliternak_Ayam_Ayam_20"
 alat = "Tarik Jala"
 cmd = '/th_SlotMachine_SevenFish'
@@ -64,16 +64,6 @@ async def handler_maifam(event):
     pesan = event.raw_text
     
     
-    #masak
-    if "Berhasil memasak" in pesan:
-        print(time.asctime(), pesan)
-        await asyncio.sleep(2)
-        await event.respond(cook)
-        
-    if 'Kamu tidak bisa memasak' in pesan:
-        print(time.asctime(), 'Rehat')
-        await asyncio.sleep(3240)
-        await event.respond(cook)
     
     #slot
     if '10000000Qn' in pesan:
@@ -257,7 +247,7 @@ async def handler_user(event):
         await asyncio.sleep(2)
         pesan_list = """Daftar perintah :
         
-!cook (masak minibacon)(alpha)
+
 !gasmancing_area (botx)
 !beliayam (botx4)
 !pancingan (list area mancing)
@@ -318,14 +308,7 @@ Daun = SlotMachine_SixLeaves
             await event.reply("Silahkan kirimkan beserta area")
 
     
-    if '/cook' in pesan:
-        await asyncio.sleep(2)
-        await event.reply("Mulai memasak...!")
-        await asyncio.sleep(2)
-        await client.send_message(mepam, cook)
-        respond_to_group = True
-
-        
+    
     if '/beliayam' in pesan:
         await asyncio.sleep(2)
         await event.reply("Mulai membeli ayam...!")
