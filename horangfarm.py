@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import time, asyncio, sys, random
-
+import logging
 
 from telethon import TelegramClient, events, utils
 
@@ -10,7 +10,10 @@ sesi_file = 'Horang'
 
 siram = '/siram'
 panen = '/ambilPanen'
+farm = 'Kebun'
 bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMaifamBot']
+
+logging.basicConfig(level=logging.ERROR)
     
 async def bentar(w):
     await asyncio.sleep(w)
@@ -29,7 +32,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         
         
         if "Berhasil menyiram tanaman" in pesan:
-            time.sleep(1265)
+            time.sleep(245)
             await event.respond(panen)
             return
             
@@ -62,9 +65,17 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             return
         
         if 'Tak ada tanaman untuk disiram' in pesan:
-            print(pesan)
-            time.sleep(1265)
-            await event.respond(panen)
+            time.sleep(2)
+            await event.respond(farm)
+            return
+          
+        if '🌲 Kebun' in pesan:
+            if 'siap panen!!' in pesan:
+                time.sleep(2)
+                await event.respond(panen)
+            else:
+                time.sleep(245)
+                await event.respond(panen)
             return
           
        
@@ -72,5 +83,6 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
     client.start() 
     print(time.asctime(), '-', 'start')
     client.loop.create_task(mancingddh(client,245))
+    print(time.asctime(), '-', 'ddh')
     client.run_until_disconnected() 
     print(time.asctime(), '-', 'berhenti')
