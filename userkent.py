@@ -95,76 +95,76 @@ async def handler_maifam(event):
     
     #slot
     if '10000000Qn' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond('/tamanHiburan_TembakTopeng')
         print('Mulai Dart')
             
                 
     if 'CollectibleFragment SixLeaves!! Kamu memperoleh:' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(cmd1)
       
                 
     elif 'Ada tujuh jenis ikan' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(1,0)
             
     elif 'Ada enam jenis daun' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(1,0)
             
     elif 'Kamu memutar SlotMachine 10x' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(1,0)
             
     elif 'Koin untuk' in pesan:
         if 'SevenFish 🎰 SlotMachine' in pesan:
-          time.sleep(1)
+          time.sleep(2)
           await event.respond(cmd1)
           return
         else:
-          time.sleep(1)
+          time.sleep(2)
           await event.respond("/collectibleFragment_SixLeaves")
             
     elif 'Fragment dikumpulkan:  ✅' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(text="Get CollectibleItem")
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(cmd1)
     
     elif 'Kumpulkan fragment untuk memperoleh' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(cmd1)
                 
             
     elif 'Apa kamu' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(text="Confirm")
             
     elif 'Berhasil membeli tambahan' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         if slot in slots_dict:
             await event.respond(slots_dict[slot])
         print(pesan)
            
     elif 'Setiap harinya' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(text='Mulai')
  
     elif 'Pilih sasaran' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,1)
             
     elif 'Lemparanmu berhasil' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(text='Lanjut')
             
     elif 'Sayang sekali' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(text='Lanjut')
             
     elif 'Kesempatan' in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await client.send_message(grup, 'Slot telah selesai di mainkan')
             
    
@@ -271,32 +271,32 @@ async def handler_ayam(event):
     
     #bayibabi
     if "Berhasil menambahkan" in pesan or "Kandang ternak khusus penuh" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond('/ambilHewan')
         
         
     if "Kamu berhasil mendapat" in pesan:
         print(time.asctime(), pesan)
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(piggy)
           
           
         
     if "Kamu tidak memiliki cukup energi" in pesan:
         print(time.asctime(), 'Isi Ulang Energi')
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(restore)
             
                 
     if "Energi berhasil" in pesan:
         print(time.asctime(), 'Energi pulih')
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(piggy) 
             
           
     elif "Tidak ada yang bisa diambil" in pesan:
         print(time.asctime(), pesan)
-        time.sleep(1)
+        time.sleep(2)
         await event.respond(piggy)
             
         
@@ -312,71 +312,71 @@ async def handler_one(event):
             
             
     if "Kalahkan musuh yang ada" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
               
     if "dan dihadang oleh 4 musuh:" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
             
     if "dan dihadang oleh 3 musuh:" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                
             
     if "dan dihadang oleh 2 musuh:" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
                 
     if "dan dihadang oleh 1 musuh:" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
                 
     if "KAMU MENANG!!" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
               
     if "Musuh menang" in pesan:
         if "untuk mencapai kekuatan" in pesan:
-           time.sleep(1)
+           time.sleep(2)
            await event.respond('/restore')
         else:
-           time.sleep(1)
+           time.sleep(2)
            await event.click(0,0)
         return
             
     if "Energi krumu telah habis" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond('/restore')  
                 
                 
     if "anggota kelompokmu" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
               
     if "100x!! Kamu mendapat" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
                 
               
     if "untuk bisa lanjut ke pulau" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
         
                 
     if "Berhasil memulihkan" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.respond('/adventure')
                 
                 
     if "kekuatan kalian sebagai" in pesan:
-        time.sleep(1)
+        time.sleep(2)
         await event.click(0,0)
         
               
@@ -446,9 +446,9 @@ Daun = SlotMachine_SixLeaves
         if len(split_result) > 1:
             area = split_result[1]
             if area in areas_dict:
-                time.sleep(1)
+                time.sleep(2)
                 await event.respond(f"Mulai memancing di {areas_dict[area]}")
-                time.sleep(1)
+                time.sleep(2)
                 await client.send_message(mepamx, areas_dict[area])
                 
             else:
@@ -480,9 +480,9 @@ Daun = SlotMachine_SixLeaves
         if len(split_result) > 1:
             slot = split_result[1]
             if slot in slots_dict:
-                time.sleep(1)
+                time.sleep(2)
                 await event.respond(f"Mulai bermain di {slots_dict[slot]}")
-                time.sleep(1)
+                time.sleep(2)
                 await client.send_message(mepam, slots_dict[slot])
                 
             else:
