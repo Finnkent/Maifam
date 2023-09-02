@@ -307,6 +307,8 @@ async def handler_one(event):
     global respond_to_group
     if not respond_to_group:
         return
+      
+    pesan = event.raw_text
             
             
     if "Kalahkan musuh yang ada" in pesan:
