@@ -365,7 +365,7 @@ async def handler_one(event):
         await event.click(0,0)
                 
               
-    if "untuk bisa lanjut ke pulau" in pesan pr "Tidak ada lawan yang bisa dilawan" in pesan:
+    if "untuk bisa lanjut ke pulau" in pesan or "Tidak ada lawan yang bisa dilawan" in pesan:
         time.sleep(2)
         await event.click(0,0)
         
