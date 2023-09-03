@@ -355,7 +355,7 @@ async def handler_one(event):
         await event.respond('/restore')  
                 
                 
-    if "anggota kelompokmu" in pesan or "kelompok musuh kabur" in pesan:
+    if "kelompok musuh kabur" in pesan:
         time.sleep(2)
         await event.click(0,0)
                 
@@ -365,7 +365,7 @@ async def handler_one(event):
         await event.click(0,0)
                 
               
-    if "untuk bisa lanjut ke pulau" in pesan or "Tidak ada lawan yang bisa dilawan" in pesan:
+    if "Tidak ada lawan yang bisa dilawan" in pesan:
         time.sleep(2)
         await event.click(0,0)
         
@@ -373,11 +373,6 @@ async def handler_one(event):
     if "Berhasil memulihkan" in pesan:
         time.sleep(2)
         await event.respond('/adventure')
-                
-                
-    if "kekuatan kalian sebagai" in pesan:
-        time.sleep(2)
-        await event.click(0,0)
         
               
     if "sudah mencapai batas maksimal" in pesan:
