@@ -34,7 +34,7 @@ user = 5199147926
 grup = -1001946930100
 
 respond_to_group = False
-respond_to_wanpis = True
+respond_to_wanpis = False
 
 
 areas_dict = {
@@ -508,15 +508,11 @@ Daun = SlotMachine_SixLeaves
             await event.reply("Anda harus menyertakan jenis slot")
 
     if "/wanpis" in pesan:
-        if not respond_to_wanpis:
-            await event.reply("Response to /wanpis is currently disabled.")
-            return
-
         await asyncio.sleep(2)
         await event.reply("Mulai berlayar...!")
         await asyncio.sleep(2)
         await client.send_message(one, adv)
-        respond_to_group = True
+        respond_to_wanpis = True
 
         
     if '/piggy' in pesan:
