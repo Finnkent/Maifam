@@ -311,7 +311,7 @@ async def handler_one(event):
     pesan = event.raw_text
             
             
-    if "Kalahkan musuh yang ada" in pesan:
+    if "Kalahkan semua musuh yang ada" in pesan:
         time.sleep(2)
         await event.click(0,0)
                 
