@@ -110,8 +110,13 @@ async def handler_maifam(event):
         await event.click(1,0)
             
     elif 'Ada enam jenis daun' in pesan:
-        time.sleep(2)
-        await event.click(1,0)
+        if 'Gunakan gelar SlotKing' in pesan:
+            time.sleep(2)
+            await event.respond('/addtitle_SlotKing')
+        else: 
+            time.sleep(2)
+            await event.click(1,0)
+          
             
     elif 'Kamu memutar SlotMachine 10x' in pesan:
         time.sleep(2)
@@ -131,10 +136,7 @@ async def handler_maifam(event):
         await event.click(text="Get CollectibleItem")
         time.sleep(2)
         await event.respond(cmd1)
-    
-    elif 'Gunakan gelar SlotKing' in pesan:
-        time.sleep(2)
-        await event.respond('/addtitle_SlotKing')
+   
         
     elif 'Berhasil menambahkan gelar' in pesan:
         time.sleep(2)
