@@ -350,32 +350,36 @@ async def handler_one(event):
            await event.click(0,0)
         return
             
-    if "Energi krumu telah habis" in pesan:
+    elif "Energi krumu telah habis" in pesan:
         time.sleep(2)
         await event.respond('/restore')  
                 
                 
-    if "kelompok musuh kabur" in pesan:
+    elif "kelompok musuh kabur" in pesan:
         time.sleep(2)
         await event.click(0,0)
                 
               
-    if "100x!! Kamu mendapat" in pesan or "250x!! Sekarang ia" in pesan:
+    elif "100x!! Kamu mendapat" in pesan or "250x!! Sekarang ia" in pesan:
         time.sleep(2)
         await event.click(0,0)
                 
               
-    if "Tidak ada lawan yang bisa dilawan" in pesan:
+    elif "Tidak ada lawan yang bisa dilawan" in pesan:
+        time.sleep(2)
+        await event.click(0,0)
+        
+    elif "tidak dalam kondisi yang prima" in pesan:
         time.sleep(2)
         await event.click(0,0)
         
                 
-    if "Berhasil memulihkan" in pesan:
+    elif "Berhasil memulihkan" in pesan:
         time.sleep(2)
         await event.respond('/adventure')
         
               
-    if "sudah mencapai batas maksimal" in pesan:
+    elif "sudah mencapai batas maksimal" in pesan:
         await client.send_message(grup, 'Kuota habis silahkan menunggu sampai 00.00')
         tunggu_hingga_menit_detik_00()
         await event.respond('/adventure')
