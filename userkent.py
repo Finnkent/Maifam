@@ -360,7 +360,7 @@ async def handler_one(event):
         await event.click(0,0)
                 
               
-    elif "100x!! Kamu mendapat" in pesan or "250x!! Sekarang ia" in pesan:
+    elif "100x!! Kamu mendapat" in pesan or "sebanyak 250x!! Sekarang" in pesan:
         time.sleep(2)
         await event.click(0,0)
                 
