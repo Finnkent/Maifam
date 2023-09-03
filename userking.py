@@ -106,11 +106,13 @@ async def handler_maifam(event):
           time.sleep(2)
           await event.respond("/collectibleFragment_SixLeaves")
             
-    elif 'Fragment dikumpulkan:  ✅' in pesan:
-        time.sleep(2)
-        await event.click(text="Get CollectibleItem")
-        time.sleep(2)
-        await event.respond(cmd1)
+    if 'untuk memperoleh salah satu' in pesan:
+        if 'Fragment dikumpulkan:  ✅' in pesan:
+            time.sleep(2)
+            await event.click(text="Get CollectibleItem")
+        else:
+            time.sleep(2)
+            await event.respond(cmd1)
    
         
     elif 'Berhasil menambahkan gelar' in pesan:
