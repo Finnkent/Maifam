@@ -132,6 +132,17 @@ async def handler_maifam(event):
         time.sleep(2)
         await event.respond(cmd1)
     
+    elif 'Gunakan gelar SlotKing' in pesan:
+        time.sleep(2)
+        await event.respond('/addtitle_SlotKing')
+        
+    elif 'Berhasil menambahkan gelar' in pesan:
+        time.sleep(2)
+        if slot in slots_dict:
+            await event.respond(slots_dict[slot])
+        print(pesan)
+        
+        
     elif 'Kumpulkan fragment untuk memperoleh' in pesan:
         time.sleep(2)
         await event.respond(cmd1)
