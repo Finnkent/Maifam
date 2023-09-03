@@ -34,7 +34,6 @@ user = 5199147926
 grup = -1001946930100
 
 respond_to_group = False
-respond_to_wanpis = False
 
 
 areas_dict = {
@@ -319,8 +318,8 @@ async def handler_ayam(event):
 
 @client.on(events.NewMessage(from_users=one))
 async def handler_one(event):
-    global respond_to_wanpis
-    if not respond_to_wanpis:
+    global respond_to_group
+    if not respond_to_group:
         return
       
     pesan = event.raw_text
@@ -396,9 +395,9 @@ async def handler_one(event):
               
     elif "sudah mencapai batas maksimal" in pesan:
         await client.send_message(grup, 'Kuota habis silahkan menunggu sampai 00.00')
-        respond_to_wanpis = False
+        respond_to_group = False
         tunggu_hingga_menit_detik_00()
-        respond_to_wanpis = True 
+        respond_to_group = True 
         await event.respond('/adventure')
         
         
@@ -512,7 +511,7 @@ Daun = SlotMachine_SixLeaves
         await event.reply("Mulai berlayar...!")
         await asyncio.sleep(2)
         await client.send_message(one, adv)
-        respond_to_wanpis = True
+        respond_to_group = True
 
         
     if '/piggy' in pesan:
