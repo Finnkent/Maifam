@@ -90,14 +90,13 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         if "Berhasil memberi makan ternak" in pesan:
             print(time.asctime(), pesan)
             tnk = 0
-            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
             time.sleep(2)
             await event.respond(ternak[tnk])
+            return
           
         if "Tak ada ternak untuk" in pesan:
             print(time.asctime(), pesan)
             tnk = 0
-            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
             time.sleep(2)
             await event.respond(ternak[tnk])
             return
