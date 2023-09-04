@@ -8,10 +8,15 @@ api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Horang'
 
+restore = '/restore_max_confirm'
 siram = '/siram'
 panen = '/ambilPanen'
 farm = 'Kebun'
 bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMaifamBot']
+ternak = '/ambilHasil'
+feed = '/beriMakan'
+jumlah_perolehan = 0
+tnk = 0
 
 logging.basicConfig(level=logging.ERROR)
     
@@ -28,14 +33,72 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
 
     @client.on(events.NewMessage(from_users=bot[1]))
     async def handler(event):
+        global tnk, jumlah_perolehan
         pesan = event.raw_text
         
         
         if "Berhasil menyiram tanaman" in pesan:
-            time.sleep(245)
-            await event.respond(panen)
+            print(time.asctime(), 'Berhasil menyiram')
+                tnk = 0
+            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
+            time.sleep(2)
+            await event.respond(ternak[tnk])
+                #await event.respond(tanam)
             return
+
+        if "Kamu berhasil memanen" in pesan:
+            print(time.asctime(), pesan)
+            await asyncio.sleep(2)
+            jumlah_perolehan += 1
+            if jumlah_perolehan >= 1:
+                await event.respond(tanam)
+                jumlah_perolehan = 0
+            else:
+                if tnk < len(ternak):
+                    await event.respond(feed)
+                    tnk += 1
+                else:
+                    tnk = 0
+                    await event.respond(feed)
+
+        if "Kamu memperoleh:" in pesan:
+            print(time.asctime(), 'Hasil ternak')
+            await asyncio.sleep(2)
+            jumlah_perolehan += 1
+            if jumlah_perolehan >= 10:
+                await event.respond(panen)
+                jumlah_perolehan = 0
+            else:
+                if tnk < len(ternak):
+                    await event.respond(feed)
+                    tnk += 1
+                else:
+                    tnk = 0
+                    await event.respond(feed)
             
+            
+        if "Tak ada yang bisa dipanen" in pesan:
+            print(time.asctime(), pesan)
+            tnk = 0
+            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
+            time.sleep(2)
+            await event.respond(ternak[tnk])
+                #await event.respond(tanam)
+            return
+          
+          
+        if "Berhasil memberi makan ternak" in pesan:
+            print(time.asctime(), pesan)
+            time.sleep(2)
+            await event.respond(ternak[tnk])
+            return
+          
+        if "Tak ada ternak untuk" in pesan:
+            print(time.asctime(), pesan)
+            time.sleep(2)
+            await event.respond(ternak[tnk])
+            return
+          
         if "Kamu berhasil memanen" in pesan:
             print(time.asctime(), pesan)
             time.sleep(2)
@@ -74,8 +137,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 time.sleep(2)
                 await event.respond(panen)
             else:
-                time.sleep(245)
-                await event.respond(panen)
+                time.sleep(2)
+                await event.respond(ternak[tnk])
             return
           
        
