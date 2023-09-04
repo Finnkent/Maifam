@@ -55,10 +55,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 jumlah_perolehan = 0
             else:
                 if tnk < len(ternak):
+                    time.sleep(2)
                     await event.respond(feed)
                     tnk += 1
                 else:
                     tnk = 0
+                    time.sleep(2)
                     await event.respond(feed)
 
         if "Kamu memperoleh:" in pesan:
@@ -69,10 +71,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 jumlah_perolehan = 0
             else:
                 if tnk < len(ternak):
+                    time.sleep(2)
                     await event.respond(feed)
                     tnk += 1
                 else:
                     tnk = 0
+                    time.sleep(2)
                     await event.respond(feed)
             
             
