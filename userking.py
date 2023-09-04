@@ -68,7 +68,6 @@ async def handler_maifam(event):
     
     pesan = event.raw_text
     
-    #slot
     
    
 @client.on(events.NewMessage(from_users=mepamx))
@@ -366,7 +365,7 @@ Daun = SlotMachine_SixLeaves
                 time.sleep(2)
                 await event.respond(f"Mulai bermain di {slots_dict[slot]}")
                 time.sleep(2)
-                await client.send_message(mepam, slots_dict[slot])
+                await client.send_message(mepamx4, slots_dict[slot])
                 
             else:
                 await event.reply("Maaf, jenis slot tersebut tidak ada dalam daftar")
