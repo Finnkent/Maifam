@@ -13,7 +13,7 @@ siram = '/siram'
 panen = '/ambilPanen'
 farm = 'Kebun'
 bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMaifamBot']
-ternak = '/ambilHasil'
+ternak = ['/ambilHasil']
 feed = '/beriMakan'
 jumlah_perolehan = 0
 tnk = 0
@@ -128,8 +128,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             return
         
         if 'Tak ada tanaman untuk disiram' in pesan:
-            tnk = 0
-            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
+            
             time.sleep(2)
             await event.respond(farm)
             return
@@ -139,12 +138,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 time.sleep(2)
                 await event.respond(panen)
             else:
-                if tnk < len(ternak):
-                    await event.respond(ternak[tnk])
-                    tnk += 1
-                else:
-                    tnk = 0
-                    await event.respond(ternak[tnk])
+                time.sleep(2)
+                await event.respond(ternak[tnk])
             return
           
        
