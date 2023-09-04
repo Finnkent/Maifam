@@ -39,7 +39,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         
         if "Berhasil menyiram tanaman" in pesan:
             print(time.asctime(), 'Berhasil menyiram')
-                tnk = 0
+            tnk = 0
             jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
             time.sleep(2)
             await event.respond(ternak[tnk])
@@ -128,6 +128,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             return
         
         if 'Tak ada tanaman untuk disiram' in pesan:
+            tnk = 0
+            jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
             time.sleep(2)
             await event.respond(farm)
             return
