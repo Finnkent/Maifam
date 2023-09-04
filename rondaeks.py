@@ -60,6 +60,7 @@ async def send_address_messages():
             
             # Setelah mengirim dua alamat, hapus buronan
             if (i + 1) % 2 == 0:
+                await asyncio.sleep(turu)
                 await client.send_message(bot, hapus)
                 print("Remove Bounty")
 
