@@ -51,7 +51,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             await asyncio.sleep(2)
             jumlah_perolehan += 1
             if jumlah_perolehan >= 1:
-                await event.respond(tanam)
+                await event.respond(siram)
                 jumlah_perolehan = 0
             else:
                 if tnk < len(ternak):
