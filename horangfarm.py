@@ -127,8 +127,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 time.sleep(2)
                 await event.respond(panen)
             else:
-                time.sleep(2)
-                await event.respond(ternak[tnk])
+                if tnk < len(ternak):
+                    await event.respond(ternak[tnk])
+                    tnk += 1
+                else:
+                    tnk = 0
+                    await event.respond(ternak[tnk])
             return
           
        
