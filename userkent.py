@@ -19,6 +19,7 @@ mepamx4 = "KampungMaifamX4Bot"
 
 logging.basicConfig(level=logging.ERROR)
 
+restore = "restore_max_confirm"
 piggy = "/pelihara_BayiBabi_336"
 cook = "/masak_minibacon_220"
 chicken = "/beliternak_Ayam_Ayam_20"
@@ -97,7 +98,7 @@ async def handler_memancing(event):
         
     elif 'tidak memiliki cukup energi' in pesan:
         await asyncio.sleep(2)
-        await event.respond('/restore_max_confirm')
+        await event.respond(restore)
         print(time.asctime(), 'Isi Ulang Energi')
         
                 
@@ -285,7 +286,7 @@ async def handler_ayam(event):
           
           
         
-    if "Kamu tidak memiliki cukup energi" in pesan:
+    if "tidak memiliki cukup energi" in pesan:
         print(time.asctime(), 'Isi Ulang Energi')
         time.sleep(2)
         await event.respond(restore)
