@@ -64,7 +64,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         if "Kamu memperoleh:" in pesan:
             print(time.asctime(), 'Hasil ternak')
             await asyncio.sleep(2)
-            if jumlah_perolehan >= 10:
+            if jumlah_perolehan >= 5:
                 await event.respond(panen)
                 jumlah_perolehan = 0
             else:
@@ -99,19 +99,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await event.respond(ternak[tnk])
             return
-          
-        if "Kamu berhasil memanen" in pesan:
-            print(time.asctime(), pesan)
-            time.sleep(2)
-            await event.respond(siram)
-            return
-        
-            
-        if "Tak ada yang bisa dipanen" in pesan:
-            time.sleep(2)
-            await event.respond(siram)
-            return
-            
+
         if "Lahan tersisa di kebun kamu tidak mencukupi" in pesan:
             time.sleep(2)
             await event.respond(panen)
