@@ -140,7 +140,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.respond(panen)
             else:
                 time.sleep(2)
-                await event.respond(ternak[tnk])
+                await event.respond(feed)
             return
           
        
