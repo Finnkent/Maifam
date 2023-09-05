@@ -169,7 +169,7 @@ async def handler(event):
         await event.respond('/casino_FortuneDice_1_5e10')
         return
         
-    if "Not bet placed," in event.text:
+    if "No bet placed" in event.text:
         sleep(1.8)
         await event.respond('/casino_FortuneDice_1_5e10')
         return
