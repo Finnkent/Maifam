@@ -146,7 +146,7 @@ async def handler(event):
         
     if '60 times' in event.raw_text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_{}_5000000000000'.format(random.randint(1,6)))
+        await event.respond('/casino_FortuneDice_1_5e10')
         return
         
     if "End previous game" in event.text:
@@ -166,17 +166,17 @@ async def handler(event):
         
     if "You bet on" in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_{}_5000000000000'.format(random.randint(1,6)))
+        await event.respond('/casino_FortuneDice_1_5e10')
         return
         
     if "Not bet placed," in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_{}_5000000000000'.format(random.randint(1,6)))
+        await event.respond('/casino_FortuneDice_1_5e10')
         return
         
     if "You won" in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_{}_5000000000000'.format(random.randint(1,6)))
+        await event.respond('/casino_FortuneDice_1_5e10')
         return
         
     if 'as free as' in event.text:
