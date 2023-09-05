@@ -194,4 +194,6 @@ async def handler(event):
         await event.respond('/homesx')
         return
        
+client.send_message(chat,'/homesx')
+
 client.run_until_disconnected()
