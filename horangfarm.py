@@ -16,6 +16,7 @@ bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMai
 ternak = ['/ambilHasil']
 feed = '/beriMakan'
 jumlah_perolehan = 0
+jumlah_penanaman = 0
 tnk = 0
 
 logging.basicConfig(level=logging.ERROR)
@@ -37,7 +38,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
     
         @client.on(events.NewMessage(from_users=bot[1]))
         async def handler(event):
-            global tnk, jumlah_perolehan
+            global tnk, jumlah_perolehan, jumlah_penanaman
             pesan = event.raw_text
             
             
@@ -108,9 +109,14 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.respond(ternak[tnk])
                 return
             
-            elif "Kamu berhasil menanam" in pesan:
-                time.sleep(2)
-                await event.respond(siram)
+            if "Kamu berhasil menanam" in pesan:
+                jumlah_penanaman += 1
+                if jumlah_penanaman == 3:
+                    await event.respond(siram)
+                    jumlah_penanaman = 0
+                else:
+                    time.sleep(2)
+                    await event.respond(command)
                 return
     
             elif "Lahan tersisa di kebun kamu tidak mencukupi" in pesan:
