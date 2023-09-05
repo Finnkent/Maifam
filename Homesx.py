@@ -35,7 +35,7 @@ async def handler(event):
             print('Alamat')
             count = 0
             for i in range(1,6):
-                z = hasil[i*5].replace('curiUang', 'stealItem')    
+                z = hasil[i*5].replace('curiuang', 'stealItem')    
                 await event.respond(z)
                 print('kirim')
                 #file.write(z+'\n')
