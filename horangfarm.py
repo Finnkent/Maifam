@@ -118,10 +118,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 else:
                     time.sleep(2)
                     if jumlah_penanaman == 1:
-                        await event.respond(tanam_commands[0])
-                    elif jumlah_penanaman == 2:
                         await event.respond(tanam_commands[1])
-                    elif jumlah_penanaman == 3:
+                    elif jumlah_penanaman == 2:
                         await event.respond(tanam_commands[2])
                 return
     
