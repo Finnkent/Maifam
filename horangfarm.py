@@ -28,8 +28,12 @@ async def mancingddh(client,w):
         await client.send_message(bot[0], "/fish")
         await bentar(w)
         
+tanam_commands = ['/tanam_Cabai_285', '/tanam_Mentimun_285', '/tanam_Tomat_285']
+
 with TelegramClient(sesi_file, api_id, api_hash) as client:
-    client.loop.run_until_complete(client.send_message(bot[1], siram))
+    # Iterate through the planting commands and plant each crop one by one
+    for command in tanam_commands:
+    client.loop.run_until_complete(client.send_message(bot[1], command))
 
     @client.on(events.NewMessage(from_users=bot[1]))
     async def handler(event):
@@ -51,7 +55,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             await asyncio.sleep(2)
             jumlah_perolehan += 1
             if jumlah_perolehan >= 1:
-                await event.respond(siram)
+                await event.respond(command)
                 jumlah_perolehan = 0
             else:
                 if tnk < len(ternak):
@@ -103,30 +107,35 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await event.respond(ternak[tnk])
             return
+        
+        elif "Kamu berhasil menanam" in pesan:
+            time.sleep(2)
+            await event.respond(siram)
+            return
 
-        if "Lahan tersisa di kebun kamu tidak mencukupi" in pesan:
+        elif "Lahan tersisa di kebun kamu tidak mencukupi" in pesan:
             time.sleep(2)
             await event.respond(panen)
             return
          
-        if 'Kamu tidak memiliki cukup energi' in pesan:
+        elif 'Kamu tidak memiliki cukup energi' in pesan:
             print('Energi habis')
             time.sleep(2)
             await event.respond('/restore_max_confirm')
             return
             
-        if 'Energi berhasil dipulihkan' in pesan:
+        elif 'Energi berhasil dipulihkan' in pesan:
             time.sleep(2)
             await event.respond(siram)
             return
         
-        if 'Tak ada tanaman untuk disiram' in pesan:
+        elif 'Tak ada tanaman untuk disiram' in pesan:
             
             time.sleep(2)
             await event.respond(farm)
             return
           
-        if '🌲 Kebun' in pesan:
+        elif '🌲 Kebun' in pesan:
             if 'siap panen!!' in pesan:
                 time.sleep(2)
                 await event.respond(panen)
