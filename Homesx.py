@@ -15,7 +15,7 @@ Masak = '/masak_MiniBacon_220'
 bot = 'kampungmaifamxbot'
 curi = '/homesx'
 alpha = 'kampungmaifambot'
-buron = '/eat_holysnack'
+buron = 'Hapus menggunakan Uang'
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
    client.loop.run_until_complete(client.send_message(bot, curi))
