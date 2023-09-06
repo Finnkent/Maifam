@@ -163,6 +163,11 @@ async def handler(event):
         sleep(1.8)
         await event.respond('/homesx')
         return
+      
+    if "EXP Target is reached" in event.text:
+        sleep(1.8)
+        await event.respond('/homesx')
+        return
         
     if "You bet on" in event.text:
         sleep(1.8)
