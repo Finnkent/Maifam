@@ -85,7 +85,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(0,0)
                 return
               
-            elif "100x!! Kamu mendapat" in pesan or "250x!! Kamu mendapat" in pesan:
+            elif "100x!! Kamu mendapat" in pesan or "250x!! Sekarang ia" in pesan:
                 time.sleep(2)
                 await event.respond(adv)
                 return
