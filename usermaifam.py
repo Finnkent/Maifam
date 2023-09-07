@@ -83,10 +83,9 @@ async def handler_memancing(event):
         
                 
     elif 'Energi berhasil' in pesan:
-        await asyncio.sleep(2)
-        await event.click(text=alat)
-        print('Lanjut Gan')
-        
+        if area in areas_dict:
+            await event.respond(areas_dict[area])
+        print(time.asctime(), 'Lanjut')
               
     elif '==' in pesan:
         await asyncio.sleep(2)
