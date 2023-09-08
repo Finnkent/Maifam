@@ -168,6 +168,18 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(0,0)
                 return
             
+            #EastBlue: TwinCapes
+            elif "Lewati Laboon si paus" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
+            #GrandLine: WhiskyPeak
+            elif "Di balik keramahtamahan warganya" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
             
             
 
