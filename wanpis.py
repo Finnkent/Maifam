@@ -182,12 +182,6 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             
             
-
-            
-            
-            
-            
-            
 client.start()
 print('Started')
 client.run_until_disconnected()
