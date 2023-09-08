@@ -50,40 +50,40 @@ async def my_function():
                     
                     
                     
-                    elif "Kalahkan musuh yang ada" in pesan or "Kalahkan semua musuh" in pesan:
-                        time.sleep(2)
-                        await event.click(0,0)
-                        return
+                    #if "Kalahkan musuh yang ada" in pesan or "Kalahkan semua musuh" in pesan:
+                        #time.sleep(2)
+                        #await event.click(0,0)
+                        #return
                       
-                    elif "dan dihadang oleh 4 musuh:" in pesan:
+                    if "dan dihadang oleh 4 musuh:" in pesan:
                         time.sleep(2)
                         await event.click(1,0)
                         return
                     
-                    elif "dan dihadang oleh 3 musuh:" in pesan:
+                    if "dan dihadang oleh 3 musuh:" in pesan:
                         time.sleep(2)
                         await event.click(1,0)
                         return
                     
-                    elif "dan dihadang oleh 2 musuh:" in pesan:
+                    if "dan dihadang oleh 2 musuh:" in pesan:
                         time.sleep(2)
                         await event.click(1,0)
                         return
                         
-                    elif "dan dihadang oleh 1 musuh:" in pesan:
+                    if "dan dihadang oleh 1 musuh:" in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                      
                      
                         
-                    elif "KAMU MENANG!!" in pesan:
+                    if "KAMU MENANG!!" in pesan:
                         
                         time.sleep(2)
                         await event.click(0,0)
                         return
                       
-                    elif "Musuh menang" in pesan:
+                    if "Musuh menang" in pesan:
                         if "untuk mencapai kekuatan" in pesan:
                             time.sleep(2)
                             await event.respond('/restore')
@@ -93,18 +93,18 @@ async def my_function():
                         return
                     
                         
-                    elif "sedang tidak dalam kondisi" in pesan:
+                    if "sedang tidak dalam kondisi" in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                       
                       
-                    elif "untuk bisa lanjut ke pulau" in pesan:
+                    if "untuk bisa lanjut ke pulau" in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                         
-                    elif "Berhasil memulihkan" in pesan:
+                    if "Berhasil memulihkan" in pesan:
                         time.sleep(2)
                         await event.respond(adv)
                         return
@@ -112,44 +112,44 @@ async def my_function():
                     
                     
                         
-                    elif "kekuatan kalian sebagai" in pesan:
+                    if "kekuatan kalian sebagai" in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                     
                     #EastBlue: ShellsTown
-                    elif 'Kota pinggir laut' in pesan:
+                    if 'Kota pinggir laut' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                     
                     #EastBlue: OrangeTown
-                    elif 'Kota kecil yang ditumbuhi' in pesan:
+                    if 'Kota kecil yang ditumbuhi' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                     
                     #EastBlue: SyrupVillage
-                    elif 'Desa sederhana yang indah' in pesan:
+                    if 'Desa sederhana yang indah' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                     
                     #EastBlue: Baratie
-                    elif 'Sebuah restauran yang mengapung' in pesan:
+                    if 'Sebuah restauran yang mengapung' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                     
                     #EastBlue: ArlongPark
-                    elif 'Kastil manusia ikan' in pesan:
+                    if 'Kastil manusia ikan' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
                       
                     
                     #EastBlue: Loguetown
-                    elif 'Dikenal sebagai kota awal mula' in pesan:
+                    if 'Dikenal sebagai kota awal mula' in pesan:
                         time.sleep(2)
                         await event.click(0,0)
                         return
