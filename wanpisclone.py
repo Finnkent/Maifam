@@ -26,9 +26,6 @@ punyaku = [
 
 bot_id = 'GrandPiratesBot'
 adv = '/adventure'
-kill = 0
-ex = '/use_EXPPill'
-
 
 async def my_function():
     while True:
@@ -50,11 +47,7 @@ async def my_function():
                         await event.respond('/restore')  
                         return
                     
-                    if kill >= 10:
-                        time.sleep(2)
-                        await event.respond(ex)  
-                        kill = 0
-                        return
+                    
                     
                     
                     elif "Kalahkan musuh yang ada" in pesan or "Kalahkan semua musuh" in pesan:
@@ -85,7 +78,7 @@ async def my_function():
                      
                         
                     elif "KAMU MENANG!!" in pesan:
-                        kill += 1
+                        
                         time.sleep(2)
                         await event.click(0,0)
                         return
@@ -113,19 +106,10 @@ async def my_function():
                         
                     elif "Berhasil memulihkan" in pesan:
                         time.sleep(2)
-                        await event.respond(ex)
-                        return
-                      
-                    elif "Berhasil menggunakan 💊EXPPill" in pesan:
-                        time.sleep(2)
-                        await event.respond(ex)
-                        return
-                      
-                    elif "maksimal 10 item buff" in pesan or "Kamu tidak memiliki 💊EXPPill" in pesan:
-                        time.sleep(2)
                         await event.respond(adv)
                         return
                       
+                    
                     
                         
                     elif "kekuatan kalian sebagai" in pesan:
