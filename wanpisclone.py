@@ -31,7 +31,7 @@ async def my_function():
     while True:
         for aaa in punyaku:
             async with TelegramClient(aaa, api_id, api_hash) as client:
-                await client.send_message(bot_id, adv)
+                await client.send_message(bot_id,adv)
                 
                 @client.on(events.NewMessage(from_users=adv))
                 async def handler(event):
