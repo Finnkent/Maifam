@@ -62,17 +62,17 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
               
             elif "dan dihadang oleh 4 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(1,0)
                 return
             
             elif "dan dihadang oleh 3 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(1,0)
                 return
             
             elif "dan dihadang oleh 2 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(1,0)
                 return
                 
             elif "dan dihadang oleh 1 musuh:" in pesan:
@@ -176,6 +176,18 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             #GrandLine: WhiskyPeak
             elif "Di balik keramahtamahan warganya" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
+            #GrandLine: LittleGarden
+            elif "Sebuah pulau di GrandLine" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #GrandLine: WinterSea
+            elif "sebuah area laut bersalju" in pesan:
                 time.sleep(2)
                 await event.click(0,0)
                 return
