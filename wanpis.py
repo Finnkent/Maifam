@@ -191,6 +191,18 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 time.sleep(2)
                 await event.click(0,0)
                 return
+              
+            #GrandLine: DrumIsland 
+            elif "Pulau dingin yang ditutupi salju" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
+            #Alabasta: Nanohana
+            elif "pertama di Kerajaan Alabasta" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
             
             
