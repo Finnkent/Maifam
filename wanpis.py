@@ -10,6 +10,8 @@ bot_id = 'GrandPiratesBot'
 adv = '/adventure'
 kill = 0
 ex = '/use_EXPPill'
+up = '/levelupKapal_HP'
+
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -62,12 +64,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
               
             elif "dan dihadang oleh 4 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(1,0)
                 return
             
             elif "dan dihadang oleh 3 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(1,0)
                 return
             
             elif "dan dihadang oleh 2 musuh:" in pesan:
@@ -110,6 +112,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 return
                 
             elif "Berhasil memulihkan" in pesan:
+                time.sleep(2)
+                await event.respond(up)
+                return
+              
+            elif "Kapalmu masih memerlukan" in pesan or "Berhasil meningkatkan level"
                 time.sleep(2)
                 await event.respond(ex)
                 return
