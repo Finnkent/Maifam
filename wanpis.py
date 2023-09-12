@@ -116,6 +116,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.respond(up)
                 return
               
+            elif "Apa kamu yakin ingin meningkatkan" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
             elif "Kapalmu masih memerlukan" in pesan or "Berhasil meningkatkan level" in pesan:
                 time.sleep(2)
                 await event.respond(ex)
