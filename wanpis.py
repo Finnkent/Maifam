@@ -215,6 +215,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 time.sleep(2)
                 await event.click(0,0)
                 return
+              
+            #Alabasta: Erumalu
+            elif "Sebuah kota kuno yang dulunya" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
             
             
