@@ -35,7 +35,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             pesan = event.raw_text
             global kill
             
-            if "maksimal 100x tiap jamnya" in pesan or "sedang dalam perjalanan menuju" in pesan:
+            if "maksimal 100x tiap jamnya" in pesan:
                 tunggu_hingga_menit_detik_00()
                 await event.respond('/adventure')
                 return
@@ -69,17 +69,17 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             elif "dan dihadang oleh 3 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
             
             elif "dan dihadang oleh 2 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
                 
             elif "dan dihadang oleh 1 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
              
              
@@ -218,6 +218,18 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
               
             #Alabasta: Erumalu
             elif "Sebuah kota kuno yang dulunya" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #Alabasta: SandoraDesert
+            elif "Gurun pasir yang dipenuhi mahkluk" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
+            #Alabasta: SpiderCafe
+            elif "Sebuah kafe di tengah gurun pasir" in pesan:
                 time.sleep(2)
                 await event.click(0,0)
                 return
