@@ -35,10 +35,10 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             pesan = event.raw_text
             global kill
             
-            #if "maksimal 100x tiap jamnya" in pesan:
-                #tunggu_hingga_menit_detik_00()
-                #await event.respond('/adventure')
-                #return
+            if "maksimal 100x tiap jamnya" in pesan:
+                tunggu_hingga_menit_detik_00()
+                await event.respond('/adventure')
+                return
               
             if "100x!! Kamu mendapat" in pesan or "250x!! Sekarang ia" in pesan or "250x!! Kamu mendapat" in pesan:
                 time.sleep(2)
