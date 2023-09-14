@@ -109,7 +109,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             if "Kamu memperoleh:" in pesan:
                 print(time.asctime(), 'Hasil ternak')
                 time.sleep(2)
-                if jumlah_perolehan >= 5:
+                if jumlah_perolehan >= 3:
                     await event.respond(panen)
                     jumlah_perolehan = 0
                 else:
