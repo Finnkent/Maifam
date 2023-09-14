@@ -8,6 +8,33 @@ api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Horang'
 
+print("\nPilih tempat mancing")
+pilih = input('\tKetik 1 untuk 💦 Lala\n\tKetik 2 untuk 💦 Mimi\n\tKetik 3 untuk 💦 Badabu\n\tKetik 4 untuk 🏝 Soprano\n\tKetik 5 untuk 💧 Bulari\n\tKetik 6 untuk 🌊 Narrow/Sempit\n\tKetik 7 untuk 🌊 Gabagaba\n\tKetik 8 untuk 🌊 Ancient/Purba\n\tKetik 9 untuk 🌊 Haunted/Berhantu\n\tKetik 10 untuk 🌊 All\n\tKetik 11 untuk 💦 Danau Penjara\n   Angka =  ')
+if pilih == '1': 
+    tempat = 'Lala River' 
+elif pilih == '2': 
+    tempat = 'Mimi River' 
+elif pilih == '3': 
+    tempat = 'Badabu River' 
+elif pilih == '4': 
+    tempat = 'Soprano Lake' 
+elif pilih == '5': 
+    tempat = 'Bay of Bulari' 
+elif pilih == '6': 
+    tempat = 'Narrow Sea'
+elif pilih == '7': 
+    tempat = 'Gabagaba Ocean' 
+elif pilih == '8': 
+    tempat = 'Ancient Sea' 
+elif pilih == '9': 
+    tempat = 'Haunted Sea'
+elif pilih == '10': 
+    tempat = 'All Sea'
+elif pilih == '11': 
+    tempat = 'Danau Penjara'
+    
+alat = 'Tarik Jala' 
+
 restore = '/restore_max_confirm'
 siram = '/siram'
 panen = '/ambilPanen'
@@ -19,17 +46,19 @@ jumlah_perolehan = 0
 jumlah_penanaman = 0
 tnk = 0
 
+
 logging.basicConfig(level=logging.ERROR)
     
 async def bentar(w):
     await asyncio.sleep(w)
+    
 
 async def mancingddh(client,w):
     while True:
         await client.send_message(bot[0], "/fish")
         await bentar(w)
         
-tanam_commands = ['/tanam_Cabai_285', '/tanam_Mentimun_285', '/tanam_Tomat_285']
+tanam_commands = ['/tanam_Kentang_593', '/tanam_Wortel_593', '/tanam_Strawberry_593']
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     # Iterate through the planting commands and plant each crop one by one
@@ -47,13 +76,22 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 tnk = 0
                 jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
                 time.sleep(2)
+                await event.respond(tempat)
+                    #await event.respond(tanam)
+                return
+              
+            if "Kamu berhasil menangkap" in pesan:
+                print(time.asctime(), 'Ikan')
+                tnk = 0
+                jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
+                time.sleep(2)
                 await event.respond(ternak[tnk])
                     #await event.respond(tanam)
                 return
     
             if "Kamu berhasil memanen" in pesan:
                 print(time.asctime(), pesan)
-                await asyncio.sleep(2)
+                time.sleep(2)
                 jumlah_perolehan += 1
                 if jumlah_perolehan >= 1:
                     await event.respond(command)
@@ -70,7 +108,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
     
             if "Kamu memperoleh:" in pesan:
                 print(time.asctime(), 'Hasil ternak')
-                await asyncio.sleep(2)
+                time.sleep(2)
                 if jumlah_perolehan >= 5:
                     await event.respond(panen)
                     jumlah_perolehan = 0
@@ -159,8 +197,67 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                         time.sleep(2)
                         await event.respond(ternak[tnk])
                 return
-              
-           
+            
+            elif 'tidak memiliki cukup energi' in pesan:
+                time.sleep(2)
+                await event.respond(restore)
+                print(time.asctime(), 'Isi Ulang Energi')
+                
+                        
+            elif 'Energi berhasil' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                print('Lanjut Gan')
+                
+                      
+            elif '==' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+            
+            elif 'Sungai dangkal' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Legenda mengatakan' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Hanya ikan besar' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Ikan langka' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Terletak di bagian' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Orang-orang mengklaim' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Bertahun-tahun yang' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Laut aneh berbahaya' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Laut terkutuk' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Bagian kecil' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                
+            elif 'Pemerintah Maikantri' in pesan:
+                time.sleep(2)
+                await event.click(text=alat)
+                   
             
         client.start() 
         print(time.asctime(), '-', 'start')
