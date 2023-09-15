@@ -21,7 +21,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
 
 
             if "Proses tambang"  in pesan:
-                time.sleep(180)
+                time.sleep(299)
                 await event.click(text=Mine)                
                 print(time.asctime(), 'Tambang')
                 return
