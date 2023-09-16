@@ -20,7 +20,7 @@ mepamx4 = "KampungMaifamX4Bot"
 logging.basicConfig(level=logging.ERROR)
 
 restore = "restore_max_confirm"
-piggy = "/pelihara_BayiBabi_336"
+piggy = "/pelihara_BayiBabi_342"
 cook = "/masak_minibacon_220"
 chicken = "/beliternak_Ayam_Ayam_20"
 alat = "Tarik Jala"
