@@ -190,6 +190,9 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 elif 'Kebun kamu kosong' in pesan:
                     time.sleep(2)
                     await event.respond(bot[1], command)
+                elif 'x /siram' in pesan:
+                    time.sleep(2)
+                    await event.respond(siram)
                 else:
                     if tnk < len(ternak):
                         time.sleep(2)
