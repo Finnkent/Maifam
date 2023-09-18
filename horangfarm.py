@@ -58,7 +58,7 @@ async def mancingddh(client,w):
         await client.send_message(bot[0], "/fish")
         await bentar(w)
         
-tanam_commands = ['/tanam_Kentang_603', '/tanam_Wortel_603', '/tanam_Strawberry_603']
+tanam_commands = ['/tanam_Kentang_593', '/tanam_Wortel_593', '/tanam_Strawberry_593']
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     # Iterate through the planting commands and plant each crop one by one
@@ -128,7 +128,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 tnk = 0
                 jumlah_perolehan = 0  # Reset perolehan jika tidak ada yang bisa dipanen
                 time.sleep(2)
-                await event.respond(ternak[tnk])
+                await event.respond(farm)
                     #await event.respond(tanam)
                 return
               
@@ -187,6 +187,9 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 if 'siap panen!!' in pesan:
                     time.sleep(2)
                     await event.respond(panen)
+                elif 'Kebun kamu kosong' in pesan:
+                    time.sleep(2)
+                    await event.respond(bot[1], command)
                 else:
                     if tnk < len(ternak):
                         time.sleep(2)
