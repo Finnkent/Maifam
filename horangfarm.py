@@ -189,7 +189,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                     await event.respond(panen)
                 elif 'Kebun kamu kosong' in pesan:
                     time.sleep(2)
-                    await event.respond(bot[1], command)
+                    await client.send_message(bot[1], command)
                 elif 'x /siram' in pesan:
                     time.sleep(2)
                     await event.respond(siram)
