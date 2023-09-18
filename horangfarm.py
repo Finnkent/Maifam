@@ -58,7 +58,7 @@ async def mancingddh(client,w):
         await client.send_message(bot[0], "/fish")
         await bentar(w)
         
-tanam_commands = ['/tanam_Kentang_593', '/tanam_Wortel_593', '/tanam_Strawberry_593']
+tanam_commands = ['/tanam_Kentang_603', '/tanam_Wortel_603', '/tanam_Strawberry_603']
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     # Iterate through the planting commands and plant each crop one by one
