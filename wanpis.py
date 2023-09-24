@@ -24,7 +24,7 @@ def tunggu_hingga_menit_detik_00():
         return  # Sudah 00:00, tidak perlu menunggu
     
     detik_yang_harus_ditunggu = (60 - menit_sekarang) * 60 - detik_sekarang
-    print(f"Menunggu hingga 00:00.")
+    print(f"Menunggu hingga 00:00")
     time.sleep(detik_yang_harus_ditunggu)
 
 
