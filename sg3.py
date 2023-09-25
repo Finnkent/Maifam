@@ -1,8 +1,7 @@
 import time, os
 import asyncio
 import sys, re
-import random
-import pytz
+import random
 import datetime
 from time import sleep
 from random import randint
