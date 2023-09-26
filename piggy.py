@@ -59,10 +59,10 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await event.respond(ternak)
             return
-        
-        else:
+          
+        if 'Tidak ada hasil' in pesan:
             time.sleep(2)
-            print(pesan)
+            await event.respond(feed)
             return
           
        
