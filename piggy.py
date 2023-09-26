@@ -59,6 +59,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await event.respond(ternak)
             return
+        
+        else:
+            time.sleep(2)
+            print(pesan)
+            return
           
        
         
