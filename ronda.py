@@ -27,7 +27,6 @@ alamat = [
 '/curiuang_111965147433',
 '/curiuang_360996181946',
 '/curiuang_640653083028',
-'/curiuang_661284389931',
 '/curiuang_360099039056',
 '/curiuang_970811486725',
 '/curiuang_321037104938',
