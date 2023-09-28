@@ -87,6 +87,16 @@ async def send_address_messages():
                 await asyncio.sleep(1)
 
             print(f"Processed {progress_count} addresses in this batch.")
+        
+            async for event in client.iter_messages(bot):
+                if 'Kamu tidak memiliki cukup energi' in event.raw_text:
+                    time.sleep(2)
+                    await event.respond('/restore_max_confirm')
+
+                if 'Energi berhasil dipulihkan' in event.raw_text:
+                    time.sleep(2)
+                    await event.respond(f'/curiUang_{address}')
+
 
         print("All addresses sent. Restarting from the beginning.")
 
