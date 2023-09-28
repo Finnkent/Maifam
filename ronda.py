@@ -80,7 +80,7 @@ async def send_address_messages():
             print("Removing Bounty")
             await client.send_message(bot, hapus)
             time.sleep(2)
-            await event.respond('/restore_max_confirm')
+            await client.send_message(bot,'/restore_max_confirm')
             print("All addresses sent in this batch. Waiting...")
 
             # Progress update for the batch
