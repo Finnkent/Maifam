@@ -1,4 +1,4 @@
-import asyncio
+import time, asyncio, sys, random
 from telethon import TelegramClient
 
 api_id = 18850178
