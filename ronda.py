@@ -65,27 +65,30 @@ async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
     await client.start()
 
-    for i in range(0, len(alamat), batch_size):
-        batch = alamat[i:i+batch_size]
-        progress_count = 0
+    while True:  # Add an infinite loop to repeat the process
+        for i in range(0, len(alamat), batch_size):
+            batch = alamat[i:i+batch_size]
+            progress_count = 0
 
-        for address in batch:
-            message = f"/curiUang_{address}"
-            await client.send_message(bot, message)
-            print(f"Sent address: {address}")
-            await asyncio.sleep(turu)
-            progress_count += 1
+            for address in batch:
+                message = f"/curiUang_{address}"
+                await client.send_message(bot, message)
+                print(f"Sent address: {address}")
+                await asyncio.sleep(turu)
+                progress_count += 1
 
-        print("Removing Bounty")
-        await client.send_message(bot, hapus)
-        print("All addresses sent in this batch. Waiting...")
+            print("Removing Bounty")
+            await client.send_message(bot, hapus)
+            print("All addresses sent in this batch. Waiting...")
 
-        # Progress update for the batch
-        for remaining in range(10):
-            print(f"Waiting: {remaining} seconds")
-            await asyncio.sleep(1)
+            # Progress update for the batch
+            for remaining in range(10):
+                print(f"Waiting: {remaining} seconds")
+                await asyncio.sleep(1)
 
-        print(f"Processed {progress_count} addresses in this batch.")
+            print(f"Processed {progress_count} addresses in this batch.")
+
+        print("All addresses sent. Restarting from the beginning.")
 
     await client.disconnect()
 
