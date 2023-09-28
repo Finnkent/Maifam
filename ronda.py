@@ -1,9 +1,5 @@
-import time
 import asyncio
-import datetime
-from tqdm import tqdm
-from telethon import TelegramClient, events
-from rich.progress import Progress
+from telethon import TelegramClient
 
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
@@ -63,32 +59,33 @@ alamat = [
 bot = 'kampungmaifamxbot'
 hapus = 'Hapus menggunakan Uang'
 turu = 3
+batch_size = 48
 
 async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
     await client.start()
 
-    while True:
-        progress = tqdm(total=len(alamat), desc="Sending addresses")
+    for i in range(0, len(alamat), batch_size):
+        batch = alamat[i:i+batch_size]
+        progress_count = 0
 
-        for i, address in enumerate(alamat):
+        for address in batch:
             message = f"/curiUang_{address}"
             await client.send_message(bot, message)
             print(f"Sent address: {address}")
             await asyncio.sleep(turu)
-            progress.update(1)
-            
-            # Setelah mengirim dua alamat, hapus buronan
-            if (i + 1) % 47 == 0:
-                await asyncio.sleep(turu)
-                await client.send_message(bot, hapus)
-                print("Remove Bounty")
+            progress_count += 1
 
-        progress.close()
+        print("Removing Bounty")
+        await client.send_message(bot, hapus)
+        print("All addresses sent in this batch. Waiting 1 hour...")
 
-        print("All addresses sent. Waiting 1 hour...")
-        for remaining in tqdm(range(3300, desc="Waiting")):
+        # Progress update for the batch
+        for remaining in range(3300):
+            print(f"Waiting: {remaining} seconds")
             await asyncio.sleep(1)
+
+        print(f"Processed {progress_count} addresses in this batch.")
 
     await client.disconnect()
 
