@@ -84,7 +84,7 @@ async def send_address_messages():
             print("All addresses sent in this batch. Waiting...")
 
             # Progress update for the batch
-            for remaining in range(3300):
+            for remaining in range(300):
                 print(f"Waiting: {remaining} seconds")
                 await asyncio.sleep(1)
 
