@@ -9,7 +9,7 @@ sesi_file = "Finnkent"
 bot_id = 'GrandPiratesBot'
 adv = '/adventure'
 kill = 0
-ex = '/use_EXPPill'
+ex = '/use_EXPPill_10'
 up = '/levelupKapal_ATK'
 
 
@@ -24,7 +24,7 @@ def tunggu_hingga_menit_detik_00():
         return  # Sudah 00:00, tidak perlu menunggu
     
     detik_yang_harus_ditunggu = (60 - menit_sekarang) * 60 - detik_sekarang
-    print(f"Menunggu hingga 00:00")
+    print(f"Menunggu hingga 00:00.")
     time.sleep(detik_yang_harus_ditunggu)
 
 
@@ -69,17 +69,17 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             elif "dan dihadang oleh 3 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
             
             elif "dan dihadang oleh 2 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
                 
             elif "dan dihadang oleh 1 musuh:" in pesan:
                 time.sleep(2)
-                await event.click(1,0)
+                await event.click(0,0)
                 return
              
              
@@ -126,9 +126,9 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.respond(ex)
                 return
               
-            elif "Berhasil menggunakan 💊EXPPill" in pesan:
+            elif "Berhasil menggunakan 💊EXPPill 10x" in pesan:
                 time.sleep(2)
-                await event.respond(ex)
+                await event.respond(adv)
                 return
               
             elif "maksimal 10 item buff" in pesan or "Kamu tidak memiliki 💊EXPPill" in pesan:
@@ -230,6 +230,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             #Alabasta: SpiderCafe
             elif "Sebuah kafe di tengah gurun pasir" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+            
+            #Alabasta: Rainbase
+            elif "Sebuah kota judi" in pesan:
                 time.sleep(2)
                 await event.click(0,0)
                 return
