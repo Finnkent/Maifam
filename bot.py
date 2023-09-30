@@ -1,7 +1,7 @@
 import os
 import subprocess
 from telegram import Update, User
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext
 from dotenv import load_dotenv
 import signal
 
