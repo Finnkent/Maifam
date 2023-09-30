@@ -18,6 +18,7 @@ OWNER_ID = os.getenv('OWNER_ID')
 START_LOGS = os.getenv('START_LOGS')
 EVENT_LOGS = os.getenv('EVENT_LOGS')
 
+
 def send_start_logs(updater: Updater, user: User):
     log_message = f'Pengguna memulai bot\nID: {user.id}\nFirst Name: {user.first_name}\nUsername: @{user.username}'
     # Kirim log_message ke START_LOGS (misalnya, sebuah grup atau chat khusus)
@@ -146,6 +147,8 @@ def main():
 
     # Daftarkan handler perintah /addsudo
     updater.dispatcher.add_handler(CommandHandler('addsudo', add_sudo))
+
+updater.dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_text_message))
 
     # Jalankan bot
     updater.start_polling()
