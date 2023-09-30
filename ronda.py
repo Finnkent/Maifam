@@ -54,12 +54,13 @@ alamat = [
     '321037104938',
     '391257263751',
     '171472047048',
+    '641932423025',
 ]
 
 bot = 'kampungmaifamxbot'
 hapus = 'Hapus menggunakan Uang'
 turu = 3
-batch_size = 48
+batch_size = 49
 
 async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
@@ -84,7 +85,7 @@ async def send_address_messages():
             print("All addresses sent in this batch. Waiting...")
 
             # Progress update for the batch
-            for remaining in range(300):
+            for remaining in range(3):
                 print(f"Waiting: {remaining} seconds")
                 await asyncio.sleep(1)
 
