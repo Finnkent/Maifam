@@ -53,12 +53,12 @@ alamat = [
     '970811486725',
     '321037104938',
     '391257263751',
-    '171472047048',
+    '941298225021',
     '641932423025',
 ]
 
 bot = 'kampungmaifamxbot'
-hapus = 'Hapus menggunakan Uang'
+hapus = '/makan_KudapanSuci'
 turu = 3
 batch_size = 49
 
@@ -85,7 +85,7 @@ async def send_address_messages():
             print("All addresses sent in this batch. Waiting...")
 
             # Progress update for the batch
-            for remaining in range(3):
+            for remaining in range(3300):
                 print(f"Waiting: {remaining} seconds")
                 await asyncio.sleep(1)
 
