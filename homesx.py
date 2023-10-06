@@ -11,7 +11,7 @@ akun1 = input("Akun : ")
 client = TelegramClient(akun1, api_id, api_hash).start()
 
 total = 0
-
+judi = '/casino_FiftyFifty_1_1e12'
 chat = 'kampungmaifamxbot'
 
 @client.on(events.NewMessage(chat))
@@ -146,7 +146,7 @@ async def handler(event):
         
     if '60 times' in event.raw_text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_1_5e10')
+        await event.respond(judi)
         return
         
     if "End previous game" in event.text:
@@ -171,17 +171,17 @@ async def handler(event):
         
     if "You bet on" in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_1_5e10')
+        await event.respond(judi)
         return
         
     if "No bet placed" in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_1_5e10')
+        await event.respond(judi)
         return
         
     if "You won" in event.text:
         sleep(1.8)
-        await event.respond('/casino_FortuneDice_1_5e10')
+        await event.respond(judi)
         return
         
     if 'as free as' in event.text:
