@@ -50,11 +50,10 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                             if angka_terisi == angka_total:
                                 time.sleep(2)
                                 await event.respond(krj)
-                
-                
-                else:
-                    time.sleep(2)
-                    await event.click(text="Mulai Mendaki")
+                            else:
+                                time.sleep(2)
+                                await event.click(text="Mulai Mendaki")
+                                
                 return
               
 
