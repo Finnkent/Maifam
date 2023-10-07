@@ -47,17 +47,21 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                             angka_terisi = int(pesan_split[0])
                             angka_total = int(pesan_split[1])
                 
+                            # Memeriksa apakah angka terisi sama dengan angka total
                             if angka_terisi == angka_total:
                                 time.sleep(2)
                                 await event.respond(krj)
-                            else:
-                                time.sleep(2)
-                                await event.click(text="Mulai Mendaki")
+                
+                        except ValueError:
+                            print("Format angka tidak valid")
                     else:
-                        print('Eror')
+                        print("Format pesan tidak sesuai")
+                
                 else:
-                    print('Eror')
+                  time.sleep(2)
+                  await event.click(text="Mulai Mendaki")
                 return
+              
 
             if "Kamu tidak memiliki cukup energi" in pesan:
                 time.sleep(2)
