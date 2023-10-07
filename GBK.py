@@ -53,9 +53,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                             else:
                                 time.sleep(2)
                                 await event.click(text="Mulai Mendaki")
-                                
-                
-              
+                    else:
+                        print('Eror')
+                else:
+                    print('Eror')
+                return
 
             if "Kamu tidak memiliki cukup energi" in pesan:
                 time.sleep(2)
