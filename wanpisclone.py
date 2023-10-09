@@ -93,7 +93,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             elif "Musuh menang" in pesan:
                 if "untuk mencapai kekuatan" in pesan:
                     time.sleep(2)
-                    await event.respond('/restore')
+                    await event.respond('/restore_x')
                 else:
                     time.sleep(2)
                     await event.click(0,0)
