@@ -9,7 +9,9 @@ sesi_file = input("Akun : ")
 bot_id = 'GrandPiratesBot'
 adv = '/adventure'
 kill = 0
-ex = '/use_EXPPill'
+ex = '/use_EXPPill_10'
+up = '/levelupKapal_ATK'
+
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -33,7 +35,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             pesan = event.raw_text
             global kill
             
-            if "maksimal 100x tiap jamnya" in pesan or "sedang dalam perjalanan menuju" in pesan:
+            if "maksimal 100x tiap jamnya" in pesan:
                 tunggu_hingga_menit_detik_00()
                 await event.respond('/adventure')
                 return
@@ -45,7 +47,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
               
             if "Energi krumu telah habis" in pesan or "musuh kabur" in pesan:
                 time.sleep(2)
-                await event.respond('/restore')  
+                await event.respond('/restore_x')  
                 return
             
             if kill >= 10:
@@ -111,12 +113,22 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 
             elif "Berhasil memulihkan" in pesan:
                 time.sleep(2)
+                await event.respond(up)
+                return
+              
+            elif "Apa kamu yakin ingin meningkatkan" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            elif "Kapalmu masih memerlukan" in pesan or "Berhasil meningkatkan level" in pesan:
+                time.sleep(2)
                 await event.respond(ex)
                 return
               
-            elif "Berhasil menggunakan 💊EXPPill" in pesan:
+            elif "Berhasil menggunakan 💊EXPPill 10x" in pesan:
                 time.sleep(2)
-                await event.respond(ex)
+                await event.respond(adv)
                 return
               
             elif "maksimal 10 item buff" in pesan or "Kamu tidak memiliki 💊EXPPill" in pesan:
@@ -180,11 +192,53 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(0,0)
                 return
             
+            #GrandLine: LittleGarden
+            elif "Sebuah pulau di GrandLine" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #GrandLine: WinterSea
+            elif "sebuah area laut bersalju" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #GrandLine: DrumIsland 
+            elif "Pulau dingin yang ditutupi salju" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
+            #Alabasta: Nanohana
+            elif "pertama di Kerajaan Alabasta" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #Alabasta: Erumalu
+            elif "Sebuah kota kuno yang dulunya" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
+            #Alabasta: SandoraDesert
+            elif "Gurun pasir yang dipenuhi mahkluk" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
-
+            #Alabasta: SpiderCafe
+            elif "Sebuah kafe di tengah gurun pasir" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
-            
+            #Alabasta: Rainbase
+            elif "Sebuah kota judi" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
             
             
             
