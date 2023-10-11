@@ -7,7 +7,6 @@ sesi_file = 'Helio'
 
 alamat = [
     '391257263751',
-    '471584354122',
     '800947317803',
     '910967339315',
     '710915339722',
@@ -48,11 +47,10 @@ alamat = [
     '641932423025',
 ]
 
-
 bot = 'kampungmaifamxbot'
 hapus = '/makan_KudapanSuci'
 turu = 3
-batch_size = 40
+batch_size = 39
 
 async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
