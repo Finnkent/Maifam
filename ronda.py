@@ -7,8 +7,6 @@ sesi_file = 'Helio'
 
 alamat = [
     '391257263751',
-    '262316242208',
-    '341543332554',
     '471584354122',
     '800947317803',
     '910967339315',
@@ -23,16 +21,9 @@ alamat = [
     '800934347619',
     '740940349826',
     '121076542903',
-    '961089537415',
-    '831074529440',
-    '191065513457',
-    '172118295136',
     '352114283538',
     '292374509522',
     '911551304540',
-    '501530319712',
-    '172118295136',
-    '531553312557',
     '891589326537',
     '940776279704',
     '571820288844',
@@ -57,10 +48,11 @@ alamat = [
     '641932423025',
 ]
 
+
 bot = 'kampungmaifamxbot'
 hapus = '/makan_KudapanSuci'
 turu = 3
-batch_size = 49
+batch_size = 40
 
 async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
@@ -83,8 +75,8 @@ async def send_address_messages():
             time.sleep(2)
             print("All addresses sent in this batch. Waiting...")
 
-            # Progress update for the batch
-            for remaining in range(60):
+
+            for remaining in range(2):
                 print(f"Waiting: {remaining} seconds")
                 await asyncio.sleep(1)
 
