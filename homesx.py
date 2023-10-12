@@ -13,6 +13,7 @@ client = TelegramClient(akun1, api_id, api_hash).start()
 total = 0
 judi = '/casino_FiftyFifty_1_1e12'
 chat = 'kampungmaifamxbot'
+hapus = '/makan_KudapanSuci'
 
 @client.on(events.NewMessage(chat))
 async def handler(event):
@@ -36,10 +37,10 @@ async def handler(event):
         print('Skill = ', total)
         
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
@@ -53,10 +54,10 @@ async def handler(event):
         print('Skill = ', total)
         
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
@@ -74,10 +75,10 @@ async def handler(event):
         tmp += 1
         
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
@@ -89,10 +90,10 @@ async def handler(event):
         tmp += 1
         
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
@@ -103,10 +104,10 @@ async def handler(event):
         sleep(1.8)
         tmp += 1
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
@@ -118,10 +119,10 @@ async def handler(event):
         tmp += 1
         
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return
         if tmp == 5:
-            await event.respond("Remove using Cash")
+            await event.respond(hapus)
             return 
         else:
             await client.send_message(chat, maling[tmp])
