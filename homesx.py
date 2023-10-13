@@ -11,7 +11,7 @@ akun1 = input("Akun : ")
 client = TelegramClient(akun1, api_id, api_hash).start()
 
 total = 0
-judi = '/casino_FiftyFifty_1_1e12'
+judi = '/casino_FiftyFifty_2_1e12'
 chat = 'kampungmaifamxbot'
 hapus = '/makan_KudapanSuci'
 
@@ -65,6 +65,12 @@ async def handler(event):
         return
             
     if 'No bounty' in event.text:
+        sleep(1.8)
+        await event.respond('/homesx')
+        #print(tmp)
+        return
+      
+    if 'Yummy mummy it' in event.text:
         sleep(1.8)
         await event.respond('/homesx')
         #print(tmp)
