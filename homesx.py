@@ -14,6 +14,7 @@ total = 0
 judi = '/casino_FiftyFifty_2_1e12'
 chat = 'kampungmaifamxbot'
 hapus = '/makan_KudapanSuci'
+result = '/casino_result'
 
 @client.on(events.NewMessage(chat))
 async def handler(event):
@@ -72,7 +73,7 @@ async def handler(event):
       
     if 'Yummy mummy it' in event.text:
         sleep(1.8)
-        await event.respond('/homesx')
+        await event.respond(result)
         #print(tmp)
         return
       
@@ -143,7 +144,7 @@ async def handler(event):
         
     if 'Great!!' in event.text:
         sleep(1.8)
-        await event.respond('/casino_result')
+        await event.respond(result)
         return
         
     if 'Successfully cooked' in event.text:
@@ -158,7 +159,7 @@ async def handler(event):
         
     if "End previous game" in event.text:
         sleep(1.8)
-        await event.respond('/casino_result')
+        await event.respond(result)
         return
         
     if "Successfully bet" in event.text:
