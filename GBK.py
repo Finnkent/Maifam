@@ -72,7 +72,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                     print("Progress Tugas:", char_progress, "dari", total_chars)
                     print("Waktu yang tersisa:", time_remaining)  # Change label
                 else:
-                    print("Informasi tugas sedang berlangsung tidak ditemukan."))
+                    print("Informasi tugas sedang berlangsung tidak ditemukan.")
             
             if "Gunung dipenuhi dengan berbagai" in pesan:
                 if pesan.startswith('Keranjang: '):
