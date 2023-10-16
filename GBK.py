@@ -1,5 +1,5 @@
-import time
-import asyncio
+import time
+import asyncio
 import sys
 import random
 
@@ -27,6 +27,17 @@ lokasi = {
     "Area hutan kecil di dasar gunung",
 }
 
+narasi = {
+    "Mendaki gunung memang melelahkan",
+    "Gunung ini terlihat tenang",
+    "perjalanan panjang pasti akan membuahkan hasil",
+    "Saat ini kamu masih berada",
+    "Hal-hal ajaib yang ada di hutan",
+    "Sudah mulai lelah? Jangan patah semangat",
+    "Ada banyak lokasi-lokasi misterius",
+    "Kamu mendaki gunung dan menemukan sebuah",
+}
+
 with TelegramClient(sesi_file, api_id, api_hash) as client:
         client.loop.run_until_complete(client.send_message(bot_id, mese))
         @client.on(events.NewMessage(from_users=bot_id))
@@ -38,6 +49,30 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 #await event.click(0,0)
                 #return
             
+            if any(nar in pesan for nar in narasi):
+                time.sleep(2)
+                await event.click(text="Lanjut Mendaki")
+                return
+            
+            if any(char in emoji.UNICODE_EMOJI for char in pesan):
+
+                pattern = r'Ongoing Task \((\d+)/(\d+)\):\s+char \((\d+)/(\d+)\)\s+⏱ (\d+:\d+:\d+)'
+
+    
+                matches = re.search(pattern, pesan)
+                
+                if matches:
+                    task_progress = int(matches.group(1))
+                    total_tasks = int(matches.group(2))
+                    char_progress = int(matches.group(3))
+                    total_chars = int(matches.group(4))
+                    time_remaining = matches.group(5)  # Change variable name
+                    
+                    print("Task active:", task_progress, "dari", total_tasks)
+                    print("Progress Tugas:", char_progress, "dari", total_chars)
+                    print("Waktu yang tersisa:", time_remaining)  # Change label
+                else:
+                    print("Informasi tugas sedang berlangsung tidak ditemukan."))
             
             if "Gunung dipenuhi dengan berbagai" in pesan:
                 if pesan.startswith('Keranjang: '):
@@ -127,52 +162,18 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(0,0)
                 return
               
+            elif "namun sayang sekali belum menemukan apa-apa" in pesan:
+                time.sleep(2)
+                await event.click(0,0)
+                return
+              
             elif "apa kamu ingin turun gunung?" in pesan:
                 time.sleep(2)
                 await event.click(text="Turun")
                 return
 
-            elif "Mendaki gunung memang melelahkan" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "Gunung ini terlihat tenang" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "perjalanan panjang pasti akan membuahkan hasil" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "Saat ini kamu masih berada" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "Hal-hal ajaib yang ada di hutan" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "Sudah mulai lelah? Jangan patah semangat" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-            elif "Ada banyak lokasi-lokasi misterius " in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
-              
-              
-            elif "Kamu mendaki gunung dan menemukan sebuah" in pesan:
-                time.sleep(2)
-                await event.click(text="Lanjut Mendaki")
-                return
 
 client.start()
+print(time.asctime(), '-', 'Started')
 client.run_until_disconnected()
 print(time.asctime(), '-', 'Berhenti')
