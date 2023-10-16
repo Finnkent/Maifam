@@ -1,5 +1,4 @@
-import time
-import emoji
+import time
 import asyncio
 import sys
 import random
@@ -55,25 +54,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(text="Lanjut Mendaki")
                 return
             
-            if any(char in emoji.UNICODE_EMOJI for char in pesan):
-
-                pattern = r'Ongoing Task \((\d+)/(\d+)\):\s+char \((\d+)/(\d+)\)\s+⏱ (\d+:\d+:\d+)'
-
-    
-                matches = re.search(pattern, pesan)
-                
-                if matches:
-                    task_progress = int(matches.group(1))
-                    total_tasks = int(matches.group(2))
-                    char_progress = int(matches.group(3))
-                    total_chars = int(matches.group(4))
-                    time_remaining = matches.group(5)  # Change variable name
-                    
-                    print("Task active:", task_progress, "dari", total_tasks)
-                    print("Progress Tugas:", char_progress, "dari", total_chars)
-                    print("Waktu yang tersisa:", time_remaining)  # Change label
-                else:
-                    print("Informasi tugas sedang berlangsung tidak ditemukan.")
+            
             
             if "Gunung dipenuhi dengan berbagai" in pesan:
                 if pesan.startswith('Keranjang: '):
