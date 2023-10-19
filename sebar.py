@@ -5,7 +5,7 @@ from telethon.sync import TelegramClient, events, utils, Button
 # Ganti dengan informasi akun Telegram Anda
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Helio'
+sesi_file = 'Heliopausa'
 
 group_list = [
     #'BIO_RPP_1',
