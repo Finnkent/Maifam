@@ -10,7 +10,7 @@ bot_id = 'GrandPiratesBot'
 adv = '/adventure'
 kill = 0
 ex = '/use_EXPPill_10'
-up = '/levelupKapal_ATK'
+up = '/levelupKapal_HP'
 
 
 logging.basicConfig(level=logging.ERROR)
