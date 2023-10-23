@@ -201,8 +201,18 @@ async def handler(event):
         sleep(1.8)
         await event.click(text="Confirm")
         return
+      
+    if 'Your energy is too low' in event.text:
+        sleep(1.8)
+        await event.respond("/restore_max_confirm")
+        return
 
     if 'Address code changed' in event.text:
+        sleep(1.8)
+        await event.respond('/homesx')
+        return
+      
+    if 'Energy Successfully restored' in event.text:
         sleep(1.8)
         await event.respond('/homesx')
         return
