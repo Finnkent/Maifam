@@ -53,7 +53,7 @@ def deteksi_pukul_20_00():
     menit = sekarang.minute
     detik = sekarang.second
 
-    if jam == 20 and menit == 0 and detik == 0:
+    if jam == 07 and menit == 15 and detik == 0:
         return True
     else:
         return False
