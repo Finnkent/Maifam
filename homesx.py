@@ -70,7 +70,7 @@ async def handler(event):
     teks = event.text
     
     if slot_20_00:
-        sleep(2)
+        sleep(10)
         await client.send_message(chatx4, 'Bahasa Indonesia')
         return
     
