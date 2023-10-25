@@ -33,6 +33,8 @@ async def handler(event):
     global total 
     global tmp
     
+    teks = event.text
+    
 
     if any(nar in teks for nar in narasi):
         sleep(2)
