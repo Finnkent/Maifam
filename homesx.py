@@ -70,12 +70,12 @@ async def handler(event):
     teks = event.text
     
     if slot_20_00:
-        time.sleep(2)
+        sleep(2)
         await client.send_message(chatx4, 'Bahasa Indonesia')
         return
     
     if any(nar in teks for nar in narasi):
-        time.sleep(2)
+        sleep(2)
         await event.respond('/homesx')
         return
 
@@ -256,13 +256,13 @@ async def handler(event):
     usn = me.username
     
     if 'Bahasa diubah ke Bahasa Indonesia' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await client.send_message(chatx4, cmd)
         print('Mulai Slot')
         return
     
     if '10000000Qn' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.respond('/tamanHiburan_TembakTopeng')
         print('Mulai Dart')
         return
@@ -302,50 +302,50 @@ async def handler(event):
            cv += int(cv_match.group(1))
         
     elif 'Ada tujuh jenis ikan' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(1,0)
         return
 
     
     elif 'Kamu memutar SlotMachine 10x' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(1,0)
         return
     
     elif 'Koin untuk' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.respond(cmd1)
         return
         
     
     
     elif 'Apa kamu' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(text="Confirm")
         return
     
     elif 'Berhasil membeli tambahan' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.respond(cmd)
         return
     
     elif 'Setiap harinya' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(text='Mulai')
         return
 
     elif 'Pilih sasaran' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(0,1)
         return
     
     elif 'Lemparanmu berhasil' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(text='Lanjut')
         return
     
     elif 'Sayang sekali' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         await event.click(text='Lanjut')
         return
       
@@ -367,16 +367,16 @@ async def handler(event):
 ⏰: <code>{}</code>
 """
         
-        time.sleep(2)
+        sleep(2)
         await event.respond(invest)
-        time.sleep(2)
+        sleep(2)
         await client.send_message(ch, ''
         + str(finalresult).format(dn,usn,jackpot, gems, tiket, poin, skill, cv, sk, time.asctime()) + '',parse_mode='html')
         return
         
     
     elif 'investasi termahal' in event.raw_text or 'Tiap petani hanya bisa' in event.raw_text or 'Saldo WorldBank tidak mencukupi' in event.raw_text:
-        time.sleep(2)
+        sleep(2)
         print('--Selesai--')
         await client.send_message(chat, 'English')
         return
