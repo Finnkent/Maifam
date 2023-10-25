@@ -27,6 +27,13 @@ narasi = {
     "Language changed to English",
 }
 
+ncasino = {
+    "You won",
+    "No bet placed",
+    "You bet on",
+    "60 times",
+}
+
 @client.on(events.NewMessage(chat))
 async def handler(event):
     global maling
@@ -39,6 +46,11 @@ async def handler(event):
     if any(nar in teks for nar in narasi):
         sleep(2)
         await event.respond('/homesx')
+        return
+      
+    if any(nca in teks for nca in ncasino):
+        sleep(2)
+        await event.respond(judi)
         return
 
     if "Villager's Abandoned" in teks:
@@ -83,13 +95,6 @@ async def handler(event):
             return
         return
             
-    
-      
-    if 'Yummy mummy it' in teks:
-        sleep(1.8)
-        await event.respond(result)
-        #print(tmp)
-        return
       
     if 'Oh snap' in teks:
         sleep(1.8)
@@ -151,45 +156,19 @@ async def handler(event):
         
         return
     
+    if 'Great!!' in teks or 'Yummy mummy it' in teks or 'End previous game' in teks:
+        sleep(1.8)
+        await event.respond(result)
+        return
+      
     if 'stuck in bloody' in teks:
         sleep(1.8)
         await event.respond('/release')
         return
-        
-    if 'Great!!' in teks:
-        sleep(1.8)
-        await event.respond(result)
-        return
-        
+    
     if 'Successfully cooked' in teks:
         sleep(1.8)
         await event.respond('/masak_minibacon_220')
-        return
-        
-    if '60 times' in event.raw_text:
-        sleep(1.8)
-        await event.respond(judi)
-        return
-        
-    if "End previous game" in teks:
-        sleep(1.8)
-        await event.respond(result)
-        return
-        
-       
-    if "You bet on" in teks:
-        sleep(1.8)
-        await event.respond(judi)
-        return
-        
-    if "No bet placed" in teks:
-        sleep(1.8)
-        await event.respond(judi)
-        return
-        
-    if "You won" in teks:
-        sleep(1.8)
-        await event.respond(judi)
         return
         
     if 'Are you sure' in teks:
@@ -202,7 +181,5 @@ async def handler(event):
         await event.respond("/restore_max_confirm")
         return
 
-       
 client.send_message(chat,'/homesx')
-
 client.run_until_disconnected()
