@@ -22,7 +22,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
             if "Kamu terdaftar sebagai" in pesan:
                 time.sleep(2)
-                await event.click(0,0
+                await event.click(0,0)
                 return
               
             if "Permen:" in pesan:
