@@ -45,6 +45,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.respond(adv)
                 return
               
+            if "2500x!! Kamu mendapat" in pesan or "25000x!! Sekarang ia" in pesan:
+                time.sleep(2)
+                await event.respond(adv)
+                return
+              
             if "Energi krumu telah habis" in pesan or "musuh kabur" in pesan:
                 time.sleep(2)
                 await event.respond('/restore_x')  
