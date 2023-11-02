@@ -10,7 +10,7 @@ from telethon.sync import TelegramClient, events, utils, Button
 
 api_id = 18850178 
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Horang'
+sesi_file = 'King'
 client = TelegramClient(sesi_file, api_id, api_hash)
 
 mepam = "KampungMaifamBot"
@@ -23,8 +23,8 @@ logging.basicConfig(level=logging.ERROR)
 restore = "/restore_max_confirm"
 alat = "Tarik Jala"
 area = ""
-user = 201319154
-grup = 5199147926
+user = [1222376950,5199147926]
+grup = 1522767385
 
 respond_to_group = False
 
