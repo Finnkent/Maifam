@@ -8,43 +8,19 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Heliopausa'
 
 group_list = [
-    #'BIO_RPP_1',
-    #'BIO_RPPO1',
-    #'BIO_RPPO2',
+    'BIO_RPP_1',
     'BIO_RPP_30',
-    #'bio_lpm_rpps',
+    'bio_lpm_rpps',
 ]
 
 message = """
-==============================
-🏴‍☠️ GrandPiratesBot 🏴‍☠️
-==============================
+LPM bebas SPAM tanpa TIMER 🫨
 
-Hallo Nakama!! Game One Piece sekarang tersedia di Telegram!! Mainkan dan bentuk kelompok bajak laut terkuat selautan!!
+@LPMX69 @LPMX69 @LPMX69
+@LPMX69 @LPMX69 @LPMX69
+@LPMX69 @LPMX69 @LPMX69
 
-Gunakan link : https://t.me/GrandPiratesBot?start=6112502967
-
-Ikuti arahan lalu kirim 
-
-/claim_KINGOFTHEKING
-/claim_NINENINECPNINE
-/claim_TWOTWOWAYO
-/claim_JUSTICEOVERALL
-/claim_ROOKIEONTHEWAY
-/claim_STRONGESTMANINTHEWORLD
-/claim_FIVE
-/claim_ONE2THREE
-/claim_CONTESTANTNO556
-/claim_6ERMA66
-
-=======================
-
-/claim_SEAOFPIRATES (waktu udah masuk grandline) 
-/claim_OTWGRANDLINE (minimal sudah sampai di loguetown) 
-
-Kirim ke bot satu persatu untuk mendapatkan kru tambahan
-
-==============================
+LPM bebas SPAM tanpa TIMER 🫨 
 """
 
 async def send_message_to_groups():
@@ -58,6 +34,6 @@ async def send_message_to_groups():
                 except Exception as e:
                     print(f"Terjadi kesalahan saat mengirim pesan ke {group_username}: {e}")
                 await asyncio.sleep(2)
-            await asyncio.sleep(2)
+            await asyncio.sleep(300)
 
 asyncio.run(send_message_to_groups())
