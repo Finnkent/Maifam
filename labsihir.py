@@ -10,7 +10,7 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Finnkent'
 
 Mese = '/labsihir_Explosimorphis_100'
-magi = '/kirimKeLab_magistone_2e5_confirm'
+magi = '/kirimKeLab_magistone_4e5_confirm'
 kali525 = '/kirimKeLab_Kalifornium525_2e5_confirm'
 kali545 = '/kirimKeLab_Kalifornium545_2e5_confirm'
 kali565 = '/kirimKeLab_Kalifornium565_2e5_confirm'
@@ -65,10 +65,10 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             return
         
 
-        if 'Berhasil menyelesaikan' in event.raw_text:
+        if 'Berhasil menyelesaikan FullMagicAlchemist' in event.raw_text:
             time.sleep(2)
             await client.forward_messages(ch, event.message)
-            time.sleep(2)
+            time.sleep(5)
             await event.respond(Mese)
             return
         
