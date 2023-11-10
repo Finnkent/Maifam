@@ -14,7 +14,7 @@ magi = '/kirimKeLab_magistone_2e5_confirm'
 kali525 = '/kirimKeLab_Kalifornium525_2e5_confirm'
 kali545 = '/kirimKeLab_Kalifornium545_2e5_confirm'
 kali565 = '/kirimKeLab_Kalifornium565_2e5_confirm'
-
+ch = 'inMaifam'
     
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     client.loop.run_until_complete(client.send_message('KampungMaifamxBot', Mese))
@@ -68,6 +68,11 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await event.respond(Mese)
             print(event.raw_text)
+            return
+          
+        if 'Berhasil menyelesaikan' in event.raw_text:
+            time.sleep(2)
+            await client.forward_messages(ch, event.message)
             return
         
     client.start() 
