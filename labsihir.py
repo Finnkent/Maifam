@@ -10,10 +10,10 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Finnkent'
 
 Mese = '/labsihir_Explosimorphis_100'
-magi = '/kirimKeLab_magistone_1e6_confirm'
-kali525 = '/kirimKeLab_Kalifornium525_5e5_confirm'
-kali545 = '/kirimKeLab_Kalifornium545_5e5_confirm'
-kali565 = '/kirimKeLab_Kalifornium565_5e5_confirm'
+magi = '/kirimKeLab_magistone_2e5_confirm'
+kali525 = '/kirimKeLab_Kalifornium525_2e5_confirm'
+kali545 = '/kirimKeLab_Kalifornium545_2e5_confirm'
+kali565 = '/kirimKeLab_Kalifornium565_2e5_confirm'
 
     
 with TelegramClient(sesi_file, api_id, api_hash) as client:
