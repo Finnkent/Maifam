@@ -64,15 +64,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             print(time.asctime(), 'Cek Aktivitas Dulu!!!')
             return
         
-        if 'Berhasil menyelesaikan' in event.raw_text:
-            time.sleep(2)
-            await event.respond(Mese)
-            print(event.raw_text)
-            return
-          
+
         if 'Berhasil menyelesaikan' in event.raw_text:
             time.sleep(2)
             await client.forward_messages(ch, event.message)
+            time.sleep(2)
+            await event.respond(Mese)
             return
         
     client.start() 
