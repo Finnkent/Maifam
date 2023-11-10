@@ -14,7 +14,7 @@ magi = '/kirimKeLab_magistone_4e5_confirm'
 kali525 = '/kirimKeLab_Kalifornium525_2e5_confirm'
 kali545 = '/kirimKeLab_Kalifornium545_2e5_confirm'
 kali565 = '/kirimKeLab_Kalifornium565_2e5_confirm'
-ch = 'inMaifam'
+ch = 'klonking'
     
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     client.loop.run_until_complete(client.send_message('KampungMaifamxBot', Mese))
