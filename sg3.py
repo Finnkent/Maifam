@@ -84,7 +84,7 @@ logs = 'fincasino'
 turu = 4
 mer = 0
 gradenum = 0
-ss = 0
+
 
 q = []
 
@@ -105,17 +105,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
         global mer
         global idMer
         global gradenum
-        global ss
-        me = await client.get_me()
-        dn = me.first_name
-        usn = me.username
-    
-        if "kamu juga mendapat 100☀️!!" in pesan:
-            ss += 100
-            
-        if "kamu juga mendapat ☀️SunShine!!" in pesan:
-            ss += 1
-            
+        
         if "di keranjang buah" in pesan:
             mer += 1
             time.sleep(2)
@@ -210,21 +200,14 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
         if Grade[gradenum] == Grade[-1]:
             gradenum = 0
             mer = 0
-            finalresult = """
-🌥 <b>SkyGarden</b> 🌥
-☀️ <b>SunShine:</b> <i>+{}</i>
-⏰: <code>{}</code>
-"""
-            time.sleep(2)
-            await client.send_message(ch, ''
-            + str(finalresult).format(ss, time.asctime()) + '',parse_mode='html')
+            
             time.sleep(2)
             print('Yosh ulang!!')
             await client.send_message(bot[1], sghc)
             return
           
         if 'Kumpulkan bonus uang dan gelar spesial' in pesan:
-            ss = 0
+            
             if '✅' in pesan:
                 t = pesan.split()
                 u = t.index('✅')
