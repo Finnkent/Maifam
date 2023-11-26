@@ -6,7 +6,7 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Finnkentz'
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
-        @client.on(events.NewMessage(chats=-1001654288969))
+        @client.on(events.NewMessage(chats=-1001946930100))
         async def handler(event):
             pesan = event.raw_text
             
