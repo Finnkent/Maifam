@@ -6,7 +6,7 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Finnkentz'
 
 #bot_id = "kampungmaifamxbot"
-bot_id = -1001654288969
+bot_id = -1001946930100
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
         @client.on(events.NewMessage(from_users=bot_id))
