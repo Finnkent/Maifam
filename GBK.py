@@ -121,7 +121,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                     klem = 0
                 
                 for tugas in klem:
-                tugas=str(klem[0])
+                    tugas=str(klem[0])
           
                 if jenis_tugas:
                     time.sleep(2)
