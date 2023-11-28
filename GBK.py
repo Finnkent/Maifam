@@ -119,7 +119,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 else:
                     print(f"Unexpected format for klem: {ongoing_task_info[3]}")
                     klem = 0
-
+                    
+                tugas=str(klem[0])
           
                 if jenis_tugas:
                     time.sleep(2)
