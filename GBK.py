@@ -1,5 +1,4 @@
-import time
-import emoji
+import time
 import asyncio
 import sys
 import random
