@@ -659,9 +659,9 @@ async def handler_ayam(event):
       
     elif 'Berhasil menambahkan gelar' in event.raw_text:
         time.sleep(2)
-        if slot in slots_dict:
-            await event.respond(slots_dict[slot])
-        return
+        if slot in slots_dict: 
+            await event.respond(slots_dict[slot]) 
+        print(pesan)
                 
     elif 'Kamu memutar SlotMachine 10x' in event.raw_text:
         time.sleep(2)
@@ -691,11 +691,11 @@ async def handler_ayam(event):
         await event.click(text="Confirm")
         return
     
-    elif 'Berhasil membeli tambahan' in event.raw_text:
-        time.sleep(2)
-        if slot in slots_dict:
-            await event.respond(slots_dict[slot])
-        return
+    elif 'Berhasil membeli tambahan' in pesan: 
+        time.sleep(2) 
+        if slot in slots_dict: 
+            await event.respond(slots_dict[slot]) 
+        print(pesan)
     
     elif 'Setiap harinya' in event.raw_text:
         time.sleep(2)
