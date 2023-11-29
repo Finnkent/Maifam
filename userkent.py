@@ -84,6 +84,7 @@ ongoing_tasks = []
 emoji_list = ['🍎','🍓', '🌰', '🍅', '🥜', '▪️', '🍌', '🍄'] #Daftar emoji yang mungkin muncul
 
 jumlah = 0
+kelar = 0
 misi = []
 narasi = []
 tugas = []
@@ -170,7 +171,7 @@ def stop_sesi():
 @client.on(events.NewMessage(from_users=mepam))
 async def handler_maifam(event):
     global respond_to_group
-    global misi, jumlah, tugas, klem, narasi, jenis_tugas
+    global misi, jumlah, tugas, klem, narasi, jenis_tugas, kelar
     if not respond_to_group:
        return
     
@@ -293,6 +294,7 @@ async def handler_maifam(event):
     
     if "Berhasil menyelesaikan tugas" in pesan:
         print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
+        kelar =+ 1
         time.sleep(2)
         await client.forward_messages(grup, event.message)
         time.sleep(5)
@@ -349,9 +351,13 @@ async def handler_maifam(event):
                 time.sleep(2)
                 await event.respond('/gbk_task')
                 jumlah = 0
-            elif jumlah == 0:
+            if kelar == 1:
                 time.sleep(2)
-                await event.click(text="Keluar")
+                await event.respond(tsk)
+                kelar = 0
+            else:
+                time.sleep(2)
+                await event.click(0,0)
         else:
             time.sleep(2)
             await event.click(0,0)
