@@ -294,8 +294,8 @@ async def handler_maifam(event):
     if "Berhasil menyelesaikan tugas" in pesan:
         print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
         time.sleep(2)
-        await client.forward_messages(ch, event.message)
-        time.sleep(10)
+        await client.forward_messages(grup, event.message)
+        time.sleep(5)
         await event.respond(tsk)
         return
             
@@ -350,8 +350,9 @@ async def handler_maifam(event):
                 await event.respond('/gbk_task')
                 jumlah = 0
                 print('Misi selesai. Yuk cari misi lagi!')
-        time.sleep(2)
-        await event.click(0,0)
+            else:
+                time.sleep(2)
+                await event.click(0,0)
         return
     
     #elif "tidak ada permata berharga" in pesan:
