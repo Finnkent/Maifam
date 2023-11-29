@@ -287,35 +287,7 @@ async def handler_maifam(event):
         await event.click(0,0)
         return
     
-    if "Berhasil menyelesaikan tugas" in pesan:
-        print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
-        kelar =+ 1
-        time.sleep(2)
-        await client.forward_messages(grup, event.message)
-        return
-      
-    if 'berhasil mendapat' in pesan:
-        if kelar == 1:
-            time.sleep(2)
-            await event.respond(tsk)
-            kelar = 0
-            
-        if f'berhasil mendapat {tugas}' in pesan:
-            jumlah+=1
-            print(f'Progres {tugas} = {jumlah}')
-            if jumlah %klem == 0:
-                time.sleep(2)
-                await event.respond('/gbk_task')
-                jumlah = 0
-                
-        if 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
-            time.sleep(2)
-            await event.respond(tsk)
-            
-        else:
-            time.sleep(2)
-            await event.click(0,0)
-        return
+    
     
             
     if "Gunung dipenuhi" in pesan:
@@ -363,6 +335,32 @@ async def handler_maifam(event):
             await event.click(text="Kirim ke Barang")
         return
     
+    if "Berhasil menyelesaikan tugas" in pesan:
+        print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
+        kelar =+ 1
+        time.sleep(2)
+        await client.forward_messages(grup, event.message)
+        return
+      
+    if 'berhasil mendapat' in pesan:
+        if kelar == 1:
+            time.sleep(2)
+            await event.respond(tsk)
+            kelar = 0
+            
+        if f'berhasil mendapat {tugas}' in pesan:
+            jumlah+=1
+            print(f'Progres {tugas} = {jumlah}')
+            if jumlah %klem == 0:
+                time.sleep(2)
+                await event.respond('/gbk_task')
+                jumlah = 0
+                
+        if 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+            time.sleep(2)
+            await event.respond(tsk)
+        return
+      
     #elif "tidak ada permata berharga" in pesan:
         #time.sleep(2)
         #await event.click(0,0)
