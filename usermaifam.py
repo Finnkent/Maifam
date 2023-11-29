@@ -84,7 +84,7 @@ narasi = []
 tugas = []
 klem = []
 jenis_tugas = []
-grup = -1001944315345
+grup = -1001802395697
 
 total = 0
 judi = '/casino_FiftyFifty_2_1e12'
