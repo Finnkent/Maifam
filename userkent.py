@@ -668,22 +668,23 @@ async def handler_ayam(event):
         await event.click(1,0)
         return
     
-    elif 'Koin untuk' in event.raw_text:
-        if slot in slots_dict:
-            await event.respond(slots_dict[slot])
-            return
+    elif 'Koin untuk' in pesan:
+        if 'SevenFish 🎰 SlotMachine' in pesan:
+          time.sleep(2)
+          await event.respond(cmd1)
+          return
+        else:
+          time.sleep(2)
+          await event.respond("/collectibleFragment_SixLeaves")
+            
+    elif 'untuk memperoleh salah satu' in pesan:
+        if 'Fragment dikumpulkan:  ✅' in pesan:
+            time.sleep(2)
+            await event.click(text="Get CollectibleItem")
         else:
             time.sleep(2)
-            await event.respond("/collectibleFragment_SixLeaves")
-            return
-    
-    elif 'CollectibleFragment SixLeaves untuk memperoleh' in event.raw_text:
-        time.sleep(2)
-        await event.click(text="Get CollectibleItem")
-        time.sleep(2)
-        if slot in slots_dict:
-            await event.respond(slots_dict[slot])
-        return
+            await event.respond(cmd1)
+   
     
     elif 'Apa kamu' in event.raw_text:
         time.sleep(2)
