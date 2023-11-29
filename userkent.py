@@ -664,7 +664,6 @@ async def handler_ayam(event):
         if slots_dict:
             for slot in slots_dict:
                 await event.respond(slots_dict[slot])  
-        print(pesan)
         return
                 
     elif 'Kamu memutar SlotMachine 10x' in event.raw_text:
@@ -680,6 +679,7 @@ async def handler_ayam(event):
           time.sleep(2)
           await event.respond("/collectibleFragment_SixLeaves")
         return
+      
     elif 'untuk memperoleh salah satu' in pesan:
         if 'Fragment dikumpulkan:  ✅' in pesan:
             time.sleep(2)
@@ -699,7 +699,7 @@ async def handler_ayam(event):
         if slots_dict:
             for slot in slots_dict:
                 await event.respond(slots_dict[slot]) 
-        print(pesan)
+
         return
       
     elif 'Setiap harinya' in event.raw_text:
@@ -723,7 +723,7 @@ async def handler_ayam(event):
         return
       
 
-    elif 'Kesempatan untuk melempar' in event.raw_text or 'dibuka setiap hari' in event.raw_text:
+    elif 'Kesempatan untuk melempar' in event.raw_text or 'dibuka setiap hari' in event.raw_text or 'Saldo WorldBank tidak mencukupi' in event.raw_text:
         for slot in slots_dict:
             if slot == 'Daun':
                 cmd = slots_dict[slot]
