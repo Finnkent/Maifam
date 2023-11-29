@@ -349,7 +349,7 @@ async def handler_maifam(event):
                 time.sleep(2)
                 await event.respond('/gbk_task')
                 jumlah = 0
-            elif jumlah == 0
+            elif jumlah == 0:
                 time.sleep(2)
                 await event.click(text="Keluar")
         else:
