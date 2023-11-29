@@ -759,7 +759,6 @@ async def handler_ayam(event):
     elif 'investasi termahal' in event.raw_text or 'Tiap petani hanya bisa' in event.raw_text or 'Saldo WorldBank tidak mencukupi' in event.raw_text:
         time.sleep(2)
         print('--Selesai--')
-        break
         exit
          
         
