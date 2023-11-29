@@ -302,13 +302,19 @@ async def handler_maifam(event):
                 time.sleep(2)
                 await event.respond('/gbk_task')
                 jumlah = 0
-            if kelar == 1:
-                time.sleep(2)
-                await event.respond(tsk)
-                kelar = 0
             else:
                 time.sleep(2)
                 await event.click(0,0)
+                
+        if 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+            time.sleep(2)
+            await event.respond(tsk)
+        
+        if kelar == 1:
+            time.sleep(2)
+            await event.respond(tsk)
+            kelar = 0
+            
         else:
             time.sleep(2)
             await event.click(0,0)
