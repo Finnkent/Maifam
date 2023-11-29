@@ -343,10 +343,6 @@ async def handler_maifam(event):
         return
       
     if 'berhasil mendapat' in pesan:
-        if kelar == 1:
-            time.sleep(2)
-            await event.respond(tsk)
-            kelar = 0
         if f'berhasil mendapat {tugas}' in pesan:
             jumlah+=1
             print(f'Progres {tugas} = {jumlah}')
@@ -357,14 +353,19 @@ async def handler_maifam(event):
             if jumlah < klem:
                 time.sleep(2)
                 await event.click(0,0)
-                return
-        elif 'berhasil mendapat' in pesan:
-            time.sleep(2)
-            await event.click(0,0)
-        elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+            return
+        if kelar == 1:
             time.sleep(2)
             await event.respond(tsk)
+            kelar = 0
+        if kelar < 1:
+            time.sleep(2)
+            await event.click(0,0)
         return
+    
+    elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+        time.sleep(2)
+        await event.respond(tsk)
       
     #elif "tidak ada permata berharga" in pesan:
         #time.sleep(2)
