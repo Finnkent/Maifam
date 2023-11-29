@@ -292,8 +292,6 @@ async def handler_maifam(event):
         kelar =+ 1
         time.sleep(2)
         await client.forward_messages(grup, event.message)
-        time.sleep(5)
-        await event.respond(tsk)
         return
             
     if "Gunung dipenuhi" in pesan:
