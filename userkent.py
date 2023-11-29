@@ -84,7 +84,7 @@ narasi = []
 tugas = []
 klem = []
 jenis_tugas = []
-grup = -1001946930100
+grup = -1001802395697
 ch = 'inMaifam'
 
 total = 0
