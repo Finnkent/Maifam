@@ -77,8 +77,8 @@ ongoing_tasks = []
 
 emoji_list = ['🍎','🍓', '🌰', '🍅', '🥜', '▪️', '🍌', '🍄'] #Daftar emoji yang mungkin muncul
 
+
 jumlah = 0
-kelar = 0
 misi = []
 narasi = []
 tugas = []
@@ -165,14 +165,18 @@ def stop_sesi():
 @client.on(events.NewMessage(from_users=mepam))
 async def handler_maifam(event):
     global respond_to_group
-    global misi, jumlah, tugas, klem, narasi, jenis_tugas, kelar
+    global misi, jumlah, tugas, klem, narasi, jenis_tugas, item
     if not respond_to_group:
        return
     
     pesan = event.raw_text
     
     if "Selesaikan tugas-tugas" in pesan:
-        if "Ongoing Task" in pesan:
+        if "Tidak ada tugas" in pesan:
+            print("Tidak ada tugas yang sedang diambil. Menanggapi dengan tugas baru.")
+            time.sleep(2)
+            await event.respond(tskg)
+        elif "Ongoing Task" in pesan:
             print("Kondisi Ongoing Task terpenuhi.")
             jenis_tugas = None
             narasi = None
@@ -211,15 +215,11 @@ async def handler_maifam(event):
                     await event.click(1,0)
                     return
             print('-'*30+f"\nTersedia tugas\njenis_tugas = {tugas}\njumlah = {klem}x\nprogres = {jumlah}\nnarasi = {narasi}\nSelamat menyelesaikan tugas!!\n"+'-'*30)
-            
-        if "Tidak ada tugas" in pesan:
-            print("Tidak ada tugas yang sedang diambil. Menanggapi dengan tugas baru.")
-            time.sleep(2)
-            await event.respond(tskg)
         return
     
     if "Berikut adalah daftar Tugas" in pesan:
         misi = []
+        print()
         z = [i for i in pesan.split("\n\n") if any(loc in i for loc in emoji_list)]
         for x in z:
             koin = [i for i in [i for i in x.split("\n") if "🎁 Koin:" in i][0].split()][2]
@@ -232,16 +232,20 @@ async def handler_maifam(event):
             print(misi_list)
             print()
             misi.append({"koin_list": koin_list, "exp_list": exp_list, "misi_list": misi_list})
+            
+        #KALAU MAU CARI KOIN TERBANYAK
         #def get_koin(misi):
             #return misi.get("koin_list")
         #misi.sort(key=get_koin, reverse=True)
+            
+        #KALAU MAU CARI EXP TERDIKIT
         def get_exp(misi):
             return misi.get("exp_list")
         misi.sort(key=get_exp, reverse=False)
-        time.sleep(2)
+        time.sleep(1.5)
         await event.respond(misi[0].get("misi_list"))
         return
-    
+
     if "Berhasil mengambil tugas" in pesan:
         jenis_tugas = None
         for emoji in emoji_list:
@@ -281,118 +285,102 @@ async def handler_maifam(event):
                 await event.click(1,0)
         print('-'*30+f"\nBerhasil mengambil tugas\njenis_tugas = {tugas}\njumlah = {klem}x\nprogres = {jumlah}\nnarasi = {narasi}\nSelamat menyelesaikan tugas!!\n"+'-'*30)
         return
-    
-    if any(loc in pesan for loc in jalan):
-        time.sleep(2)
-        await event.click(0,0)
-        return
-            
-    if "Gunung dipenuhi" in pesan:
-        time.sleep(2)
-        await event.respond(krj)
-        return
       
-    if "Kamu tidak memiliki cukup energi" in pesan:
-        time.sleep(2)
-        await event.respond(restore)
-        return
-    
-    if "Energi berhasil dipulihkan" in pesan:
-        time.sleep(2)
-        await event.respond(tsk)
-        return
-    
-    if "tidak bisa mengambil tugas" in pesan:
-        time.sleep(2)
-        await event.click(text="Turun")
-        return
-    
-    if 'ingin turun gunung' in pesan:
-        time.sleep(2)
-        await event.click(text="Turun")
-        return
-      
-    if "Keranjang kamu sudah penuh!!" in pesan:
-        time.sleep(2)
-        await event.respond(krj)
-        return
-    
-    if "🧺 Keranjang - GunungBelakangKebun" in pesan:
-        if "Keranjang kamu sudah penuh!!" in pesan:
-            time.sleep(2)
-            await event.respond('/gbk')
-        elif "Silakan turun gunung terlebih dahulu" in pesan:
-            time.sleep(2)
-            await event.respond('/gbk')
-        elif "Berhasil mengirim ke barang:" in pesan:
-            time.sleep(2)
-            await event.respond(tsk)
-        elif "Keranjang gunung kamu kosong" in pesan:
-            time.sleep(2)
-            await event.respond(tsk)
-        else:
-            time.sleep(2)
-            await event.click(text="Kirim ke Barang")
-        return
-    
     if "Berhasil menyelesaikan tugas" in pesan:
         print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
-        kelar =+ 1
         time.sleep(2)
         await client.forward_messages(grup, event.message)
         return
+    
+    elif any(loc in pesan for loc in jalan):
+        time.sleep(1.5)
+        await event.click(0,0)
+        return
+            
+    elif "Gunung dipenuhi" in pesan:
+        time.sleep(1.5)
+        await event.respond(krj)
+        return
       
+    elif "Kamu tidak memiliki cukup energi" in pesan:
+        time.sleep(1.5)
+        await event.respond(restore)
+        return
+    
+    elif "Energi berhasil" in pesan:
+        time.sleep(1.5)
+        await event.respond(tsk)
+        return
+    
+    elif 'ingin turun gunung' in pesan or "tidak bisa mengambil tugas" in pesan or "hanya bisa mendaki" in pesan:
+        time.sleep(1.5)
+        await event.click(text='Turun')
+        return
+      
+    elif "Keranjang kamu sudah penuh!!" in pesan:
+        time.sleep(1.5)
+        await event.respond('/gbk')
+        return
+    
+    elif "🧺 Keranjang - GunungBelakangKebun" in pesan:
+        if "Silakan turun gunung terlebih dahulu" in pesan:
+            time.sleep(1.5)
+            await event.respond('/gbk')
+        if "Berhasil mengirim ke barang:" in pesan:
+            time.sleep(1.5)
+            await event.respond(tsk)
+        if "kamu kosong" in pesan:
+            time.sleep(1.5)
+            await event.respond(tsk)
+        else:
+            time.sleep(1.5)
+            await event.click(text='Kirim ke Barang')
+        return
+    
     if 'berhasil mendapat' in pesan:
-        if f'berhasil mendapat {tugas}' in pesan:
+        item = pesan.splitlines()[4].split('berhasil mendapat ')[1]
+        if tugas == item:
             jumlah+=1
             print(f'Progres {tugas} = {jumlah}')
             if jumlah %klem == 0:
-                time.sleep(2)
+                time.sleep(1.5)
                 await event.respond('/gbk_task')
                 jumlah = 0
-            if jumlah < klem:
-                time.sleep(2)
+                print('Misi selesai. Yuk cari misi lagi!')
+            else:
+                time.sleep(1.5)
                 await event.click(0,0)
-            return
-        if kelar == 1:
-            time.sleep(2)
-            await event.respond(tsk)
-            kelar = 0
-        if kelar < 1:
-            time.sleep(2)
+        else:
+            time.sleep(1.5)
             await event.click(0,0)
         return
     
-    elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
-        time.sleep(2)
-        await event.respond(tsk)
+    elif "belum menemukan apa-apa" in pesan:
+        time.sleep(1.5)
+        await event.click(0,0)
+        return
+       
+    elif '- GBK ⛰' in pesan:
+        if narasi in pesan:
+            time.sleep(1.5)
+            await event.click(0,0)
+            return
+        else:
+            time.sleep(1.5)
+            await event.click(1,0)
+            return
+        return
+      
+    
+    #elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+        #time.sleep(2)
+        #await event.respond(tsk)
       
     #elif "tidak ada permata berharga" in pesan:
         #time.sleep(2)
         #await event.click(0,0)
         #return
-      
-    if "belum menemukan apa-apa" in pesan:
-        time.sleep(2)
-        await event.click(0,0)
-        return
-      
-    elif "hanya bisa mendaki" in pesan:
-        time.sleep(2)
-        await event.click(0,0)
-        return
-       
-    if '- GBK ⛰' in pesan:
-        if narasi in pesan:
-            print('-'*30+f"\nNarasi {narasi} ditemukan di dalam pesan\n"+'-'*30)
-            time.sleep(2)
-            await event.click(0,0)
-            return
-        else:
-            time.sleep(2)
-            await event.click(1,0)
-            return
-        return
+
         
         
             
