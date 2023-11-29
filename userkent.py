@@ -1,11 +1,5 @@
-import time
-import asyncio
-import sys
-import random
-import datetime
-import os
-import re
-import logging
+import time, asyncio, sys, random, datetime, os, re, logging
+from time import sleep 
 from telethon.sync import TelegramClient, events, utils, Button
 
 api_id = 18850178 
@@ -178,10 +172,6 @@ async def handler_maifam(event):
     pesan = event.raw_text
     
     if "Selesaikan tugas-tugas" in pesan:
-        if "Tidak ada tugas" in pesan:
-            print("Tidak ada tugas yang sedang diambil. Menanggapi dengan tugas baru.")
-            time.sleep(2)
-            await event.respond(tskg)
         if "Ongoing Task" in pesan:
             print("Kondisi Ongoing Task terpenuhi.")
             jenis_tugas = None
@@ -221,6 +211,11 @@ async def handler_maifam(event):
                     await event.click(1,0)
                     return
             print('-'*30+f"\nTersedia tugas\njenis_tugas = {tugas}\njumlah = {klem}x\nprogres = {jumlah}\nnarasi = {narasi}\nSelamat menyelesaikan tugas!!\n"+'-'*30)
+            
+        if "Tidak ada tugas" in pesan:
+            print("Tidak ada tugas yang sedang diambil. Menanggapi dengan tugas baru.")
+            time.sleep(2)
+            await event.respond(tskg)
         return
     
     if "Berikut adalah daftar Tugas" in pesan:
@@ -332,15 +327,15 @@ async def handler_maifam(event):
         return
     
     if "🧺 Keranjang - GunungBelakangKebun" in pesan:
-        if "Silakan turun gunung terlebih dahulu" in pesan:
+        if "Keranjang kamu sudah penuh!!" in pesan:
             time.sleep(2)
             await event.respond('/gbk')
         if "Berhasil mengirim ke barang:" in pesan:
             time.sleep(2)
             await event.respond(tsk)
-        else:
+        if "Keranjang gunung kamu kosong" in pesan:
             time.sleep(2)
-            await event.click(0,0)
+            await event.respond(tsk)
         return
     
     if 'berhasil mendapat' in pesan:
