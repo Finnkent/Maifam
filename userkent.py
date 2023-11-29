@@ -349,10 +349,12 @@ async def handler_maifam(event):
                 time.sleep(2)
                 await event.respond('/gbk_task')
                 jumlah = 0
-                print('Misi selesai. Yuk cari misi lagi!')
-            else:
+            elif jumlah == 0
                 time.sleep(2)
-                await event.click(0,0)
+                await event.click(text="Keluar")
+        else:
+            time.sleep(2)
+            await event.click(0,0)
         return
     
     #elif "tidak ada permata berharga" in pesan:
