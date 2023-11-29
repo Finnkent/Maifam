@@ -358,6 +358,9 @@ async def handler_maifam(event):
         if "Keranjang gunung kamu kosong" in pesan:
             time.sleep(2)
             await event.respond(tsk)
+        else:
+            time.sleep(2)
+            await event.click(text="Kirim ke Barang")
         return
     
     #elif "tidak ada permata berharga" in pesan:
