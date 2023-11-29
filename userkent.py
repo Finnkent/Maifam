@@ -351,6 +351,10 @@ async def handler_maifam(event):
                 time.sleep(2)
                 await event.respond('/gbk_task')
                 jumlah = 0
+            if jumlah < klem:
+                time.sleep(2)
+                await event.click(0,0)
+                return
         elif 'berhasil mendapat' in pesan:
             time.sleep(2)
             await event.click(0,0)
