@@ -174,7 +174,7 @@ async def handler_maifam(event):
     if "Selesaikan tugas-tugas" in pesan:
         if "Tidak ada tugas" in pesan:
             print("Tidak ada tugas yang sedang diambil. Menanggapi dengan tugas baru.")
-            time.sleep(2)
+            time.sleep(1.5)
             await event.respond(tskg)
         elif "Ongoing Task" in pesan:
             print("Kondisi Ongoing Task terpenuhi.")
@@ -189,7 +189,7 @@ async def handler_maifam(event):
                     jumlah = int(pesan.splitlines()[12].split('(')[1].split('/')[0])
                     break
             if jenis_tugas:
-                time.sleep(2)
+                time.sleep(1.5)
                 await event.respond(gbk)
                 if jenis_tugas in area_tupai:
                     narasi = narasi_1
@@ -211,7 +211,7 @@ async def handler_maifam(event):
                     narasi = narasi_9
                 else:
                     print("Jenis item tidak di temukan di dalam area")
-                    time.sleep(2)
+                    time.sleep(1.5)
                     await event.click(1,0)
                     return
             print('-'*30+f"\nTersedia tugas\njenis_tugas = {tugas}\njumlah = {klem}x\nprogres = {jumlah}\nnarasi = {narasi}\nSelamat menyelesaikan tugas!!\n"+'-'*30)
@@ -259,7 +259,7 @@ async def handler_maifam(event):
         for klem in klems:
             klem=int(klems[0])
         if jenis_tugas:
-            time.sleep(2)
+            time.sleep(1.5)
             await event.respond(gbk)
             if jenis_tugas in area_tupai:
                 narasi = narasi_1
@@ -281,15 +281,17 @@ async def handler_maifam(event):
                 narasi = narasi_9
             else:
                 print("Jenis item tidak di temukan di dalam area")
-                time.sleep(2)
+                time.sleep(1.5)
                 await event.click(1,0)
         print('-'*30+f"\nBerhasil mengambil tugas\njenis_tugas = {tugas}\njumlah = {klem}x\nprogres = {jumlah}\nnarasi = {narasi}\nSelamat menyelesaikan tugas!!\n"+'-'*30)
         return
       
     if "Berhasil menyelesaikan tugas" in pesan:
         print('-'*30+f"\nTugas sudah di selesaikan\n"+'-'*30)
-        time.sleep(2)
+        time.sleep(1.5)
         await client.forward_messages(grup, event.message)
+        time.sleep(1.5)
+        await event.respond(tsk)
         return
     
     elif any(loc in pesan for loc in jalan):
@@ -373,11 +375,11 @@ async def handler_maifam(event):
       
     
     #elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
-        #time.sleep(2)
+        #time.sleep(1.5)
         #await event.respond(tsk)
       
     #elif "tidak ada permata berharga" in pesan:
-        #time.sleep(2)
+        #time.sleep(1.5)
         #await event.click(0,0)
         #return
 
@@ -569,7 +571,7 @@ async def handler_ayam(event):
             
               
     if '10000000Qn' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.respond('/tamanHiburan_TembakTopeng')
         print('Mulai Dart')
         return
@@ -634,57 +636,57 @@ async def handler_ayam(event):
         
         
     elif 'Ada tujuh jenis ikan' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(1,0)
         return
         
     
     elif 'Ada enam jenis daun' in event.raw_text:
         if 'Gunakan gelar SlotKing' in event.raw_text:
-            time.sleep(2)
+            time.sleep(1.5)
             await event.respond('/addtitle_SlotKing')
         else: 
-            time.sleep(2)
+            time.sleep(1.5)
             await event.click(1,0)
         return
       
     elif 'Berhasil menambahkan gelar' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         if slots_dict:
             for slot in slots_dict:
                 await event.respond(slots_dict[slot])  
         return
                 
     elif 'Kamu memutar SlotMachine 10x' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(1,0)
         return
     
     elif 'Koin untuk' in pesan:
         if 'SevenFish 🎰 SlotMachine' in pesan:
-          time.sleep(2)
+          time.sleep(1.5)
           await event.respond(cmd1)
         else:
-          time.sleep(2)
+          time.sleep(1.5)
           await event.respond("/collectibleFragment_SixLeaves")
         return
       
     elif 'untuk memperoleh salah satu' in pesan:
         if 'Fragment dikumpulkan:  ✅' in pesan:
-            time.sleep(2)
+            time.sleep(1.5)
             await event.click(text="Get CollectibleItem")
         else:
-            time.sleep(2)
+            time.sleep(1.5)
             await event.respond(cmd1)
         return
     
     elif 'Apa kamu' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(text="Confirm")
         return
     
     elif 'Berhasil membeli tambahan' in pesan: 
-        time.sleep(2) 
+        time.sleep(1.5) 
         if slots_dict:
             for slot in slots_dict:
                 await event.respond(slots_dict[slot]) 
@@ -692,22 +694,22 @@ async def handler_ayam(event):
         return
       
     elif 'Setiap harinya' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(text='Mulai')
         return
 
     elif 'Pilih sasaran' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(0,1)
         return
     
     elif 'Lemparanmu berhasil' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(text='Lanjut')
         return
     
     elif 'Sayang sekali' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         await event.click(text='Lanjut')
         return
       
@@ -742,16 +744,16 @@ async def handler_ayam(event):
 ⏰: <code>{}</code>
 """
         
-        time.sleep(2)
+        time.sleep(1.5)
         await event.respond(invest)
-        time.sleep(2)
+        time.sleep(1.5)
         await client.send_message(ch, ''
         + str(finalresult).format(dn,usn,jackpot, gems, tiket, poin, skill, cv, sk, af, mm, fp, hw, bd, cc, md, mp, slot, time.asctime()) + '',parse_mode='html')
         return
         
     
     elif 'investasi termahal' in event.raw_text or 'Tiap petani hanya bisa' in event.raw_text or 'Saldo WorldBank tidak mencukupi' in event.raw_text:
-        time.sleep(2)
+        time.sleep(1.5)
         print('--Selesai--')
         exit
          
@@ -809,9 +811,9 @@ Daun = SlotMachine_SixLeaves
         if len(split_result) > 1:
             slot = split_result[1]
             if slot in slots_dict:
-                time.sleep(2)
+                time.sleep(1.5)
                 await event.respond(f"Mulai bermain di {slots_dict[slot]}")
-                time.sleep(2)
+                time.sleep(1.5)
                 await client.send_message(mepamx4, slots_dict[slot])
                 
             else:
