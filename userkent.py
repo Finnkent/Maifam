@@ -135,8 +135,7 @@ ncasino = {
     "60 times",
 }
 
-area = ""
-slot = ""
+slot = []
 
 slots_dict = {
     'Ikan': '/th_SlotMachine_SevenFish',
