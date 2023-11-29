@@ -374,9 +374,11 @@ async def handler_maifam(event):
         return
       
     
-    #elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
-        #time.sleep(1.5)
-        #await event.respond(tsk)
+    elif 'EXP terpenuhi!! Level pendaki meningkat!!' in pesan:
+        print('-'*30+f"\nNaik Level Dik\n"+'-'*30)
+        time.sleep(1.5)
+        await client.forward_messages(ch, event.message)
+        return
       
     #elif "tidak ada permata berharga" in pesan:
         #time.sleep(1.5)
@@ -547,22 +549,7 @@ async def handler_ayam(event):
     
     pesan = event.raw_text
     
-    global jackpot
-    global gems
-    global tiket
-    global poin 
-    global skill
-    global cv
-    global sk
-    global af
-    global fp
-    global hw
-    global mm
-    global bd
-    global cc
-    global md
-    global mp
-    global slot
+    global jackpot, gems, tiket, poin, skill, cv, sk, af, fp, hw, mm, bd, cc, md, mp, slot
     
     me = await client.get_me()
     
