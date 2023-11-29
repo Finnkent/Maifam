@@ -321,10 +321,13 @@ async def handler_maifam(event):
         if "Keranjang kamu sudah penuh!!" in pesan:
             time.sleep(2)
             await event.respond('/gbk')
-        if "Berhasil mengirim ke barang:" in pesan:
+        elif "Silakan turun gunung terlebih dahulu" in pesan:
+            time.sleep(2)
+            await event.respond('/gbk')
+        elif "Berhasil mengirim ke barang:" in pesan:
             time.sleep(2)
             await event.respond(tsk)
-        if "Keranjang gunung kamu kosong" in pesan:
+        elif "Keranjang gunung kamu kosong" in pesan:
             time.sleep(2)
             await event.respond(tsk)
         else:
