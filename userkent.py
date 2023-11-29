@@ -293,6 +293,27 @@ async def handler_maifam(event):
         time.sleep(2)
         await client.forward_messages(grup, event.message)
         return
+      
+    if 'berhasil mendapat' in pesan:
+        if f'berhasil mendapat {tugas}' in pesan:
+            jumlah+=1
+            print(f'Progres {tugas} = {jumlah}')
+            if jumlah %klem == 0:
+                time.sleep(2)
+                await event.respond('/gbk_task')
+                jumlah = 0
+            if kelar == 1:
+                time.sleep(2)
+                await event.respond(tsk)
+                kelar = 0
+            else:
+                time.sleep(2)
+                await event.click(0,0)
+        else:
+            time.sleep(2)
+            await event.click(0,0)
+        return
+    
             
     if "Gunung dipenuhi" in pesan:
         time.sleep(2)
@@ -334,26 +355,6 @@ async def handler_maifam(event):
         if "Keranjang gunung kamu kosong" in pesan:
             time.sleep(2)
             await event.respond(tsk)
-        return
-    
-    if 'berhasil mendapat' in pesan:
-        if f'berhasil mendapat {tugas}' in pesan:
-            jumlah+=1
-            print(f'Progres {tugas} = {jumlah}')
-            if jumlah %klem == 0:
-                time.sleep(2)
-                await event.respond('/gbk_task')
-                jumlah = 0
-            if kelar == 1:
-                time.sleep(2)
-                await event.respond(tsk)
-                kelar = 0
-            else:
-                time.sleep(2)
-                await event.click(0,0)
-        else:
-            time.sleep(2)
-            await event.click(0,0)
         return
     
     #elif "tidak ada permata berharga" in pesan:
