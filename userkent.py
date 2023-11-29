@@ -646,7 +646,7 @@ async def handler_ayam(event):
     elif 'Ada tujuh jenis ikan' in event.raw_text:
         time.sleep(2)
         await event.click(1,0)
-        return
+        
     
     elif 'Ada enam jenis daun' in event.raw_text:
         if 'Gunakan gelar SlotKing' in event.raw_text:
@@ -655,7 +655,7 @@ async def handler_ayam(event):
         else: 
             time.sleep(2)
             await event.click(1,0)
-        return
+        
       
     elif 'Berhasil menambahkan gelar' in event.raw_text:
         time.sleep(2)
@@ -689,7 +689,7 @@ async def handler_ayam(event):
     elif 'Apa kamu' in event.raw_text:
         time.sleep(2)
         await event.click(text="Confirm")
-        return
+        
     
     elif 'Berhasil membeli tambahan' in pesan: 
         time.sleep(2) 
@@ -700,22 +700,22 @@ async def handler_ayam(event):
     elif 'Setiap harinya' in event.raw_text:
         time.sleep(2)
         await event.click(text='Mulai')
-        return
+        
 
     elif 'Pilih sasaran' in event.raw_text:
         time.sleep(2)
         await event.click(0,1)
-        return
+        
     
     elif 'Lemparanmu berhasil' in event.raw_text:
         time.sleep(2)
         await event.click(text='Lanjut')
-        return
+        
     
     elif 'Sayang sekali' in event.raw_text:
         time.sleep(2)
         await event.click(text='Lanjut')
-        return
+        
       
 
     elif 'Kesempatan untuk melempar' in event.raw_text or 'dibuka setiap hari' in event.raw_text:
@@ -753,12 +753,14 @@ async def handler_ayam(event):
         time.sleep(2)
         await client.send_message(ch, ''
         + str(finalresult).format(dn,usn,jackpot, gems, tiket, poin, skill, cv, sk, af, mm, fp, hw, bd, cc, md, mp, slot, time.asctime()) + '',parse_mode='html')
-        return
+        
         
     
     elif 'investasi termahal' in event.raw_text or 'Tiap petani hanya bisa' in event.raw_text or 'Saldo WorldBank tidak mencukupi' in event.raw_text:
         time.sleep(2)
         print('--Selesai--')
+        break
+        exit
          
         
 @client.on(events.NewMessage(from_users=user))
