@@ -1,185 +1,112 @@
-from telethon import TelegramClient, events, sync, utils
-from time import sleep
-import asyncio, random
+#by Ditza
+#!/usr/bin/env python3
+import time
+import re
+import asyncio 
+import sys
+import random
 
-loop = asyncio.get_event_loop()
-
+from telethon import TelegramClient, events, utils, Button
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
+sesi_file = 'Finnkent'
 
-akun1 = input("Akun : ")
-client = TelegramClient(akun1, api_id, api_hash).start()
+dest = ('danaudalamhutan', 'KampungMaifamBot', 'KampungMaifamXBot')
+maling = True
 
-total = 0
-judi = '/casino_FiftyFifty_2_1e12'
-chat = 'kampungmaifamxbot'
-hapus = '/makan_KudapanSuci'
-result = '/casino_result'
+uang = 'Hapus menggunakan Uang'
+#ch = 'Afterbluesky'
+    
+async def nungguin(w):
+   await asyncio.sleep(w)
 
-narasi = {
-    "No bounty",
-    "Successfully bet",
-    "You can see",
-    "EXP Target is reached",
-    "as free as",
-    "Address code changed",
-    "Energy Successfully restored",
-    "Language changed to English",
-}
+async def mancingddh(client,w):
+    while True:
+        await client.send_message(dest[0], "/fish")
+        await nungguin(w)
 
-ncasino = {
-    "You won",
-    "No bet placed",
-    "You bet on",
-    "60 times",
-}
-
-@client.on(events.NewMessage(chat))
+with TelegramClient(sesi_file, api_id, api_hash) as client:
+    client.loop.run_until_complete(client.send_message(dest[2], '/homes_curiUang'))
+    
+@client.on(events.NewMessage(from_users=dest[2]))
 async def handler(event):
-    global maling
-    global total 
-    global tmp
-    
-    teks = event.text
-    
-
-    if any(nar in teks for nar in narasi):
-        sleep(2)
-        await event.respond('/homesx')
-        return
-      
-    if any(nca in teks for nca in ncasino):
-        sleep(2)
-        await event.respond(judi)
-        return
-
-    if "Villager's Abandoned" in teks:
-        tmp = 0
-        rem = 0
-        maling = [x for x in teks.split() if '/stealitem' in x]
-        sleep(1.8)
-        await event.respond(maling[tmp])
-        return
+        pesan = event.raw_text
+        global maling
         
-    if "The house you are trying to" in event.raw_text:
-        sleep(1.8)
-        tmp +=1
-        total += 40
-        print('Skill = ', total)
-        
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
-            return
-        return
-        
-    if "ve stolen" in event.raw_text:
-        sleep(1.8)
-        tmp +=1
-        total += 40
-        print('Skill = ', total)
-        
-        if tmp == 5:
-            await event.respond(hapus)
-            return
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
-            return
-        return
+        if  ("Villager's Houses" in pesan) or ("Rumah Warga" in pesan):
+            print(time.asctime()+" Kunjungi Rumah Warga ke - ")
+            time.sleep(2)
+            x = pesan.split('/curi')
+            file = open("Homes.txt","a+")
+            count = 0
+            for i in range(1,11):
+                y = x[i].split(' - ')
+                z = y[0].replace('Uang', '/curiTernak')
+                #file.write(z+'\n')
+                await event.respond(z)
+                print(time.asctime()+" Masuk Rumah")
+                file.write(z+'\n')
+                print(time.asctime()+" Maling Alamat ke-"+str(i))
+                count+=1
             
-      
-    if 'Oh snap' in teks:
-        sleep(1.8)
-        tmp += 1
-        
-        if tmp == 5:
-            await event.respond(hapus)
-            return
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
-            return
-        return
-        
-    if 'has no item to steal' in teks:
-        sleep(1.8)
-        tmp += 1
-        
-        if tmp == 5:
-            await event.respond(hapus)
-            return
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
-            return
-        return
-    
-    if 'The house you visited' in teks:
-        sleep(1.8)
-        tmp += 1
-        if tmp == 5:
-            await event.respond(hapus)
-            return
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
-            return
-        return
+                if count%10==0:
+                    time.sleep(2)
+                    await event.respond(uang)
+                    print(time.asctime(), 'hapus buron')
+                    #time.sleep(2)
+                    #await client.send_message(dest[1], '/act_ThieveMastery')
+                    #print(time.asctime(), 'Cek ACT')
+                    #await asyncio.sleep(5)
+                    #await event.respond('/act_ThieveMastery')
+                    #time.sleep(2)
+                    #await event.click(0)
+                    #time.sleep(2)
+                    #await event.respond('/harvestAnimal')
+                    #print(time.asctime(), 'ambil hewan')
+                    #time.sleep(2)
+                    #await event.respond('/feed')
+                    #print(time.asctime(), 'beri makan')
+                    #time.sleep(2)
+                    #await event.respond('/masak_Bacon_220')
+                    #print(time.asctime(), 'masak')
 
-    if 'Same address' in teks:
-        sleep(1.8)
-        tmp += 1
-        
-        if tmp == 5:
-            await event.respond(hapus)
+                time.sleep(3)
+            await event.respond('/homes_curiUang')
+            file.close()
             return
-        if tmp == 5:
-            await event.respond(hapus)
-            return 
-        else:
-            await client.send_message(chat, maling[tmp])
+            
+        if 'Kamu tidak memiliki cukup energi' in pesan:
+            print(time.asctime(), 'Habis energi')
+            time.sleep(2)
+            await event.respond('/restore_max_confirm')
+            time.sleep(2)
             return
-        
-        return
-    
-    if 'Great!!' in teks or 'Yummy mummy it' in teks or 'End previous game' in teks:
-        sleep(1.8)
-        await event.respond(result)
-        return
-      
-    if 'stuck in bloody' in teks:
-        sleep(1.8)
-        await event.respond('/release')
-        return
-    
-    if 'Successfully cooked' in teks:
-        sleep(1.8)
-        await event.respond('/masak_minibacon_220')
-        return
-        
-    if 'Are you sure' in teks:
-        sleep(1.8)
-        await event.click(text="Confirm")
-        return
-      
-    if 'Your energy is too low' in teks:
-        sleep(1.8)
-        await event.respond("/restore_max_confirm")
-        return
+          
+        if 'Energi berhasil dipulihkan' in pesan:
+            print('energi di pulihkan')
+            await nungguin(1)
 
-client.send_message(chat,'/homesx')
-client.run_until_disconnected()
+
+        if 'Polisi menemukanmu' in pesan:
+            print('kena polisi')
+            await client.send_message(dest[2], '/release')
+            print('nyogok polisi')
+            await nungguin(1)
+            
+        if 'Apa kamu yakin untuk menggunakan' in pesan:
+            print(time.asctime(), 'Sogok polisi dlu')
+            time.sleep(2)
+            await event.click(text="Confirm")
+            return
+          
+        #if 'WonderstoneOfYouth' in pesan or 'Stealestrite' in pesan:
+            #print('Item sihir nih')
+            #time.sleep(2)
+            #await client.forward_messages(ch, event.message)
+            #time.sleep(4)
+            #return
+            
+with client:
+    client.start()
+    client.loop.create_task(mancingddh(client,245))
+    client.run_until_disconnected()
