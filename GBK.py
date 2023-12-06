@@ -16,6 +16,7 @@ gbkt = '/gbk_Task'
 krj = '/gbk_keranjang'
 
 lokasi = {
+#G
     "Tempat ini dipenuhi tupai",
     "Dulu sekali seorang petani tinggal",
     "Keberadaan tumbuhan-tumbuhan beracun",
@@ -25,6 +26,11 @@ lokasi = {
     "terdapat berbagai macam burung",
     "Taman bunga matahari di kaki Gunung",
     "Area hutan kecil di dasar gunung",
+#F
+    "Gua ini menyimpan permata-permata",
+    "Tempat hidup para monyet",
+    "Taman mawar yang dipenuhi mawar",
+    "Area subur yang dipenuhi buah-buahan"
 }
 
 narasi = {
@@ -36,6 +42,12 @@ narasi = {
     "Sudah mulai lelah? Jangan patah semangat",
     "Ada banyak lokasi-lokasi misterius",
     "Kamu mendaki gunung dan menemukan sebuah",
+    "Seorang bajak laut terkenal",
+    "Tempat-tempat langka",
+    "Gunung ini menyimpan kekuatan sihir",
+    "Hal paling misterius dari gunung",
+    "Meskipun gunung ini sangat tinggi",
+    "Sudah merasa berjalan cukup jauh"
 }
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
@@ -138,7 +150,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(0,0)
                 return
               
-            elif "hanya bisa mendaki sampai ketinggian 100 meter" in pesan:
+            elif "hanya bisa mendaki sampai ketinggian" in pesan:
                 time.sleep(2)
                 await event.click(0,0)
                 return
