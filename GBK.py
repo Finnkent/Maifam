@@ -60,7 +60,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 print(pesan)
                 #time.sleep(2)
                 #await event.click(0,0)
-                #return
+                return
             
             if any(nar in pesan for nar in narasi):
                 time.sleep(2)
