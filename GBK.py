@@ -56,7 +56,8 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         async def handler(event):
             pesan = event.raw_text
             
-            #if any(loc in pesan for loc in lokasi):
+            if any(loc in pesan for loc in lokasi):
+                print(pesan)
                 #time.sleep(2)
                 #await event.click(0,0)
                 #return
