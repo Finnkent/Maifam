@@ -57,7 +57,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             pesan = event.raw_text
             
             if any(loc in pesan for loc in lokasi):
-                print(pesan)
+                print(time.asctime(), 'Ketemu Area')
                 #time.sleep(2)
                 #await event.click(0,0)
                 return
