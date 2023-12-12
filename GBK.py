@@ -55,9 +55,10 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         @client.on(events.NewMessage(from_users=bot_id))
         async def handler(event):
             pesan = event.raw_text
+            print(time.asctime(), pesan)
             
             if any(loc in pesan for loc in lokasi):
-                print(time.asctime(), 'Ketemu Area')
+                #print(time.asctime(), 'Ketemu Area')
                 #time.sleep(2)
                 #await event.click(0,0)
                 return
