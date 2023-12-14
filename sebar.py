@@ -8,7 +8,6 @@ api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
 sesi_file = 'Heliopausa'
 
 group_list = [
-    'BIO_RPP_1',
     'BIO_RPP_30',
     'bio_lpm_rpps',
     'LPM_JUAL_BELI_CH_GC'
@@ -30,6 +29,6 @@ async def send_message_to_groups():
                 except Exception as e:
                     print(f"Terjadi kesalahan saat mengirim pesan ke {group_username}: {e}")
                 await asyncio.sleep(2)
-            await asyncio.sleep(300)
+            await asyncio.sleep(120)
 
 asyncio.run(send_message_to_groups())
