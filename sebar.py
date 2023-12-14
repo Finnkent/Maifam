@@ -11,10 +11,12 @@ group_list = [
     'BIO_RPP_1',
     'BIO_RPP_30',
     'bio_lpm_rpps',
+    'LPM_JUAL_BELI_CH_GC'
 ]
 
 message = """
 @LPMX69 2.1km (100k)
+minat rc @beltofvenus
 """
 
 async def send_message_to_groups():
