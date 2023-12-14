@@ -14,13 +14,7 @@ group_list = [
 ]
 
 message = """
-LPM bebas SPAM tanpa TIMER 🫨
-
-@LPMX69 @LPMX69 @LPMX69
-@LPMX69 @LPMX69 @LPMX69
-@LPMX69 @LPMX69 @LPMX69
-
-LPM bebas SPAM tanpa TIMER 🫨 
+@LPMX69 2.1km (100k)
 """
 
 async def send_message_to_groups():
