@@ -14,7 +14,7 @@ group_list = [
 ]
 
 message = """
-@LPMX69 2.1km (100k)
+@LPMX69 2.3km (100k)
 minat rc @beltofvenus
 """
 
