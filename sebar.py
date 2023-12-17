@@ -5,7 +5,7 @@ from telethon.sync import TelegramClient, events, utils, Button
 # Ganti dengan informasi akun Telegram Anda
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Heliopausa'
+sesi_file = 'Xeroz'
 
 group_list = [
     'BIO_RPP_30',
@@ -13,8 +13,27 @@ group_list = [
 ]
 
 message = """
-@LPMX69 2.7 (120k)
-minat rc @beltofvenus
+
+LPM BEBAS SPAM!!!
+
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
+
+BEBAS PROMOTE
+BANTU RAMEIN
+
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
+
+NEED ALL? GF BF DLL
+
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
+
+JUALAN? BOLEH!
+
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
 """
 
 async def send_message_to_groups():
