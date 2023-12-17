@@ -20,8 +20,8 @@ https://t.me/+n4vEO3h3ZI1iMGU1
 
 *BEBAS PROMOTE*
 *BANTU RAMEIN*
-https://t.me/+
 
+https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
 *NEED ALL? GF BF DLL*
