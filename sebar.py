@@ -13,23 +13,23 @@ group_list = [
 ]
 
 message = """
-*LPM BEBAS SPAM!!!*
+**LPM BEBAS SPAM!!!**
 
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
-*BEBAS PROMOTE*
-*BANTU RAMEIN*
+**BEBAS PROMOTE**
+**BANTU RAMEIN**
 
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
-*NEED ALL? GF BF DLL*
+**NEED ALL? GF BF DLL**
 
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
-*JUALAN? BOLEH!!!*
+**JUALAN? BOLEH!!!**
 
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
