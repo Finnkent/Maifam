@@ -10,7 +10,6 @@ sesi_file = 'Heliopausa'
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
-    'LPM_JUAL_BELI_CH_GC'
 ]
 
 message = """
