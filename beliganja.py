@@ -11,7 +11,7 @@ sesi_file = input('Akun : ')
 Beli = '/beli_ganja_1e6'
 Release = '/release_denganKartu'
 Alamat = '/newaddressx_confirm'
-bot_id = 'KampungMaifamXBot'
+bot_id = 'KampungMaifamBot'
 Act = '/act_FulltimeCriminal'
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
