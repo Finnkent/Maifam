@@ -6,7 +6,7 @@ from telethon import TelegramClient, events, utils, Button
 
 api_id = 18850178 
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Finnkent'
+sesi_file = input('Akun : ')
 
 Beli = '/beli_ganja_1e6'
 Release = '/release_denganKartu'
