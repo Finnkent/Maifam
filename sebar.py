@@ -5,34 +5,20 @@ from telethon.sync import TelegramClient, events, utils, Button
 # Ganti dengan informasi akun Telegram Anda
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Xeroz'
+sesi_file = 'Blaze'
 
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
+    'Lpmcaripacar0',
+    'lpm_roleplayerrprl',
+    'Lpm_ClubRp',
+    'LPM_18_RPRL',
 ]
 
 message = """
-**LPM BEBAS SPAM!!!**
-
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
-
-**BEBAS PROMOTE**
-**BANTU RAMEIN**
-
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
-
-**NEED ALL? GF BF DLL**
-
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
-
-**JUALAN? BOLEH!!!**
-
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
+stalk sini @multrasusu 
+hati-hati gabisa balik
 """
 
 async def send_message_to_groups():
