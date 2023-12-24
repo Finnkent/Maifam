@@ -10,9 +10,6 @@ sesi_file = 'Blaze'
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
-    'lpm_roleplayerrprl',
-    'Lpm_ClubRp',
-    'LPM_18_RPRL',
 ]
 
 message = """
