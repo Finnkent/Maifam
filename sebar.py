@@ -16,13 +16,6 @@ group_list = [
 ]
 
 message = """
-BUTUH ASUPAN? CEK KESINI
-
-https://t.me/multrasusu 
-https://t.me/multrasusu
-https://t.me/multrasusu
-
-hati-hati gabisa balik
 """
 
 async def send_message_to_groups():
