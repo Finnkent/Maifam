@@ -17,7 +17,7 @@ group_list = [
 ]
 
 message = """
-stalk sini @multrasusu 
+stalk sini ada bokep @multrasusu 
 hati-hati gabisa balik
 """
 
