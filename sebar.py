@@ -10,7 +10,6 @@ sesi_file = 'Blaze'
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
-    'Lpmcaripacar0',
     'lpm_roleplayerrprl',
     'Lpm_ClubRp',
     'LPM_18_RPRL',
