@@ -16,7 +16,12 @@ group_list = [
 ]
 
 message = """
-stalk sini ada bokep @multrasusu 
+BUTUH ASUPAN? CEK KESINI
+
+https://t.me/multrasusu 
+https://t.me/multrasusu
+https://t.me/multrasusu
+
 hati-hati gabisa balik
 """
 
