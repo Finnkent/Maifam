@@ -10,17 +10,20 @@ sesi_file = 'Xeroz'
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
-    'LPM_JUAL_BELI_CH_GC',
-    'JualbeliGCCHtelegram',
-    'LPMCH',
 ]
 
 message = """
-wts !!!
-@LPMX76 2k member
-125k via Qriss
-boleh nego :)
-minat? chat @Beltofvenus
+**JOIN LPM 76**
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
+
+**LPM BEBAS**
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
+
+**CARI FAMS / JUALAN / DLL**
+https://t.me/+n4vEO3h3ZI1iMGU1
+https://t.me/+n4vEO3h3ZI1iMGU1
 """
 
 async def send_message_to_groups():
