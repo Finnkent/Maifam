@@ -10,6 +10,7 @@ sesi_file = 'Xeroz'
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
+    'BIORPP55',
 ]
 
 message = """
