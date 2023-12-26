@@ -16,17 +16,27 @@ group_list = [
 ]
 
 message = """
-**JOIN LPM 76**
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
+Hai semuanya, ada kabar baik nih. Ada yang bagi-bagi UPSUBS gratis nih. Eitss tapi ada syaratnya, gak sulit kok.
 
-**LPM BEBAS NO TIMER**
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
+Syaratnya :
+1. Join @LPMX76 & @LPMX69
+2. Subs @nancyfrance
 
-**CARI FAMS / JUALAN / DLL**
-https://t.me/+n4vEO3h3ZI1iMGU1
-https://t.me/+n4vEO3h3ZI1iMGU1
+Jika sudah maka kalian bisa kirim format
+
+```ଘੈ Format UPSUBS
+
+Nama  :
+Username  :
+Memenuhi Syarat : Sudah
+UPSUB : 30s
+Usn Channel : 
+
+Terimakasih```
+
+n : tap auto copy
+
+☎️ @NancyFranceBot
 """
 
 async def send_message_to_groups():
