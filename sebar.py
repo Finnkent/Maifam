@@ -11,6 +11,7 @@ group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
     'BIORPP55',
+    'BIORPP4_S2',
 ]
 
 message = """
