@@ -12,6 +12,7 @@ group_list = [
     'bio_lpm_rpps',
     'BIORPP55',
     'BIORPP4_S2',
+    'BIO_RPPO2',
 ]
 
 message = """
@@ -19,7 +20,7 @@ message = """
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
-**LPM BEBAS**
+**LPM BEBAS NO TIMER**
 https://t.me/+n4vEO3h3ZI1iMGU1
 https://t.me/+n4vEO3h3ZI1iMGU1
 
