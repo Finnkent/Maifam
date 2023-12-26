@@ -16,27 +16,15 @@ group_list = [
 ]
 
 message = """
-Hai semuanya, ada kabar baik nih. Ada yang bagi-bagi UPSUBS gratis nih. Eitss tapi ada syaratnya, gak sulit kok.
+**JOIN LPM 76**
+https://t.me/+YR8Di7zB4uFiY2Y1
+https://t.me/+YR8Di7zB4uFiY2Y1
 
-Syaratnya :
-1. Join @LPMX76 & @LPMX69
-2. Subs @nancyfrance
+**BEBAS NO TIMER**
+https://t.me/+YR8Di7zB4uFiY2Y1
+https://t.me/+YR8Di7zB4uFiY2Y1
 
-Jika sudah maka kalian bisa kirim format
-
-```ଘੈ Format UPSUBS
-
-Nama  :
-Username  :
-Memenuhi Syarat : Sudah
-UPSUB : 30s
-Usn Channel : 
-
-Terimakasih```
-
-n : tap auto copy
-
-☎️ @NancyFranceBot
+**ADA YANG LAGI BAGI UPSUBS GRATIS!!! LANGSUNG JOIN DAN CEK PESAN TERSEMAT*"
 """
 
 async def send_message_to_groups():
