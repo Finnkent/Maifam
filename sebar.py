@@ -16,15 +16,10 @@ group_list = [
 ]
 
 message = """
-**JOIN LPM 76**
-https://t.me/+YR8Di7zB4uFiY2Y1
-https://t.me/+YR8Di7zB4uFiY2Y1
-
-**BEBAS NO TIMER**
-https://t.me/+YR8Di7zB4uFiY2Y1
-https://t.me/+YR8Di7zB4uFiY2Y1
-
-**ADA YANG LAGI BAGI UPSUBS GRATIS!!! LANGSUNG JOIN DAN CEK PESAN TERSEMAT**
+Mampir ke store aku guys :(
+baru bikin kemarin 
+ada promo UPSUB gratis loh
+@nancyfrance
 """
 
 async def send_message_to_groups():
