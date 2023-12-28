@@ -1,5 +1,7 @@
 import time, asyncio, sys, random
 
+
+
 import logging
 
 from telethon import TelegramClient, events, utils, Button
@@ -28,7 +30,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 await event.click(text="Cari Hadiah")
                 return
               
-            elif "Pelan-pelan" in pesan:
+            elif "Pelan-pelan" in pesan or "Berhasil mengambil" in pesan:
                 time.sleep(jeda)
                 await event.click(text="Cari Hadiah")
                 return
