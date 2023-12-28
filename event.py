@@ -11,6 +11,7 @@ sesi_file = input("Akun : ")
 bot_id = 'KampungMaifamX4Bot'
 cmd = '/xm2023_GudangSanta'
 grup = -1001611827546
+jeda = 6
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -23,22 +24,22 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             
               
             if "namun ia telah kabur" in pesan or "Kamu mencuri dari" in pesan or "telah kabur..." in pesan:
-                time.sleep(5.2)
+                time.sleep(jeda)
                 await event.click(text="Cari Hadiah")
                 return
               
             elif "Pelan-pelan" in pesan:
-                time.sleep(5.2)
+                time.sleep(jeda)
                 await event.click(text="Cari Hadiah")
                 return
               
             elif "dari jauh melihat" in pesan:
-                time.sleep(4)
+                time.sleep(jeda)
                 await event.click(text="Curi")
                 return
             
             elif "menemukan sebuah" in pesan:
-                time.sleep(5.2)
+                time.sleep(jeda)
                 await event.click(text="Ambil")
                 return
               
