@@ -29,7 +29,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         
         if 'ingin mencuri hadiah' in event.raw_text:
             gas = await client.get_messages(bot_id, ids=event.message.id)
-            time.sleep(6.2)
+            time.sleep(5.2)
             await gas.click(text='Curi')
             return
         
