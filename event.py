@@ -54,6 +54,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(6)
             await gas.click(text='Cari Hadiah')
             return
+
+        if 'namun ia telah kabur' in event.raw_text:
+            gas = await client.get_messages('KampungMaifamX4Bot', ids=event.message.id)
+            time.sleep(6)
+            await gas.click(text='Cari Hadiah')
+            return
           
     client.start()
     client.run_until_disconnected()
