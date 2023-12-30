@@ -183,7 +183,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
 
         if 'Berhasil menggabungkan' in pesan:
             await bentar(0.9)
-            msg = await client.get_messages(bot[1],ids = idMer)
+            msg = await client.get_messages(bot[2],ids = idMer)
             await msg.click(0,2)
             return
           
@@ -203,7 +203,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
             
             time.sleep(2)
             print('Yosh ulang!!')
-            await client.send_message(bot[1], sghc)
+            await client.send_message(bot[2], sghc)
             return
           
         if 'Kumpulkan bonus uang dan gelar spesial' in pesan:
@@ -236,7 +236,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
         
         elif "dimiliki:" in pesan:
             idMer = event.id
-            msg = await client.get_messages(bot[1],ids = idMer)
+            msg = await client.get_messages(bot[2],ids = idMer)
             time.sleep(1.5)
             a = pesan.split()
             b = int(a.index('dimiliki:'))
