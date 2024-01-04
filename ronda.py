@@ -28,12 +28,13 @@ alamat = [
 '391257263751',
 '731091086247',
 '181988138717',
+'220751199636',
 ]
 
 bot = 'kampungmaifamxbot'
 hapus = '/makan_KudapanSuci'
 turu = 3
-batch_size = 22
+batch_size = 23
 
 async def send_address_messages():
     client = TelegramClient(sesi_file, api_id, api_hash)
@@ -50,6 +51,9 @@ async def send_address_messages():
                 print(f"Sent address: {address}")
                 await asyncio.sleep(turu)
                 progress_count += 1
+                
+                if progress_count == 1:
+                    await client.send_message(bot, '/makan_RotiBelanda')
 
             print("Removing Bounty")
             await client.send_message(bot, hapus)
