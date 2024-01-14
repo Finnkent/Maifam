@@ -11,7 +11,7 @@ akun1 = input("Akun : ")
 client = TelegramClient(akun1, api_id, api_hash).start()
 
 total = 0
-judi = '/casino_FiftyFifty_2_1e12'
+judi = '/casino_UltraLuck_13_5e12'
 chat = 'kampungmaifamxbot'
 hapus = 'Hapus menggunakan Uang'
 result = '/casino_result'
