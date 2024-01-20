@@ -42,7 +42,6 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             return
                 
         if "Permainan telah berakhir" in pesan:
-            print(time.asctime(), pesan)
             time.sleep(2)
             await client.send_message(grup,msg)
             return
@@ -53,7 +52,6 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         pesan = event.raw_text
         
         if "Jumlah minimum pemain - 4" in pesan or "Jika pemain 12 sedikit untuk" in pesan:
-            print(time.asctime(), pesan)
             time.sleep(2)
             await client.send_message(grup, lanjut)
             return
