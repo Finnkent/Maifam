@@ -54,7 +54,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
         
         if "Jumlah minimum pemain - 4" in pesan or "Jika pemain 12 sedikit untuk" in pesan:
             print(time.asctime(), pesan)
-            await bentar(2)
+            time.sleep(2)
             await client.send_message(grup, lanjut)
             return
           
