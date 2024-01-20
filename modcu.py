@@ -15,7 +15,7 @@ sesi_file = 'Frizi'
 bot_id = 'TrueMafiaBot'
 lanjut = '/next@TrueMafiaBot'
 grup = -1001876432938
-msg = 'modcuu woii'
+msg = 'lagi'
 
     
 with TelegramClient(sesi_file, api_id, api_hash) as client:
