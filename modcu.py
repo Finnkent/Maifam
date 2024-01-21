@@ -15,7 +15,7 @@ sesi_file = 'Frizi'
 bot_id = 'TrueMafiaBot'
 lanjut = '/next@TrueMafiaBot'
 grup = -1001831687167
-msg = 'lagi'
+#msg = 'lagi'
 
     
 with TelegramClient(sesi_file, api_id, api_hash) as client:
@@ -50,7 +50,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 
         if "Permainan telah berakhir" in pesan:
             time.sleep(2)
-            await client.send_message(grup,msg)
+            #await client.send_message(grup,msg)
             return
 
         
