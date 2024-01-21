@@ -14,7 +14,7 @@ sesi_file = 'Frizi'
 
 bot_id = 'TrueMafiaBot'
 lanjut = '/next@TrueMafiaBot'
-grup = -1001876432938
+grup = -1001831687167
 msg = 'lagi'
 
     
@@ -29,10 +29,17 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             print(time.asctime(), 'Game baru')
             return
                 
-        if "Anda adalah 👨🏼 Warga" in pesan:
-            time.sleep(7)
-            await client.send_message(grup ,lanjut)
+        if "Anda adalah " in pesan:
             print(time.asctime(), 'Next')
+            if "👨🏼 Warga" in pesan:
+                time.sleep(5)
+                await client.send_message(grup ,lanjut)
+            elif "🤵🏻 Boss Lana" in pesan:
+                time.sleep(5)
+                await client.send_message(grup ,lanjut)  
+            elif "🤵🏼 Mafia!" in pesan:
+                time.sleep(5)
+                await client.send_message(grup ,lanjut)
             return
               
         if "Permainan sudah dimulai..." in pesan:
