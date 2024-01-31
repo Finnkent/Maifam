@@ -37,6 +37,6 @@ async def send_message_to_groups():
                 except Exception as e:
                     print(f"Terjadi kesalahan saat mengirim pesan ke {group_username}: {e}")
                 await asyncio.sleep(2)
-            await asyncio.sleep(120)
+            await asyncio.sleep(30)
 
 asyncio.run(send_message_to_groups())
