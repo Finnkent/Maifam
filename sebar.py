@@ -5,21 +5,26 @@ from telethon.sync import TelegramClient, events, utils, Button
 # Ganti dengan informasi akun Telegram Anda
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_file = 'Xeroz'
+sesi_file = 'Finnkent'
 
 group_list = [
     'BIO_RPP_30',
     'bio_lpm_rpps',
     'BIORPP55',
     'BIORPP4_S2',
-    'BIO_RPPO2',
 ]
 
 message = """
-Mampir ke store aku guys :(
-baru bikin kemarin 
-ada promo UPSUB gratis loh
-@nancyfrance
+*GW TAU LU SEMUA GABUT BANGET
+SINI MENDING COBAIN BOT GAME ONE PIECE*
+
+[GAS COBAIN GAS COBAIN GAS COBAIN](https://t.me/GrandPiratesBot?start=5199147926)
+
+*MAU LANGSUNG DAPAT BANYAK KRU???
+LANGSUNG AJA*
+
+[SINI SINI SINI SINI SINI SINI](https://t.me/GrandPiratesGroup/124810)
+
 """
 
 async def send_message_to_groups():
