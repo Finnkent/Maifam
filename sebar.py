@@ -14,16 +14,11 @@ group_list = [
 ]
 
 message = """
-**GW TAU LU SEMUA GABUT BANGET
-SINI MENDING COBAIN BOT GAME ONE PIECE**
+**EMANG MASIH ADA SEKARANG YANG MAU JOIN GRUP WA??**
 
-[GAS COBAIN GAS COBAIN GAS COBAIN](https://t.me/GrandPiratesBot?start=5199147926)
+**YUK JOIN KALAU KUOTANYA CUMA SISA BUAT CHAT**
 
-**MAU LANGSUNG DAPAT BANYAK KRU???
-LANGSUNG AJA**
-
-[SINI SINI SINI SINI SINI SINI](https://t.me/GrandPiratesGroup/124810)
-
+[GAS JOIN GAS JOIN GAS JOIN](https://chat.whatsapp.com/Ea0wqs85MTK34t7MwrWbgc)
 """
 
 async def send_message_to_groups():
