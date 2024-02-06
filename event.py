@@ -29,7 +29,7 @@ async def mancingddh(client,w):
         await client.send_message(bot[0], "/fish")
         await bentar(w)
         
-tanam_commands = ['/tanam_Strawberry_1500', '/tanam_Pisang_205']
+tanam_commands = ['/tanam_Strawberry_1500', '/tanam_Pisang_213']
 totanam = 2
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
