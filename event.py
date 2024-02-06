@@ -111,15 +111,13 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             if "Kamu berhasil menanam" in pesan:
                 jumlah_penanaman += 1
                 time.sleep(2)
-                if jumlah_penanaman == 3:
+                if jumlah_penanaman == 2:
                     await event.respond(siram)
                     jumlah_penanaman = 0
                 else:
                     time.sleep(2)
                     if jumlah_penanaman == 1:
                         await event.respond(tanam_commands[1])
-                    elif jumlah_penanaman == 2:
-                        await event.respond(tanam_commands[2])
                 return
     
             elif "Lahan tersisa di kebun kamu tidak mencukupi" in pesan:
