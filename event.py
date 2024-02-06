@@ -11,7 +11,7 @@ sesi_file = 'Horang'
 restore = '/restore_max_confirm'
 siram = '/siram'
 panen = '/ambilPanen'
-farm = 'Kebun'
+farm = '/kebun'
 bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMaifamBot']
 ternak = ['/ambilHasil']
 feed = '/beriMakan'
@@ -30,6 +30,7 @@ async def mancingddh(client,w):
         await bentar(w)
         
 tanam_commands = ['/tanam_Strawberry_1500', '/tanam_Pisang_205']
+totanam = 2
 
 with TelegramClient(sesi_file, api_id, api_hash) as client:
     for command in tanam_commands:
@@ -71,7 +72,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
                 print(time.asctime(), 'Hasil ternak')
                 await asyncio.sleep(2)
                 if jumlah_perolehan >= 5:
-                    await event.respond(panen)
+                    await event.respond(farm)
                     jumlah_perolehan = 0
                 else:
                     if tnk < len(ternak):
@@ -111,7 +112,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             if "Kamu berhasil menanam" in pesan:
                 jumlah_penanaman += 1
                 time.sleep(2)
-                if jumlah_penanaman == 2:
+                if jumlah_penanaman == totanam:
                     await event.respond(siram)
                     jumlah_penanaman = 0
                 else:
