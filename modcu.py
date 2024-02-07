@@ -7,6 +7,8 @@ from random import randint
 from datetime import datetime
 from telethon import TelegramClient, events, utils, Button
 from telethon.tl.functions.messages import GetBotCallbackAnswerRequest
+from telethon.tl.functions.messages import GetDialogsRequest
+from telethon.tl.types import InputPeerEmpty
 
 api_id = 18850178 
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
@@ -63,7 +65,12 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             await client.send_message(grup, lanjut)
             return
           
-        
+    @client.on(events.NewMessage(chats=['me'], incoming=True))
+    async def handle_new_message(event):
+        if event.message.mentioned:
+            sender = await event.get_sender()
+            print(f"Mention received from {sender.username}: {event.message.message}")
+
                 
     client.start() 
     print(time.asctime(), 'Mulai...')
