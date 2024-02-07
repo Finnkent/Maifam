@@ -20,6 +20,8 @@ Kalau tertarik silahkan di coba yaa. Ini botnya
 [@KampungMaifamBot](https://telegram.me/kampungmaifambot?start=10398117035)
 
 Tutorialnya [ada disini](https://t.me/guidemepam/18) yaa
+
+Mau di bantu untuk nambah duitnya? sini chat @zifri
 """
 
 async def send_message_to_groups():
