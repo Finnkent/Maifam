@@ -14,11 +14,12 @@ group_list = [
 ]
 
 message = """
-**EMANG MASIH ADA SEKARANG YANG MAU JOIN GRUP WA??**
+Mau coba main salah satu bot game di telegram gak? tentang bertani gitu ✨ mau tau lebih detail tentang gamenya? [Coba kesini](https://telegra.ph/Kampung-Maifam-02-02)
 
-**YUK JOIN KALAU KUOTANYA CUMA SISA BUAT CHAT**
+Kalau tertarik silahkan di coba yaa. Ini botnya
+[@KampungMaifamBot](https://telegram.me/kampungmaifambot?start=10398117035)
 
-[GAS JOIN GAS JOIN GAS JOIN](https://chat.whatsapp.com/Ea0wqs85MTK34t7MwrWbgc)
+Tutorialnya [ada disini](https://t.me/guidemepam/18) yaa
 """
 
 async def send_message_to_groups():
