@@ -64,9 +64,7 @@ with TelegramClient(sesi_file, api_id, api_hash) as client:
             time.sleep(2)
             await client.send_message(grup, lanjut)
             return
-          
-    @client.on(events.NewMessage(chats=['me'], incoming=True))
-    async def handle_new_message(event):
+
         if event.message.mentioned:
             sender = await event.get_sender()
             print(f"Mention received from {sender.username}: {event.message.message}")
