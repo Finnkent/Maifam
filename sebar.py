@@ -22,6 +22,8 @@ Kalau tertarik silahkan di coba yaa. Ini botnya
 Tutorialnya [ada disini](https://t.me/guidemepam/18) yaa
 
 Mau di bantu untuk nambah duitnya? sini chat @zifri
+
+*INI CUMA GAME YAA GABISA HASILIN DUIT ASLI*
 """
 
 async def send_message_to_groups():
