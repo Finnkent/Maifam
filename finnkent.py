@@ -106,7 +106,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
             
         if 'Kamu terkurung' in teks:
             sleep(1.8)
-            await event.respond('/release')
+            await event.respond('/release_denganKartu')
             return
         
         if 'Berhasil memasak' in teks:
