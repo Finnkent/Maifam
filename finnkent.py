@@ -90,6 +90,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
             return
     
         if "Kamu berhasil mencuri" in teks:
+            tmp += 1
             total += 40
             print('Skill = ', total)
             await lanjut(tmp, event, hapus)
@@ -106,7 +107,7 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
             
         if 'Kamu terkurung' in teks:
             sleep(1.8)
-            await event.respond('/release_denganKartu')
+            await event.respond('/release')
             return
         
         if 'Berhasil memasak' in teks:
