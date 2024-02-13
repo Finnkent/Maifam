@@ -7,16 +7,15 @@ from telethon.tl.functions.messages import GetBotCallbackAnswerRequest
 
 api_id = 18850178
 api_hash = '34d2d64d0bb5827789bc7bf7c0d34b69'
-sesi_fil = 'Finnkent'
+sesi_fil = input('Akun : ')
 
 bot = ['danaudalamhutan', 'KampungMaifamXBot', 'KampungMaifamX4Bot', 'KampungMaifamBot']
 result = "/casino_hasil"
-mode = "/casino_UltraLuck_"
-judi = mode+str(random.randint(1,50))+"_5e12"
-ch = 'inMaifam'
-hapus = 'Hapus menggunakan Uang'
-masak = '/masak_minibacon_220' 
+mode = "/casino_FiftyFifty_"
+judi = mode+str(random.randint(1,2))+"_1e12"
+hapus = '/eat_holysnack'
 total = 0
+
 
 narasi = {
     "Bahasa diubah ke Bahasa Indonesia",
@@ -24,7 +23,6 @@ narasi = {
     "Energi berhasil dipulihkan",
     "Sekarang kamu bebas",
     "Hasil akan keluar",
-    "tidak bisa memasak",
 }
 
 ncasino = {
@@ -58,12 +56,12 @@ async def lanjut(tmp, event, buron):
     return tmp
     
 with TelegramClient(sesi_fil, api_id, api_hash) as client:
-    client.loop.run_until_complete(client.send_message(bot[1], masak))
+    client.loop.run_until_complete(client.send_message(bot[1], '/homesx'))
     @client.on(events.NewMessage(incoming=True, from_users=bot[1]))
     async def handler(event):
         global maling
-        global total 
         global tmp
+        global total
         
         teks = event.text
         
@@ -108,11 +106,6 @@ with TelegramClient(sesi_fil, api_id, api_hash) as client:
         if 'Kamu terkurung' in teks:
             sleep(1.8)
             await event.respond('/release')
-            return
-        
-        if 'Berhasil memasak' in teks:
-            sleep(1.8)
-            await event.respond(masak)
             return
             
         if 'Apa kamu yakin' in teks:
